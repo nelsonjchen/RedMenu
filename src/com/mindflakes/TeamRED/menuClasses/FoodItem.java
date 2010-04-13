@@ -1,4 +1,4 @@
-package menuClasses;
+package com.mindflakes.TeamRED.menuClasses;
 
 public class FoodItem {
 
