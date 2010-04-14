@@ -1,4 +1,4 @@
-package redMenu;
+package com.mindflakes.TeamRED.redMenu;
 
 import java.io.IOException;
 import javax.servlet.http.*;
