@@ -3,7 +3,7 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="com.google.appengine.eclipse.core.GAE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/google-collect-1.0.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/google-collect-1.0.jar" sourcepath="lib/google-collect-1.0/src-1.0.zip"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/joda-time-1.6.jar" sourcepath="lib/joda-time-1.6/joda-time-1.6-sources.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/twig-persist-1.0.1.jar" sourcepath="lib/twig-persist/twig-persist-1.0.1-sources.jar"/>
 	<classpathentry kind="output" path="war/WEB-INF/classes"/>
