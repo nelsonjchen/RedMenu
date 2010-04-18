@@ -23,4 +23,12 @@ public class LightSwitch {
 			on = true;
 		}
 	}
+	
+	public Boolean isOn() {
+		if (on) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }
