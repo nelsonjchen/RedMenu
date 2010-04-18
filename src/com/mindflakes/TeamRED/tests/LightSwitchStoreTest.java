@@ -12,6 +12,7 @@ import org.junit.Test;
 
 public class LightSwitchStoreTest extends LocalDatastoreTestCase {
 	
+	@SuppressWarnings("unused")
 	private AnnotationObjectDatastore datastore;
 
 	@Override
