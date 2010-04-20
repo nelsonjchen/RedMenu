@@ -5,23 +5,31 @@ import java.util.ArrayList;
 
 public class MealMenu {
 	private String commonsName;
-	private Interval dateTimeInterval;
+	private long startMillis, endMillis, modMillis;
 	private ArrayList<Venue> venues;
 	private String mealName;
-	private DateTime modDate;
-	public MealMenu(String commonsName, Interval dateTimeInterval,
-			ArrayList<Venue> venues, String mealName, DateTime modDate) {
+	
+	public MealMenu(String commonsName, long startMillis, long endMillis,
+			long modMillis, ArrayList<Venue> venues, String mealName) {
 		this.commonsName = commonsName;
-		this.dateTimeInterval = dateTimeInterval;
+		this.startMillis = startMillis;
+		this.endMillis = endMillis;
+		this.modMillis = modMillis;
 		this.venues = venues;
 		this.mealName = mealName;
-		this.modDate = modDate;
+	}
+	
+	private MealMenu(){
+		this.commonsName = null;
+		this.venues = new ArrayList<Venue>();
+		this.mealName = null;
+		this.modMillis = 0;
+		this.startMillis = 0;
+		this.endMillis = 0;
+		
 	}
 	public String getCommonsName() {
 		return commonsName;
-	}
-	public Interval getDateTimeInterval() {
-		return dateTimeInterval;
 	}
 	public ArrayList<Venue> getVenues() {
 		return venues;
@@ -29,11 +37,16 @@ public class MealMenu {
 	public String getMealName() {
 		return mealName;
 	}
+	
+	public Interval getMealInterval(){
+		return new Interval(startMillis, endMillis);
+	}
+	
 	public DateTime getModDate() {
-		return modDate;
+		return new DateTime(modMillis);
 	}
 	public void setModDate(DateTime modDate) {
-		this.modDate = modDate;
+		this.modMillis = modDate.getMillis();
 	}
 
 }
