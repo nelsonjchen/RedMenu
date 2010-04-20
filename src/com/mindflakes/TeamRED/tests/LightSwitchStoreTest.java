@@ -3,7 +3,7 @@ package com.mindflakes.TeamRED.tests;
 import static junit.framework.Assert.assertEquals;
 
 import static org.junit.Assert.*;
-import static org.junit.Assert.assertEquals;
+//import static org.junit.Assert.assertEquals;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Key;
