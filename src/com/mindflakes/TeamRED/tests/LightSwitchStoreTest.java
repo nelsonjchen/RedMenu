@@ -2,10 +2,11 @@ package com.mindflakes.TeamRED.tests;
 
 import static junit.framework.Assert.assertEquals;
 
+import static org.junit.Assert.*;
 import static org.junit.Assert.assertEquals;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
-import com.mindflakes.TeamRED.menuClasses.MealMenu;
+import com.google.appengine.api.datastore.Key;
 import com.vercer.engine.persist.annotation.AnnotationObjectDatastore;
 
 import org.junit.Test;
@@ -25,8 +26,15 @@ public class LightSwitchStoreTest extends LocalDatastoreTestCase {
 	}
 	
 	@Test
-	public void setupSwitch() {
+	public void checkSwitch() {
 		LightSwitch sw = new LightSwitch();
+//		LightSwitch sw_name = new LightSwitch();
+		
+		Key key = datastore.store(sw);
+		LightSwitch sw2 = datastore.load(key);
+		assertFalse(sw2.isOn());
+		assertEquals("Name Accuracy", sw2.getName(), "Unknown");
+
 	}
 
 	
