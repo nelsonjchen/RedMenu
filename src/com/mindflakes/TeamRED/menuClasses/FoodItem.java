@@ -9,6 +9,12 @@ public class FoodItem {
 		this.vegan = vegan;
 		this.vegetarian = vegetarian;
 	}
+	
+	@SuppressWarnings("unused")
+	private FoodItem() {
+		
+	}
+	
 	public String getName() {
 		return name;
 	}

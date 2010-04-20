@@ -19,6 +19,7 @@ public class MealMenu {
 		this.mealName = mealName;
 	}
 	
+	@SuppressWarnings("unused")
 	private MealMenu(){
 		this.commonsName = null;
 		this.venues = new ArrayList<Venue>();

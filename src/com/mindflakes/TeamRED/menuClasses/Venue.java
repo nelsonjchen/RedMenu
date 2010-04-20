@@ -8,6 +8,12 @@ public class Venue {
 		this.name = name;
 		this.foodItems = foodItems;
 	}
+	
+	@SuppressWarnings("unused")
+	private Venue() {
+		
+	}
+	
 	public String getName() {
 		return name;
 	}
