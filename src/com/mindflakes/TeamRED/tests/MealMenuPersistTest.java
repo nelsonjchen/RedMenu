@@ -16,7 +16,7 @@ import org.joda.time.DateTime;
 import org.junit.Test;
 
 
-public class MealMenuTest extends LocalDatastoreTestCase {
+public class MealMenuPersistTest extends LocalDatastoreTestCase {
 	
 //	@SuppressWarnings("unused")
 	private AnnotationObjectDatastore datastore;
