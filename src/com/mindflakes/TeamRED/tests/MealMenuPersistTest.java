@@ -6,7 +6,6 @@ import java.util.Iterator;
 
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
-import com.mindflakes.TeamRED.UCSBScrape.TestMain;
 import com.mindflakes.TeamRED.menuClasses.FoodItem;
 import com.mindflakes.TeamRED.menuClasses.MealMenu;
 import com.vercer.engine.persist.annotation.AnnotationObjectDatastore;
@@ -31,7 +30,7 @@ public class MealMenuPersistTest extends LocalDatastoreTestCase {
 	}
 	
 	private void storeMenu() {
-		mealmenu = TestMain.createTestMenu();
+		mealmenu = MealMenuTestUtils.createTestMenu();
 		datastore.store().instance(mealmenu).returnKeyNow();
 	}
 	
@@ -42,13 +41,13 @@ public class MealMenuPersistTest extends LocalDatastoreTestCase {
 	
 	@Test
 	public void persistMenu() {
-		mealmenu = TestMain.createTestMenu();
+		mealmenu = MealMenuTestUtils.createTestMenu();
 		datastore.store().instance(mealmenu).returnKeyNow();
 	}
 	
 	@Test
 	public void doesMenuExist() {
-		mealmenu = TestMain.createTestMenu();
+		mealmenu = MealMenuTestUtils.createTestMenu();
 		datastore.store().instance(mealmenu).returnKeyNow();
 		Iterator<MealMenu> retrieved_menus = datastore.find().type(MealMenu.class)
 		.addFilter("commonsName", EQUAL, "Carrillo")
