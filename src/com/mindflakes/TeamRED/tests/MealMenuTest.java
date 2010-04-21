@@ -12,6 +12,7 @@ import com.mindflakes.TeamRED.menuClasses.MealMenu;
 import com.vercer.engine.persist.annotation.AnnotationObjectDatastore;
 import static com.google.appengine.api.datastore.Query.FilterOperator.*;
 
+import org.joda.time.DateTime;
 import org.junit.Test;
 
 
@@ -57,14 +58,16 @@ public class MealMenuTest extends LocalDatastoreTestCase {
 	}
 
 	@Test
-	
-	public void findCommonByCheeze() {
+	public void findCommonByTime() {
 		storeMenu();
-		Iterator<FoodItem> retreived_fooditems = datastore.find()
-		.type(FoodItem.class)
-		.addFilter("Cheeze", IN, "name").returnResultsNow();
-		FoodItem item = retreived_fooditems.next();
-		assertTrue("Item is Cheezy", item.getName().contains("Cheeze"));
-		
+//		Only one inequality is supported.
+//		7 o clock
+		long early_time = new DateTime(2010, 4, 12, 7, 00, 00, 00).getMillis();
+		Iterator<MealMenu> future_menu = datastore.find()
+		.type(MealMenu.class)
+		.addFilter("startMillis", GREATER_THAN_OR_EQUAL, early_time)
+		.addSort("startMillis")
+		.returnResultsNow();
+		assertEquals("Name", "Carrillo", future_menu.next().getCommonsName());
 	}
 }	
