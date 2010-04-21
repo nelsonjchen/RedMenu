@@ -65,8 +65,8 @@ public class MealMenuTest extends LocalDatastoreTestCase {
 		long early_time = new DateTime(2010, 4, 12, 7, 00, 00, 00).getMillis();
 		Iterator<MealMenu> future_menu = datastore.find()
 		.type(MealMenu.class)
-		.addFilter("startMillis", GREATER_THAN_OR_EQUAL, early_time)
-		.addSort("startMillis")
+		.addFilter("endMillis", GREATER_THAN_OR_EQUAL, early_time)
+		.addSort("endMillis")
 		.returnResultsNow();
 		assertEquals("Name", "Carrillo", future_menu.next().getCommonsName());
 	}
