@@ -112,6 +112,11 @@ public class UCSBMenuScraper {
         
 
     } //construct
+    
+    /**
+     * Returns generated MealMenu Objects
+     * @return Arraylist of MealMenus
+     */
     public static ArrayList<MealMenu> getMealMenu() {
     	return menus;
     }
