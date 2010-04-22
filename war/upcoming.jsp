@@ -10,6 +10,9 @@
 <%@page import="com.mindflakes.TeamRED.menuClasses.MealMenu"%>
 <%@page import="com.mindflakes.TeamRED.utils.MealMenuUtil"%>
 <%@page import="com.mindflakes.TeamRED.tests.MealMenuTestUtils"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="com.google.appengine.api.datastore.*"%>
+<%@page import="com.vercer.engine.persist.annotation.AnnotationObjectDatastore" %>
 
 <html>
 <head>
@@ -40,7 +43,23 @@ Current (Fake) Time is <%= time %> </br>
 
 <h1>Menu for Meals</h1>
 
-<%= MealMenuUtil.mealMenuSimpleHTML((MealMenuTestUtils.createTestMenu())) %>
+<%
+
+DatastoreService service = DatastoreServiceFactory.getDatastoreService();
+AnnotationObjectDatastore datastore = new AnnotationObjectDatastore(service);
+
+MealMenu mealmenu = MealMenuTestUtils.createTestMenu();
+datastore.store().instance(mealmenu).returnKeyNow();
+Iterator<MealMenu> future_menu = datastore.find()
+.type(MealMenu.class)
+.addFilter("endMillis",
+		com.google.appengine.api.datastore.Query.FilterOperator.GREATER_THAN_OR_EQUAL,
+		time.getMillis())
+.addSort("endMillis")
+.returnResultsNow();
+%>
+
+<%= MealMenuUtil.mealMenuSimpleHTML(future_menu.next()) %>
 
 
 </body>

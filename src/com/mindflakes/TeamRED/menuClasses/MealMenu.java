@@ -2,7 +2,7 @@ package com.mindflakes.TeamRED.menuClasses;
 import org.joda.time.DateTime;
 import org.joda.time.Interval;
 
-import com.google.appengine.repackaged.org.joda.time.format.DateTimeFormat;
+import org.joda.time.format.DateTimeFormat;
 import com.vercer.engine.persist.annotation.Key;
 
 import java.util.ArrayList;
@@ -12,6 +12,7 @@ public class MealMenu {
 	private long startMillis, endMillis, modMillis;
 	private ArrayList<Venue> venues;
 	private String mealName;
+	@SuppressWarnings("unused")
 	@Key
 	private String menukey;
 	
