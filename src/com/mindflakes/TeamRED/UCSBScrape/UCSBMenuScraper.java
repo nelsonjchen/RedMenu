@@ -108,7 +108,7 @@ public class UCSBMenuScraper {
 
        for (int i=0; i<day[0].size(); i++) {
             System.out.println(day[0].get(i));
-            System.out.println( isVgt(day[0].get(i)) );
+            System.out.println(isMealTime(day[0].get(i)));
         }
         
 
@@ -117,6 +117,43 @@ public class UCSBMenuScraper {
 
 
     } //construct
+    private static boolean isMealTime(String input) {
+    	input = input.toLowerCase();
+    	if (input.contains("breakfast")) {
+    		return true;
+    	} else if (input.contains("lunch")) {
+    		return true;
+    	} else if (input.contains("brunch")) {
+    		return true;
+    	} else if (input.contains("dinner")) {
+    		return true;
+    	} else if (input.contains("late night")) {
+    		return true;
+    	} else {
+    		return false;
+    	}
+    	
+    	
+    	}
+    private static boolean isVenue(String food, String commons) {
+    	food = food.toLowerCase();
+    	commons = commons.toLowerCase();
+    	if (commons.contains("ortega")) {
+    		if (food.contains("bakery"))
+    			return true;
+    		else if (food.contains("hot food"))
+    			return true;
+    		else if (food.contains("salads"))
+    			return true;
+    	} else if (commons.contains("carrillo")) {
+    		
+    	} else if (commons.contains("portola")) {
+    		
+    	} else if (commons.contains("guerra")) {
+    		
+    	}
+    	return false;
+    }
     private static boolean isVegan(String food) {
     	food = food.toLowerCase();
     	if (food.contains("vegan")) {
