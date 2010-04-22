@@ -38,7 +38,7 @@ DateTime time = new DateTime(2010, 4, 12, 7, 15, 00, 00);
 %>
 Current (Fake) Time is <%= time %> </br>
 
-<h1>Upcoming Menu</h1>
+<h1>Menu for Meals</h1>
 
 <%= MealMenuUtil.mealMenuSimpleHTML((MealMenuTestUtils.createTestMenu())) %>
 

@@ -21,11 +21,13 @@ public  class MealMenuUtil {
 	public static String mealMenuSimpleHTML(MealMenu menu) {
 		String append = "";
 		append += "<h2>" + menu.getCommonsName() + "</h2>\n";
+		append += "<h3>" + menu.getMealName() + "</h3>\n";
+		append += "<p>" + menu.getMealInterval() + "</p>\n";
 		for (Venue v : menu.getVenues()) {
-			append += "<h3>" + v.getName() + "</h3>\n";
+			append += "<h4>" + v.getName() + "</h4>\n";
 			append += "<ul>\n";
 			for (FoodItem f: v.getFoodItems()) {
-				append += "<li>" + f.getName() + "</li<\n";
+				append += "<li>" + f.getName() + "</li>\n";
 			}
 			append += "</ul>\n";
 		}
