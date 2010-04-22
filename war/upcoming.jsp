@@ -5,7 +5,8 @@
 <%@ page import="com.google.appengine.api.users.UserServiceFactory" %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+
+<%@page import="org.joda.time.DateTime"%><html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Upcoming Meals</title>
@@ -27,7 +28,7 @@
     }
 %>
 
-
+Current (Fake) Time is <%= (new DateTime()) %> 
 
 </body>
 </html>
