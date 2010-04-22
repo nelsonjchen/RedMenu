@@ -2,7 +2,7 @@ package com.mindflakes.TeamRED.UCSBScrape;
 import java.util.*;
 
 public class UCSBMenuScraper {
-    static UCSBMenuFile file;
+    private static UCSBMenuFile file;
     public UCSBMenuScraper(String filename, int mode) {
         if (mode==1) {
             file = new LocalUCSBMenuFile(filename);
@@ -15,27 +15,44 @@ public class UCSBMenuScraper {
             //aligns the scanner to rid of leading whitespace
         }
 
-        //gets venue name
+        //gets commons name
         jump(6);       
-        String venueName;
+        String commonsName;
         targetline = file.nextLine();
-        venueName=getText(targetline);
-
-        //gets dates
-        jump(9);
-        String date[] = new String[7];
-        for (int i=0; i<7; i++) {
-            date[i] = getText( file.nextLine());
-        }
-
-        //creates and fill arrays
+        commonsName=getText(targetline);
+        
+        file.nextLine();
+        targetline = file.nextLine();
+        
+        
+        //create arrays
+        Vector<String> temp;
         Vector<String> day[] = new Vector[7];
         for (int i=0; i<7; i++) {
             Vector<String> food = new Vector<String>();
             day[i] = food;
         }
-        Vector<String> temp;
+        
+        //adds first meal to arrays
+        for (int i=0; i<7; i++) {
+    		temp = day[i];
+    		temp.add(getText(targetline));
+    		
+    	}
+        
+        
+
+        //gets dates
+        jump(7);
+        String date[] = new String[7];
+        for (int i=0; i<7; i++) {
+            date[i] = getText(file.nextLine());
+        }
+     
+        
+        targetline = file.nextLine();
         while(!targetline.equals("EOF")) {
+        	
            switch(getNum(targetline)) {
                 case 34:
                     temp = day[0];
@@ -66,18 +83,33 @@ public class UCSBMenuScraper {
                     temp.add(getText(targetline));
                     break;
                 default:
+                	String text = getText(targetline);
+                	if (text.equals("Monday")) {
+                		jump(13);
+                	} else if (text.equals("/notext")) {
+                	
+                	} else if (text.equals(commonsName)) {
+                	
+                	} else if (text.equals("Weekly Menu")) {
+                	
+                	} else {
+	                	for (int i=0; i<7; i++) {
+	                		temp = day[i];
+	                		temp.add(getText(targetline));
+	                	}
+                	}
                     break;
-            }
+            } //switch
            targetline= file.nextLine();
         }
 
 
 
-/* test
+
        for (int i=0; i<day[0].size(); i++) {
             System.out.println(day[0].get(i));
         }
-        */
+        
 
 
 
