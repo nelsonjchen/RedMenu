@@ -7,12 +7,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <%@page import="org.joda.time.DateTime"%>
+<%@page import="org.joda.time.format.DateTimeFormat"%>
 <%@page import="com.mindflakes.TeamRED.menuClasses.MealMenu"%>
 <%@page import="com.mindflakes.TeamRED.utils.MealMenuUtil"%>
 <%@page import="com.mindflakes.TeamRED.tests.MealMenuTestUtils"%>
 <%@page import="java.util.Iterator"%>
 <%@page import="com.google.appengine.api.datastore.*"%>
 <%@page import="com.vercer.engine.persist.annotation.AnnotationObjectDatastore" %>
+
 
 <html>
 <head>
@@ -39,7 +41,7 @@
 <% 
 DateTime time = new DateTime(2010, 4, 12, 7, 15, 00, 00); 
 %>
-Current (Fake) Time is <%= time %> </br>
+Current (Fake) Time is <%= DateTimeFormat.mediumDateTime().print(time) %> </br>
 
 <h1>Menu for Meals</h1>
 
@@ -53,8 +55,7 @@ datastore.store().instance(mealmenu).returnKeyNow();
 Iterator<MealMenu> future_menu = datastore.find()
 .type(MealMenu.class)
 .addFilter("endMillis",
-		com.google.appengine.api.datastore.Query.FilterOperator.GREATER_THAN_OR_EQUAL,
-		time.getMillis())
+		com.google.appengine.api.datastore.Query.FilterOperator.GREATER_THAN_OR_EQUAL, time.getMillis())
 .addSort("endMillis")
 .returnResultsNow();
 %>

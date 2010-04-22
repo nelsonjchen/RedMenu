@@ -1,5 +1,7 @@
 package com.mindflakes.TeamRED.utils;
 
+import org.joda.time.format.DateTimeFormat;
+
 import com.mindflakes.TeamRED.menuClasses.FoodItem;
 import com.mindflakes.TeamRED.menuClasses.MealMenu;
 import com.mindflakes.TeamRED.menuClasses.Venue;
@@ -22,7 +24,13 @@ public  class MealMenuUtil {
 		String append = "";
 		append += "<h2>" + menu.getCommonsName() + "</h2>\n";
 		append += "<h3>" + menu.getMealName() + "</h3>\n";
-		append += "<p>" + menu.getMealInterval() + "</p>\n";
+		append += "<p>" + DateTimeFormat.mediumDateTime()
+				.print(menu.getMealInterval().getStartMillis())
+				+ " to "
+				+ DateTimeFormat.shortTime()
+				.print(menu.getMealInterval().getEndMillis()) 
+				
+				+ "</p>\n";
 		for (Venue v : menu.getVenues()) {
 			append += "<h4>" + v.getName() + "</h4>\n";
 			append += "<ul>\n";
