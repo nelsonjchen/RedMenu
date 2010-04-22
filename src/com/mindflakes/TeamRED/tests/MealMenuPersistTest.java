@@ -34,6 +34,21 @@ public class MealMenuPersistTest extends LocalDatastoreTestCase {
 	}
 	
 	@Test
+	public void persistTwice() {
+		storeMenu();
+		storeMenu();
+		Iterator<MealMenu> retrieved_menus = datastore.find().type(MealMenu.class)
+		.addFilter("commonsName", EQUAL, "Carrillo")
+		.returnResultsNow();
+		int count = 0;
+		while (retrieved_menus.hasNext()) {
+			retrieved_menus.next();
+			count++;
+		}
+		assertEquals(1, count);
+	}
+	
+	@Test
 	public void checkEqual() {
 		assertEquals("One Equals One",1,1);
 	}

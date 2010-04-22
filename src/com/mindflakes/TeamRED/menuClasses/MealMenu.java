@@ -1,6 +1,9 @@
 package com.mindflakes.TeamRED.menuClasses;
 import org.joda.time.DateTime;
 import org.joda.time.Interval;
+
+import com.google.appengine.repackaged.org.joda.time.format.DateTimeFormat;
+
 import java.util.ArrayList;
 
 public class MealMenu {
@@ -8,6 +11,7 @@ public class MealMenu {
 	private long startMillis, endMillis, modMillis;
 	private ArrayList<Venue> venues;
 	private String mealName;
+	private String menukey;
 	
 	public MealMenu(String commonsName, long startMillis, long endMillis,
 			long modMillis, ArrayList<Venue> venues, String mealName) {
@@ -17,6 +21,7 @@ public class MealMenu {
 		this.modMillis = modMillis;
 		this.venues = venues;
 		this.mealName = mealName;
+		setmenuKey();
 	}
 	
 	@SuppressWarnings("unused")
@@ -29,6 +34,14 @@ public class MealMenu {
 		this.endMillis = 0;
 		
 	}
+	
+	private void setmenuKey() {
+		this.menukey =  this.commonsName.toLowerCase() +
+						this.mealName.toLowerCase() +
+						DateTimeFormat.forPattern("MMddyyyy")
+						.print(startMillis);
+	}
+	
 	public String getCommonsName() {
 		return commonsName;
 	}
