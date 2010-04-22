@@ -38,6 +38,9 @@ public class MealMenu {
 		
 	}
 	
+	/**
+	 * This method sets a key for unique persistance.
+	 */
 	private void setmenuKey() {
 		this.menukey =  this.commonsName.toLowerCase() +
 						this.mealName.toLowerCase() +
@@ -45,16 +48,26 @@ public class MealMenu {
 						.print(startMillis);
 	}
 	
+	/**
+	 * @return common name like "Ortega" or "Carrillo"
+	 */
 	public String getCommonsName() {
 		return commonsName;
 	}
 	public ArrayList<Venue> getVenues() {
 		return venues;
 	}
+	
+	/**
+	 * @return name of meal like "Dinner" or "Breakfast" or "Late Night"
+	 */
 	public String getMealName() {
 		return mealName;
 	}
 	
+	/**
+	 * @return interval 
+	 */
 	public Interval getMealInterval(){
 		return new Interval(startMillis, endMillis);
 	}
@@ -62,6 +75,7 @@ public class MealMenu {
 	public DateTime getModDate() {
 		return new DateTime(modMillis);
 	}
+	
 	public void setModDate(DateTime modDate) {
 		this.modMillis = modDate.getMillis();
 	}
