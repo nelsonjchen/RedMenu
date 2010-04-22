@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 
 import org.joda.time.DateTime;
+import org.junit.Before;
 import org.junit.Test;
 
 import com.mindflakes.TeamRED.UCSBScrape.UCSBMenuScraper;
@@ -15,15 +16,21 @@ import com.mindflakes.TeamRED.menuClasses.MealMenu;
 public class UCSBMenuScraperTest {
 	ArrayList<MealMenu> menus;
 	
+	@Before
 	public void setUp() {
 //		Carrillo
-        
+		new UCSBMenuScraper("docs/viewer.xml", 1);
+        menus = UCSBMenuScraper.getMealMenu();
 	}
 	
 	@Test
 	public void checkName() {
-		new UCSBMenuScraper("docs/viewer.xml", 1);
-        menus = UCSBMenuScraper.getMealMenu();
-		assertEquals("Common Name Matches","Carrillo",menus.get(0).getCommonsName());
+		
+		assertEquals("Common Name Matches","Ortega",menus.get(0).getCommonsName());
+	}
+	
+	@Test
+	public void checkStartTimeForBreakfast() {
+		
 	}
 }
