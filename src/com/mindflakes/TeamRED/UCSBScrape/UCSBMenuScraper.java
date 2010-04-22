@@ -104,10 +104,11 @@ public class UCSBMenuScraper {
         }
 
 
-
+       //prints out monday menu (4Testing)
 
        for (int i=0; i<day[0].size(); i++) {
             System.out.println(day[0].get(i));
+            System.out.println( isVgt(day[0].get(i)) );
         }
         
 
@@ -116,13 +117,30 @@ public class UCSBMenuScraper {
 
 
     } //construct
-    public static void jump(int lines) {
+    private static boolean isVegan(String food) {
+    	food = food.toLowerCase();
+    	if (food.contains("vegan")) {
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }
+    private static boolean isVgt(String food) {
+    	food = food.toLowerCase();
+    	if (food.contains("vgt")) {
+    		return true;
+    	} else {
+    		return false;
+    	}
+    }
+    
+    private static void jump(int lines) {
         //moves scanning position of the menu file
         for(int i=0; i<lines; i++) {
             file.nextLine();
         }
     }
-    public static String getText(String input) {
+    private static String getText(String input) {
         String temp = "";
         String text = "/notext";
         
@@ -141,7 +159,7 @@ public class UCSBMenuScraper {
         }
         return text;
     }
-    public static int getNum(String input) {
+    private static int getNum(String input) {
         int temp = -1;
 
         StringTokenizer read = new StringTokenizer(input, "\"", false);
@@ -153,7 +171,7 @@ public class UCSBMenuScraper {
         }
         return temp;
     }
-    public static boolean hasText(String input) {
+    private static boolean hasText(String input) {
         if ((getText(input).equals("/notext"))) {
             return false;
         } else {
@@ -161,7 +179,7 @@ public class UCSBMenuScraper {
         }
 
     }
-    public static boolean hasNum(String input) {
+    private static boolean hasNum(String input) {
         if ((getNum(input)==-1)) {
             return false;
         } else {
