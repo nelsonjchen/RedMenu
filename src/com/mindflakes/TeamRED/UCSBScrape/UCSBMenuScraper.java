@@ -1,8 +1,11 @@
 package com.mindflakes.TeamRED.UCSBScrape;
 import java.util.*;
 
+import com.mindflakes.TeamRED.menuClasses.*;
+
 public class UCSBMenuScraper {
     private static UCSBMenuFile file;
+    private static String date[] = new String[7];
     public UCSBMenuScraper(String filename, int mode) {
         if (mode==1) {
             file = new LocalUCSBMenuFile(filename);
@@ -44,7 +47,7 @@ public class UCSBMenuScraper {
 
         //gets dates
         jump(7);
-        String date[] = new String[7];
+        
         for (int i=0; i<7; i++) {
             date[i] = getText(file.nextLine());
         }
@@ -106,10 +109,12 @@ public class UCSBMenuScraper {
 
        //prints out monday menu (4Testing)
 
-       for (int i=0; i<day[0].size(); i++) {
+       /*for (int i=0; i<day[0].size(); i++) {
             System.out.println(day[0].get(i));
             System.out.println(isMealTime(day[0].get(i)));
-        }
+        }*/
+        
+        System.out.println(dateToLong(date[0]));
         
 
 
@@ -117,6 +122,61 @@ public class UCSBMenuScraper {
 
 
     } //construct
+    private static void makeMenu(Vector<String> s, String commonsName) {
+    	ArrayList<MealMenu> menus = new ArrayList<MealMenu>();
+    	ArrayList<Venue> vs = new ArrayList<Venue>();
+    	ArrayList<FoodItem> foods = new ArrayList<FoodItem>();
+    
+		for (int i=s.size(); i>0; i--) {
+			
+		}
+    }
+    private static long dateToLong(String s) {
+    	String out = "";
+    	s = s.toLowerCase();
+    	if (s.contains("january")) {
+    		out+="01";
+    	} 
+    	if (s.contains("febuary")) {
+    		out+="02";
+    	} 
+    	if (s.contains("march")) {
+    		out+="03";
+    	} 
+    	if (s.contains("april")) {
+    		out+="04";
+    	} 
+    	if (s.contains("may")) {
+    		out+="05";
+    	} 
+    	if (s.contains("june")) {
+    		out+="06";
+    	} 
+    	if (s.contains("july")) {
+    		out+="07";
+    	} 
+    	if (s.contains("august")) {
+    		out+="08";
+    	} 
+    	if (s.contains("september")) {
+    		out+="09";
+    	} 
+    	if (s.contains("october")) {
+    		out+="10";
+    	} 
+    	if (s.contains("november")) {
+    		out+="11";
+    	} 
+    	if (s.contains("december")) {
+    		out+="12";
+    	}
+    	StringTokenizer getnum = new StringTokenizer(s);
+    	getnum.nextToken();
+    	out+=getnum.nextToken();
+    	
+    	return Long.parseLong(out);
+    	
+    }
     private static boolean isMealTime(String input) {
     	input = input.toLowerCase();
     	if (input.contains("breakfast")) {
