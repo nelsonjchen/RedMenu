@@ -4,13 +4,14 @@ import java.io.InputStreamReader;
 import java.io.FileInputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Scanner;
 
 public class LocalUCSBMenuFile extends UCSBMenuFile {
 	public LocalUCSBMenuFile(String fileName){
-		try{
-			br=new BufferedReader(new InputStreamReader(new FileInputStream(new File(fileName))));
-		}catch(FileNotFoundException e){
-			br=new BufferedReader(null);
+		try {
+			sc=new Scanner(new InputStreamReader(new FileInputStream(new File(fileName))));
+		} catch(FileNotFoundException e){
+			System.out.println(e);
 		}
 	}
 }
