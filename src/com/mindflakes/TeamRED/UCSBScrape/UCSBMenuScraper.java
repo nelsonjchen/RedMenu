@@ -6,6 +6,7 @@ import com.mindflakes.TeamRED.menuClasses.*;
 public class UCSBMenuScraper {
     private static UCSBMenuFile file;
     private static String date[] = new String[7];
+    private static ArrayList<MealMenu> menus = new ArrayList<MealMenu>();
     public UCSBMenuScraper(String filename, int mode) {
         if (mode==1) {
             file = new LocalUCSBMenuFile(filename);
@@ -105,29 +106,32 @@ public class UCSBMenuScraper {
             } //switch
            targetline= file.nextLine();
         }
-
-
-       //prints out monday menu (4Testing)
-
-       /*for (int i=0; i<day[0].size(); i++) {
-            System.out.println(day[0].get(i));
-            System.out.println(isMealTime(day[0].get(i)));
-        }*/
+        for (int i=0; i<7; i++) {
+        	makeMenu(day[i], commonsName);
+        }
         
-        System.out.println(dateToLong(date[0]));
-        
-
-
-
-
 
     } //construct
+    public static ArrayList<MealMenu> getMealMenu() {
+    	return menus;
+    }
     private static void makeMenu(Vector<String> s, String commonsName) {
-    	ArrayList<MealMenu> menus = new ArrayList<MealMenu>();
     	ArrayList<Venue> vs = new ArrayList<Venue>();
     	ArrayList<FoodItem> foods = new ArrayList<FoodItem>();
     
-		for (int i=s.size(); i>0; i--) {
+		for (int i=s.size()-1; i>=0; i--) {
+			if (isMealTime(s.get(i))) {
+				menus.add(new MealMenu(commonsName, dateToLong(date[0]), dateToLong(date[6]), 0, vs, s.get(i)) );
+				vs = new ArrayList<Venue>();
+				
+			} else if (isVenue(s.get(i), commonsName)) {
+				vs.add(new Venue(s.get(i), foods));
+				foods = new ArrayList<FoodItem>();
+				
+			} else {
+				foods.add(new FoodItem(s.get(i), isVegan(s.get(i)), isVgt(s.get(i))));
+				
+			}
 			
 		}
     }
