@@ -6,7 +6,12 @@
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
-<%@page import="org.joda.time.DateTime"%><html>
+<%@page import="org.joda.time.DateTime"%>
+<%@page import="com.mindflakes.TeamRED.menuClasses.MealMenu"%>
+<%@page import="com.mindflakes.TeamRED.utils.MealMenuUtil"%>
+<%@page import="com.mindflakes.TeamRED.tests.MealMenuTestUtils"%>
+
+<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Upcoming Meals</title>
@@ -28,7 +33,15 @@
     }
 %>
 
-Current (Fake) Time is <%= (new DateTime()) %> 
+<% 
+DateTime time = new DateTime(2010, 4, 12, 7, 15, 00, 00); 
+%>
+Current (Fake) Time is <%= time %> </br>
+
+<h1>Upcoming Menu</h1>
+
+<%= MealMenuUtil.mealMenuSimpleHTML((MealMenuTestUtils.createTestMenu())) %>
+
 
 </body>
 </html>
