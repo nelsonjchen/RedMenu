@@ -25,7 +25,6 @@ public class UCSBMenuScraperTest {
 
 	@Test
 	public void checkName() {
-
 		assertEquals("Common Name Matches","Ortega",menus.get(0).getCommonsName());
 	}
 
