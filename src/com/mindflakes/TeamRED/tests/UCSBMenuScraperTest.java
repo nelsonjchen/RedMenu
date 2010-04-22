@@ -18,7 +18,7 @@ public class UCSBMenuScraperTest {
 
 	@Before
 	public void setUp() {
-		//		Ortega
+		// Ortega Menu
 		new UCSBMenuScraper("docs/viewer.xml", 1);
 		menus = UCSBMenuScraper.getMealMenu();
 	}
