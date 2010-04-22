@@ -6,7 +6,6 @@ import java.util.Iterator;
 
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
-import com.mindflakes.TeamRED.menuClasses.FoodItem;
 import com.mindflakes.TeamRED.menuClasses.MealMenu;
 import com.vercer.engine.persist.annotation.AnnotationObjectDatastore;
 import static com.google.appengine.api.datastore.Query.FilterOperator.*;
