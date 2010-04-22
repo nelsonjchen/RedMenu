@@ -11,6 +11,7 @@ public class TestMain {
 	public static void main(String[] args) {
 		MealMenu menu = MealMenuTestUtils.createTestMenu();
 		System.out.println(MealMenuUtil.mealMenuString(menu));
+		System.out.println(MealMenuUtil.mealMenuSimpleHTML(menu));
 	}
 
 }

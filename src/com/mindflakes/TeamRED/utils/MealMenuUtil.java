@@ -17,4 +17,18 @@ public  class MealMenuUtil {
 		}
 		return append;
 	}
+	
+	public static String mealMenuSimpleHTML(MealMenu menu) {
+		String append = "";
+		append += "<h2>" + menu.getCommonsName() + "</h2>\n";
+		for (Venue v : menu.getVenues()) {
+			append += "<h3>" + v.getName() + "</h3\n";
+			append += "<ul>\n";
+			for (FoodItem f: v.getFoodItems()) {
+				append += "<li>" + f.getName() + "</li<\n";
+			}
+			append += "</ul>\n";
+		}
+		return append;
+	}
 }
