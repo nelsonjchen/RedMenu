@@ -31,6 +31,15 @@ public class UCSBMenuScraperTest {
 	
 	@Test
 	public void checkStartTimeForBreakfast() {
-		
+		DateTime common_open = new DateTime(2010, 4, 19, 7, 15, 0, 0);
+		assertEquals("Start time is correct", common_open.getMillis(),
+					menus.get(0).getMealInterval().getStartMillis());
+	}
+	
+	@Test
+	public void checkEndTimeForBreakfast() {
+		DateTime common_close = new DateTime(2010, 4, 19, 10, 45, 0, 0);
+		assertEquals("End time is correct", common_close.getMillis(),
+					menus.get(0).getMealInterval().getEndMillis());
 	}
 }
