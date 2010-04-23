@@ -9,7 +9,12 @@ public class UCSBJMenuScraper {
     //private static String date[] = new String[7];
     private  ArrayList<MealMenu> menus = new ArrayList<MealMenu>();
     
-    private static long modDateStringToLongMillis(String modDate){
+    
+    public ArrayList<MealMenu> getMenus() {
+		return menus;
+	}
+
+	private static long modDateStringToLongMillis(String modDate){
     	int[] result = new int[7];
     		result[0]=Integer.parseInt(modDate.substring(0,4));
     		result[1]=Integer.parseInt(modDate.substring(4,6));
@@ -76,17 +81,16 @@ public class UCSBJMenuScraper {
         
         String lastLine = "";
         while(true){
+        	if(currentLine.equals("EOF")) break;
         	if(currentLine.equals(lastLine)) System.out.println("Failing on:" + currentLine);
         	else lastLine=currentLine;
-        		
-        	System.out.println("sup guys");
-        	if(currentLine.contains("<page ") || currentLine.equals("</page>")|| 
+        		        	if(currentLine.contains("<page ") || currentLine.equals("</page>")|| 
         			currentLine.contains("Weekly Menu")|| currentLine.equals("</pdf2xml>")||
-        			currentLine.contains(" Commons")){
+        			currentLine.contains(" Commons")
+        			|| getHValue(currentLine)<8){
         		currentLine = file.nextLine();
         		continue;
         	}
-        	if(currentLine.equals("EOF")) break;
         	
         	
         	if(isMealTimeLine(currentLine)){
@@ -145,10 +149,14 @@ public class UCSBJMenuScraper {
         			dates[dayNear]=contentOfLine(currentLine);
         			currentLine=file.nextLine();
         		}
-        		System.out.println(firstPass);
+//        		System.out.println(firstPass);
         		firstPass=false;
         		
         		while(!currentLine.equals("</page>")){
+        			if(getHValue(currentLine)<8) {
+        				currentLine=file.nextLine();
+        				continue;
+        			}
         			
         			//Checks if the line matches venue names and then adds to all lists if it is a venue.
         			if(lineIsVenue(currentLine,currentCommons)){
@@ -177,7 +185,7 @@ public class UCSBJMenuScraper {
             				int[] pArr = splitIntsFromPValInLine(workingLine);
             				int pos = -1;
             				for(int i = 2;i<pArr.length;i+=2){
-            					if(pArr[i]-(pArr[i-2]+pArr[i-1])>3){
+            					if(pArr[i]-(pArr[i-2]+pArr[i-1])>2){
             						for(int o = 0; o<positions[dayNear+1].length;o++){
             							if(positions[dayNear+1][o]==pArr[i]){
             								pos=i;
@@ -203,6 +211,8 @@ public class UCSBJMenuScraper {
             				//Makes a new 'currentLine' that does not include the later part of the string
             				currentLine = workingLine.substring(0, workingLine.indexOf(">")+1)+currentCont+workingLine.substring(workingLine.indexOf("</"));
             				
+//            				System.out.println("#### DOUBLE LINE DETECTED:" + workingLine);
+//            				System.out.println("First Line: " + currentLine);
             				
             				//Makes a new 'secondLine' that will be parsed next that has a shorter length, proper starting point, and only the correct data
             				secondLine = workingLine.substring(0,workingLine.indexOf("l=\"")+3)+pArr[pos]+ // through the value of l="
@@ -240,6 +250,10 @@ public class UCSBJMenuScraper {
 
         }
     }
+    
+    private static int getHValue(String line){
+    	return Integer.parseInt(line.substring(line.indexOf("h=\"")+3,line.indexOf("\"",line.indexOf("h=\"")+3)));
+    }
    
     private static boolean hasMoreThanVenues(ArrayList<String> arr, String commons){
     	for(String st : arr){
@@ -269,7 +283,6 @@ public class UCSBJMenuScraper {
     	for(int i = 0; i<dates.length;i++){
     		if(dates[i].indexOf(" ") == -1)continue;
     		String year = ""+currentYear;
-    		System.out.println(dates[i]);
     		String cur = dates[i].substring(0,dates[i].indexOf(" ")).toLowerCase();
     		if(cur.equals("january")){
     			cur="01";
@@ -341,6 +354,7 @@ public class UCSBJMenuScraper {
     		ArrayList<Venue> venues = new ArrayList<Venue>();
     		ArrayList<FoodItem> foodItems = null;
     		for(String st : arrOfArr.get(i)){
+//    			System.out.println(st);
     			if(lineIsVenue(st,commons)){
     				venues.add(new Venue(contentOfLine(st),new ArrayList<FoodItem>()));
     				foodItems = venues.get(venues.size()-1).getFoodItems();
@@ -355,6 +369,8 @@ public class UCSBJMenuScraper {
     				startMillis,endMillis,modDateMillis, venues, mealName));
     	}
     }
+    
+    
     private static int[] splitIntsFromPValInLine(String in){
     	in=in.substring(in.indexOf("p=\"")+3,in.indexOf("\"",in.indexOf("p=\"")+3));
     	String[] ar = in.split(",");
