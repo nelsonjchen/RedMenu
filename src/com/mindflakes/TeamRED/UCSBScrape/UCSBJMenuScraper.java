@@ -27,7 +27,7 @@ public class UCSBJMenuScraper {
     	}
     }
     
-    public UCSBJMenuScraper(String filename, int mode) {
+    public UCSBJMenuScraper(String filename, int mode) {    	
         if (mode==1) {
             file = new LocalUCSBMenuFile(filename);
         } else if (mode==0) {
@@ -231,10 +231,17 @@ public class UCSBJMenuScraper {
 //        			}
 //        		}
         	}
+        	convertDatesToMMDDYYYY(dates);
+        	createMealMenusForMeal(breakfasts,currentCommons, dates, mealTimes[0],modDateMillis,mealNames[0]);
+        	createMealMenusForMeal(lunches,currentCommons, dates, mealTimes[1],modDateMillis,mealNames[1]);
+        	createMealMenusForMeal(dinners,currentCommons, dates, mealTimes[2],modDateMillis,mealNames[2]);
+        	createMealMenusForMeal(brunches,currentCommons, dates, mealTimes[3],modDateMillis,mealNames[3]);
+        	createMealMenusForMeal(lateNites,currentCommons, dates, mealTimes[4],modDateMillis,mealNames[4]);
+
         }
     }
    
-    private static boolean hasMoreThanVenus(ArrayList<String> arr, String commons){
+    private static boolean hasMoreThanVenues(ArrayList<String> arr, String commons){
     	for(String st : arr){
     		if(!lineIsVenue(st, commons)) return true;
     	}
@@ -256,10 +263,13 @@ public class UCSBJMenuScraper {
     }
     
     private static void convertDatesToMMDDYYYY(String[] dates){
+
     	int currentYear = (new DateTime()).getYear();
     	int currentMonth = (new DateTime()).getMonthOfYear();
     	for(int i = 0; i<dates.length;i++){
+    		if(dates[i].indexOf(" ") == -1)continue;
     		String year = ""+currentYear;
+    		System.out.println(dates[i]);
     		String cur = dates[i].substring(0,dates[i].indexOf(" ")).toLowerCase();
     		if(cur.equals("january")){
     			cur="01";
@@ -293,32 +303,56 @@ public class UCSBJMenuScraper {
     		dates[i]=cur+dates[i].substring(dates[i].indexOf(" ")+1)+year;
     	}
     }
-    
-    private static long[] combineAndConvertToMillis(String[] dates, String[] mealTimes){
-    	convertDatesToMMDDYYYY(dates);
-    	long[] result = new long[7];
-    	for(int i = 0; i<result.length;i++){
-    		result[i]=(new DateTime())
+
+    public void printAll(){
+    	for(MealMenu menu : menus){
+    		System.out.println("Commons: " + menu.getCommonsName());
+    		System.out.println("Start Time: " + DateTimeFormat.mediumDateTime().print(menu.getMealInterval().getStart()));
+    		System.out.println("End Time: " + DateTimeFormat.mediumDateTime().print(menu.getMealInterval().getEnd()));
+    		System.out.println("Mod Time: " + DateTimeFormat.mediumDateTime().print(menu.getModDate()));
+    		System.out.println("Meal Name: " + menu.getMealName());
+    		System.out.println("Venues: ");
+    		for(Venue ven : menu.getVenues()){
+    			System.out.println("    Venue Name: " + ven.getName());
+    			System.out.println("    Food Items:");
+    			for(FoodItem food : ven.getFoodItems()){
+    				System.out.println("        " + food.getName()+" " + food.isVegan() +" "+ food.isVegetarian());
+    			}
+    		}
     	}
+    }
+    
+    private static long combineAndConvertToMillis(String dates, String time){
+    	long result =(new DateTime(
+        			Integer.parseInt(dates.substring(4)),
+        			Integer.parseInt(dates.substring(0,2)),
+        			Integer.parseInt(dates.substring(2,4)),
+        			Integer.parseInt(time.substring(0,2)),
+        			Integer.parseInt(time.substring(2))
+    				,00,00)).getMillis();
+
     	return result;
     }
     
-    private static void createMealMenusForMeal(ArrayList<MealMenu> toAddTo, ArrayList<ArrayList<String>> arrOfArr, String commons, String[] dates, String[] mealTimes, long modDateMillis, String mealName){
-    	long[] startMillis;
-    	long[] endMillis;
+    private  void createMealMenusForMeal(ArrayList<ArrayList<String>> arrOfArr, String commons, String[] dates, String[] mealTimes, long modDateMillis, String mealName){
+    	
     	for(int i = 0; i<arrOfArr.size();i++){
+    		if(!hasMoreThanVenues(arrOfArr.get(i),commons)) continue;
     		ArrayList<Venue> venues = new ArrayList<Venue>();
     		ArrayList<FoodItem> foodItems = null;
     		for(String st : arrOfArr.get(i)){
     			if(lineIsVenue(st,commons)){
     				venues.add(new Venue(contentOfLine(st),new ArrayList<FoodItem>()));
     				foodItems = venues.get(venues.size()-1).getFoodItems();
+    				continue;
     			}
     			st = contentOfLine(st);
-    			foodItems.add(new FoodItem(contentOfLine(st),isVegan(st), isVgt(st)));
+    			foodItems.add(new FoodItem(fixAndSigns(st),isVegan(st), isVgt(st)));
     		}
-    		
-    		toAddTo.add(new MealMenu(commons.substring(0,commons.indexOf(" Commons")),)), 
+    		long startMillis = combineAndConvertToMillis(dates[i], mealTimes[0]);
+        	long endMillis  = combineAndConvertToMillis(dates[i], mealTimes[1]);
+    		menus.add(new MealMenu(commons.substring(0,commons.indexOf(" Commons")),
+    				startMillis,endMillis,modDateMillis, venues, mealName));
     	}
     }
     private static int[] splitIntsFromPValInLine(String in){
