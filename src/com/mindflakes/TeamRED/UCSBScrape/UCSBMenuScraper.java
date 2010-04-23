@@ -112,6 +112,11 @@ public class UCSBMenuScraper {
         
         System.out.println(menus.get(0).getCommonsName()+" "+date[0]+" "+DateTimeFormat.mediumDateTime().print(menus.get(0).getMealInterval().getStart()));
     } //construct
+    
+    /**
+     * Returns generated MealMenu Objects
+     * @return Arraylist of MealMenus
+     */
     public static ArrayList<MealMenu> getMealMenu() {
     	return menus;
     }

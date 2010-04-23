@@ -1,4 +1,4 @@
-package com.mindflakes.TeamRED.tests;
+package com.mindflakes.TeamRED.experiments;
 
 public class LightSwitch {
 
