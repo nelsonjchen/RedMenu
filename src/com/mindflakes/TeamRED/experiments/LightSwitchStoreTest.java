@@ -1,4 +1,4 @@
-package com.mindflakes.TeamRED.tests;
+package com.mindflakes.TeamRED.experiments;
 
 import static junit.framework.Assert.assertEquals;
 
@@ -7,6 +7,7 @@ import static org.junit.Assert.*;
 import com.google.appengine.api.datastore.DatastoreService;
 import com.google.appengine.api.datastore.DatastoreServiceFactory;
 import com.google.appengine.api.datastore.Key;
+import com.mindflakes.TeamRED.tests.LocalDatastoreTestCase;
 import com.vercer.engine.persist.annotation.AnnotationObjectDatastore;
 
 import org.junit.Test;
