@@ -11,7 +11,7 @@ public class LocalUCSBMenuFile extends UCSBMenuFile {
 		try {
 			sc=new Scanner(new InputStreamReader(new FileInputStream(new File(fileName))));
 		} catch(FileNotFoundException e){
-			System.out.println(e);
+			e.printStackTrace();
 		}
 	}
 }

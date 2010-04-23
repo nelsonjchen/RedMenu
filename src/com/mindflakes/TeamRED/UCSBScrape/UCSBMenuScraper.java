@@ -1,6 +1,6 @@
 package com.mindflakes.TeamRED.UCSBScrape;
 import java.util.*;
-
+import org.joda.time.format.DateTimeFormat;
 import com.mindflakes.TeamRED.menuClasses.*;
 
 public class UCSBMenuScraper {
@@ -110,7 +110,7 @@ public class UCSBMenuScraper {
         	makeMenu(day[i], commonsName);
         }
         
-
+        System.out.println(menus.get(0).getCommonsName()+" "+date[0]+" "+DateTimeFormat.mediumDateTime().print(menus.get(0).getMealInterval().getStart()));
     } //construct
     public static ArrayList<MealMenu> getMealMenu() {
     	return menus;
