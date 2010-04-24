@@ -6,6 +6,7 @@ public class UCSBMealMenuScraperElement {
 	private int top;
 	private int width;
 	private int height;
+//	private ArrayList<>
 	
 	public void setLeft(int left) {
 		this.left = left;
