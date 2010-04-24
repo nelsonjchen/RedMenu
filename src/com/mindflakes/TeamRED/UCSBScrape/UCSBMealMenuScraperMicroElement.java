@@ -1,11 +1,9 @@
 package com.mindflakes.TeamRED.UCSBScrape;
 
-public class UCSBMealMenuScraperElement {
-	
+public class UCSBMealMenuScraperMicroElement {
 	private int left;
-	private int top;
 	private int width;
-	private int height;
+	private UCSBMealMenuScraperElement parent;
 	
 	public void setLeft(int left) {
 		this.left = left;
@@ -13,24 +11,16 @@ public class UCSBMealMenuScraperElement {
 	public int getLeft() {
 		return left;
 	}
-	public void setTop(int top) {
-		this.top = top;
-	}
-	public int getTop() {
-		return top;
-	}
 	public void setWidth(int width) {
 		this.width = width;
 	}
 	public int getWidth() {
 		return width;
 	}
-	public void setHeight(int height) {
-		this.height = height;
+	public void setParent(UCSBMealMenuScraperElement parent) {
+		this.parent = parent;
 	}
-	public int getHeight() {
-		return height;
+	public UCSBMealMenuScraperElement getParent() {
+		return parent;
 	}
-
-	
 }
