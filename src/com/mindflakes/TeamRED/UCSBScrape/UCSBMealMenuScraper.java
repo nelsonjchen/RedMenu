@@ -1,5 +1,5 @@
 package com.mindflakes.TeamRED.UCSBScrape;
 
-public class UCSBMealMenuScraper {
-
+public class UCSBMealMenuScraper implements MealMenuScraper {
+	
 }
