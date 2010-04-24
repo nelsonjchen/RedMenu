@@ -66,7 +66,7 @@ public class UCSBJMenuScraper {
         	currentLine=file.nextLine();
         }
 		if(!currentLine.contains("Commons")){
-			throw new LineErrorException("Expected \"Commons\" in line" + currentLine);
+//			throw new LineErrorException("Expected \"Commons\" in line" + currentLine);
 		}
 		currentCommons = contentOfLine(currentLine);
 
