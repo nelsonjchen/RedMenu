@@ -10,7 +10,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.w3c.dom.Document;
 
-public class DOMParsingPlayTest {
+public class DOMParsingPlayTestWithCommonXML {
 	private Document doc;
 	
 	@BeforeClass
@@ -29,7 +29,14 @@ public class DOMParsingPlayTest {
 	
 	@Test
 	public void printdoc() {
-		System.out.println(doc);
+//		System.out.println(doc);
 	}
+	
+	@Test
+	public void showCommonName() {
+		
+	}
+	
+	
 
 }
