@@ -73,7 +73,7 @@ public class UCSBJMenuScraper {
 		if(!currentLine.contains("Commons")){
 			throw new LineErrorException("Expected \"Commons\" in line" + currentLine);
 		}
-		currentCommons = contentOfLine(currentLine);
+		currentCommons = getLineBody(currentLine);
 
 //        System.out.println(DateTimeFormat.mediumDateTime().print(new DateTime(modDateMillis)));
         currentLine = file.nextLine();
@@ -93,20 +93,20 @@ public class UCSBJMenuScraper {
         	}
         	
         	
-        	if(isMealTimeLine(currentLine)){
-        		String currentMeal = contentOfLine(currentLine);
+        	if(lineHasMealTime(currentLine)){
+        		String currentMeal = getLineBody(currentLine);
         		
         		String currentMealStartTime = currentMeal.substring(currentMeal.indexOf('(')+1,currentMeal.indexOf('-'));
-        		currentMealStartTime= fixStringTimeForAMPM(currentMealStartTime.trim());
+        		currentMealStartTime= fixBodyOfMealTimeLineForAMPM(currentMealStartTime.trim());
         		
         		String currentMealEndTime = currentMeal.substring(currentMeal.indexOf('-')+1,currentMeal.indexOf(')')); 
-        		currentMealEndTime = fixStringTimeForAMPM(currentMealEndTime.trim());
+        		currentMealEndTime = fixBodyOfMealTimeLineForAMPM(currentMealEndTime.trim());
         		{
-        			int meal = whichMealIsIt(currentLine);
+        			int meal = findMealNumberFromBodyOfMealNameLine(currentLine);
         			mealNames[meal-1]=currentMeal.substring(0,currentMeal.indexOf("(")-1);
         			mealTimes[meal-1][0]=currentMealStartTime;
         			mealTimes[meal-1][1]=currentMealEndTime;
-        			switch(whichMealIsIt(currentLine)){
+        			switch(findMealNumberFromBodyOfMealNameLine(currentLine)){
         			case 1:
         				currentMealArrayList = breakfasts;
         				break;
@@ -126,27 +126,31 @@ public class UCSBJMenuScraper {
         		}
         		
         		currentLine=file.nextLine();
-        		while(dayOfWeekFromLine(currentLine)!=0){
-        			if(!firstPass){
-        				currentLine=file.nextLine();
-        				continue;
+        		{
+        			int dayOfWeekNumber = dayOfWeekNumberFromLineBody(getLineBody(currentLine)); 
+        			while(dayOfWeekNumber!=0){
+        				if(!firstPass){
+        					currentLine=file.nextLine();
+        					dayOfWeekNumber = dayOfWeekNumberFromLineBody(getLineBody(currentLine));
+        					continue;
+        				}
+        				{
+        					int currentPos = getLineLValue(currentLine);
+        					addPosnToArr(positions[dayOfWeekNumber-1],currentPos);
+        				}
+        				currentLine = file.nextLine();        		
+    					dayOfWeekNumber = dayOfWeekNumberFromLineBody(getLineBody(currentLine));
         			}
-        			int day = dayOfWeekFromLine(currentLine);
-        			{
-        				int currentPos = getCurrentPos(currentLine);
-        				addPosnToArr(positions[day-1],currentPos);
-        			}
-        			currentLine = file.nextLine();        		
         		}
         		while(isLineADate(currentLine)){
         			if(!firstPass){
         				currentLine=file.nextLine();
         				continue;
         			}
-        			int currentPos = getCurrentPos(currentLine);
+        			int currentPos = getLineLValue(currentLine);
         			int dayNear = getNearestDayIndex(positions,currentPos);
         			addPosnToArr(positions[dayNear],currentPos);
-        			dates[dayNear]=contentOfLine(currentLine);
+        			dates[dayNear]=getLineBody(currentLine);
         			currentLine=file.nextLine();
         		}
 //        		System.out.println(firstPass);
@@ -176,13 +180,13 @@ public class UCSBJMenuScraper {
         			if(isTwoEntries){
         				
         				String workingLine = currentLine;
-        				int currentPos = getCurrentPos(workingLine);
+        				int currentPos = getLineLValue(workingLine);
             			int dayNear = getNearestDayIndex(positions,currentPos);
             			
             			if(dayNear==6) isTwoEntries=false;
             			
             			else{
-            				int[] pArr = splitIntsFromPValInLine(workingLine);
+            				int[] pArr = getLinePValues(workingLine);
             				int pos = -1;
             				for(int i = 2;i<pArr.length;i+=2){
             					if(pArr[i]-(pArr[i-2]+pArr[i-1])>2){
@@ -195,7 +199,7 @@ public class UCSBJMenuScraper {
             					}
             				}
             				
-            				String[] contentAr = contentOfLine(workingLine).split(" ");
+            				String[] contentAr = getLineBody(workingLine).split(" ");
             				String currentCont = "";
             				String secondCont = "";
 //            				System.out.println(pos+" "+pos/2);
@@ -223,7 +227,7 @@ public class UCSBJMenuScraper {
         			}
         			
         			//Standard adding code, also used with two entires
-        			int currentPos = getCurrentPos(currentLine);
+        			int currentPos = getLineLValue(currentLine);
         			int dayNear = getNearestDayIndex(positions,currentPos);
         			addPosnToArr(positions[dayNear],currentPos);
         			currentMealArrayList.get(dayNear).add(currentLine);
@@ -356,11 +360,11 @@ public class UCSBJMenuScraper {
     		for(String st : arrOfArr.get(i)){
 //    			System.out.println(st);
     			if(lineIsVenue(st,commons)){
-    				venues.add(new Venue(contentOfLine(st),new ArrayList<FoodItem>()));
+    				venues.add(new Venue(getLineBody(st),new ArrayList<FoodItem>()));
     				foodItems = venues.get(venues.size()-1).getFoodItems();
     				continue;
     			}
-    			st = contentOfLine(st);
+    			st = getLineBody(st);
     			foodItems.add(new FoodItem(fixAndSigns(st),isVegan(st), isVgt(st)));
     		}
     		long startMillis = combineAndConvertToMillis(dates[i], mealTimes[0]);
@@ -371,17 +375,7 @@ public class UCSBJMenuScraper {
     }
     
     
-    private static int[] splitIntsFromPValInLine(String in){
-    	in=in.substring(in.indexOf("p=\"")+3,in.indexOf("\"",in.indexOf("p=\"")+3));
-    	String[] ar = in.split(",");
-    	int[] result = new int[ar.length];
-    	for(int i = 0;i<ar.length;i++){
-    		result[i]=Integer.parseInt(ar[i]);
-//    		System.out.print(result[i]+",");
-    	}
-//    	System.out.println();
-    	return result;
-    }
+
     
     private static boolean isTwoEntries(String line){
     	int width = Integer.parseInt(line.substring(line.indexOf("w=\"")+3,line.indexOf('\"',line.indexOf("w=\"")+3)));
@@ -389,7 +383,7 @@ public class UCSBJMenuScraper {
     }
     
     private static boolean lineIsVenue(String line, String commonsName){
-    	line=contentOfLine(line).toLowerCase();
+    	line=getLineBody(line).toLowerCase();
     	//For Carrillo venues...
     	if(commonsName.equals("Carrillo Commons") && (line.equals("grill (cafe)") || line.equals("bakery") ||
     			line.equals("salads") || line.equals("deli")||
@@ -409,12 +403,9 @@ public class UCSBJMenuScraper {
     	return false;
     }
     
-    private static int getCurrentPos(String currentLine){
-    	return Integer.parseInt(currentLine.substring(currentLine.indexOf("l=\"")+3,currentLine.indexOf("\"", currentLine.indexOf("l=\"")+3)));
-    }
-    
+
     private static boolean isLineADate(String line){
-    	line=contentOfLine(line);
+    	line=getLineBody(line);
     	try{
     		if(line.indexOf(" ")==-1 || line.indexOf(" ")+1==line.length()) return false;
     		Integer.parseInt(line.substring(line.indexOf(" ")+1));
@@ -456,9 +447,7 @@ public class UCSBJMenuScraper {
     	return closest;
     }
     
-    private static int dayOfWeekFromLine(String cL){
-    	cL = contentOfLine(cL);
-    	
+    private static int dayOfWeekNumberFromLineBody(String cL){  	
     	if(cL.equals("Monday")) return 1;
     	if(cL.equals("Tuesday")) return 2;
     	if(cL.equals("Wednesday")) return 3;
@@ -469,8 +458,8 @@ public class UCSBJMenuScraper {
     	return 0;
     }
     
-    private static boolean isMealTimeLine(String currentLine){
-    	currentLine = contentOfLine(currentLine);
+    private static boolean lineHasMealTime(String currentLine){
+    	currentLine = getLineBody(currentLine);
     	return ((currentLine.startsWith("Breakfast") ||
     			currentLine.startsWith("Lunch")||
     			currentLine.startsWith("Dinner")||
@@ -480,8 +469,8 @@ public class UCSBJMenuScraper {
     				currentLine.toLowerCase().contains("pm")));
     }
     
-    private static int whichMealIsIt(String currentLine){
-    	currentLine = contentOfLine(currentLine);
+    private static int findMealNumberFromBodyOfMealNameLine(String currentLine){
+    	currentLine = getLineBody(currentLine);
     	if((currentLine.toLowerCase().contains("am") ||
 				currentLine.toLowerCase().contains("pm"))==false) return -1;
     	if(currentLine.startsWith("Breakfast")) return 1;
@@ -492,11 +481,7 @@ public class UCSBJMenuScraper {
     	return -1;
     }
     
-    private static String contentOfLine(String inputLine){
-    	return inputLine.substring(inputLine.indexOf('>')+1,inputLine.lastIndexOf('<'));
-    }
-    
-    private static String fixStringTimeForAMPM(String inputTime){
+    private static String fixBodyOfMealTimeLineForAMPM(String inputTime){
     	if(inputTime.substring(inputTime.length()-2).toLowerCase().equals("pm")){
 			inputTime=""+(Integer.parseInt(inputTime.substring(0,inputTime.indexOf(":")))+12)+inputTime.substring(inputTime.indexOf(":")+1,inputTime.length()-2);
 		} else{
@@ -505,274 +490,115 @@ public class UCSBJMenuScraper {
 		}
     	return inputTime;
     }
-/*
-        //gets commons name
-        jump(6);       
-        String commonsName;
-        targetline = file.nextLine();
-        commonsName=getText(targetline);
-        
-        file.nextLine();
-        targetline = file.nextLine();
-        
-        
-        //create arrays
-        Vector<String> temp;
-        Vector<String> day[] = new Vector[7];
-        for (int i=0; i<7; i++) {
-            Vector<String> food = new Vector<String>();
-            day[i] = food;
-        }
-        
-        //adds first meal to arrays
-        for (int i=0; i<7; i++) {
-    		temp = day[i];
-    		temp.add(getText(targetline));
-    		
-    	}
-        
-        
-
-        //gets dates
-        jump(7);
-        
-        for (int i=0; i<7; i++) {
-            date[i] = getText(file.nextLine());
-        }
-     
-        
-        targetline = file.nextLine();
-        while(!targetline.equals("EOF")) {
-        	
-           switch(getNum(targetline)) {
-                case 34:
-                    temp = day[0];
-                    temp.add(getText(targetline));
-                    break;
-                case 166:
-                    temp = day[1];
-                    temp.add(getText(targetline));
-                    break;
-                case 299:
-                    temp = day[2];
-                    temp.add(getText(targetline));
-                    break;
-                case 434:
-                    temp = day[3];
-                    temp.add(getText(targetline));
-                    break;
-                case 567:
-                    temp = day[4];
-                    temp.add(getText(targetline));
-                    break;
-                case 702:
-                    temp = day[5];
-                    temp.add(getText(targetline));
-                    break;
-                case 837:
-                    temp = day[6];
-                    temp.add(getText(targetline));
-                    break;
-                default:
-                	String text = getText(targetline);
-                	if (text.equals("Monday")) {
-                		jump(13);
-                	} else if (text.equals("/notext")) {
-                	
-                	} else if (text.equals(commonsName)) {
-                	
-                	} else if (text.equals("Weekly Menu")) {
-                	
-                	} else {
-	                	for (int i=0; i<7; i++) {
-	                		temp = day[i];
-	                		temp.add(getText(targetline));
-	                	}
-                	}
-                    break;
-            } //switch
-           targetline= file.nextLine();
-        }
-        for (int i=0; i<7; i++) {
-        	makeMenu(day[i], commonsName);
-        }
-        
-        System.out.println(menus.get(0).getCommonsName()+" "+date[0]+" "+DateTimeFormat.mediumDateTime().print(menus.get(0).getMealInterval().getStart()));
-    } //construct
-    public static ArrayList<MealMenu> getMealMenu() {
-    	return menus;
-    }
-    private static void makeMenu(Vector<String> s, String commonsName) {
-    	ArrayList<Venue> vs = new ArrayList<Venue>();
-    	ArrayList<FoodItem> foods = new ArrayList<FoodItem>();
     
-		for (int i=s.size()-1; i>=0; i--) {
-			if (isMealTime(s.get(i))) {
-				menus.add(new MealMenu(commonsName, dateToLong(date[0]), dateToLong(date[6]), 0, vs, s.get(i)) );
-				vs = new ArrayList<Venue>();
-				
-			} else if (isVenue(s.get(i), commonsName)) {
-				vs.add(new Venue(s.get(i), foods));
-				foods = new ArrayList<FoodItem>();
-				
-			} else {
-				foods.add(new FoodItem(s.get(i), isVegan(s.get(i)), isVgt(s.get(i))));
-				
-			}
-			
-		}
-    }
-    private static long dateToLong(String s) {
-    	String out = "";
-    	s = s.toLowerCase();
-    	if (s.contains("january")) {
-    		out+="01";
-    	} 
-    	if (s.contains("febuary")) {
-    		out+="02";
-    	} 
-    	if (s.contains("march")) {
-    		out+="03";
-    	} 
-    	if (s.contains("april")) {
-    		out+="04";
-    	} 
-    	if (s.contains("may")) {
-    		out+="05";
-    	} 
-    	if (s.contains("june")) {
-    		out+="06";
-    	} 
-    	if (s.contains("july")) {
-    		out+="07";
-    	} 
-    	if (s.contains("august")) {
-    		out+="08";
-    	} 
-    	if (s.contains("september")) {
-    		out+="09";
-    	} 
-    	if (s.contains("october")) {
-    		out+="10";
-    	} 
-    	if (s.contains("november")) {
-    		out+="11";
-    	} 
-    	if (s.contains("december")) {
-    		out+="12";
-    	}
-    	StringTokenizer getnum = new StringTokenizer(s);
-    	getnum.nextToken();
-    	out+=getnum.nextToken();
-    	
-    	return Long.parseLong(out);
-    	
-    }
-    private static boolean isMealTime(String input) {
-    	input = input.toLowerCase();
-    	if (input.contains("breakfast")) {
-    		return true;
-    	} else if (input.contains("lunch")) {
-    		return true;
-    	} else if (input.contains("brunch")) {
-    		return true;
-    	} else if (input.contains("dinner")) {
-    		return true;
-    	} else if (input.contains("late night")) {
-    		return true;
-    	} else {
-    		return false;
-    	}
-    	
-    	
-    	}
-    private static boolean isVenue(String food, String commons) {
-    	food = food.toLowerCase();
-    	commons = commons.toLowerCase();
-    	if (commons.contains("ortega")) {
-    		if (food.contains("bakery"))
-    			return true;
-    		else if (food.contains("hot food"))
-    			return true;
-    		else if (food.contains("salads"))
-    			return true;
-    	} else if (commons.contains("carrillo")) {
-    		
-    	} else if (commons.contains("portola")) {
-    		
-    	} else if (commons.contains("guerra")) {
-    		
-    	}
-    	return false;
-    }
-    private static boolean isVegan(String food) {
-    	food = food.toLowerCase();
-    	if (food.contains("vegan")) {
-    		return true;
-    	} else {
-    		return false;
-    	}
-    }
-    private static boolean isVgt(String food) {
-    	food = food.toLowerCase();
-    	if (food.contains("vgt")) {
-    		return true;
-    	} else {
-    		return false;
-    	}
+    //Getters and setters for the line values
+    
+    private static String getLineBody(String inputLine){
+    	return inputLine.substring(inputLine.indexOf('>')+1,inputLine.lastIndexOf('<'));
     }
     
-    private static void jump(int lines) {
-        //moves scanning position of the menu file
-        for(int i=0; i<lines; i++) {
-            file.nextLine();
-        }
+    private static String setLineBody(String inputLine, String bodyVal){
+    	return inputLine.substring(0,inputLine.indexOf('>'+1))+bodyVal+inputLine.substring(inputLine.lastIndexOf('<'));
     }
-    private static String getText(String input) {
-        String temp = "";
-        String text = "/notext";
-        
-        //cut off leading <text>
-        StringTokenizer read = new StringTokenizer(input, ">", false);
-        if (read.hasMoreTokens()) {
-            read.nextToken();
-            if (read.hasMoreTokens()) {
-                temp = read.nextToken();
-                //cut off trailing </text>
-                StringTokenizer read2 = new StringTokenizer(temp, "<", false);
-                if (read2.hasMoreTokens()) {
-                    text = read2.nextToken();
-                }
-            }
-        }
-        return text;
+    
+    private static int getLineLValue(String currentLine){
+    	return Integer.parseInt(getLineLString(currentLine));
     }
-    private static int getNum(String input) {
-        int temp = -1;
+    
+    private static String getLineLString(String currentLine){
+    	return currentLine.substring(currentLine.indexOf("l=\"")+3,currentLine.indexOf("\"", currentLine.indexOf("l=\"")+3));
+    }
+    
+    private static String setLineLValue(String line, String lVal){
+    	return line = line.substring(0,line.indexOf("l=\"")+3)+lVal+
+    	line.substring(line.indexOf("\"",line.indexOf("l=\"")+3));
+    }
+    
+    private static String setLineLValue(String line, int lVal){
+    	return line = line.substring(0,line.indexOf("l=\"")+3)+lVal+
+    	line.substring(line.indexOf("\"",line.indexOf("l=\"")+3));
+    }
+    
+    private static int getLineTValue(String currentLine){
+    	return Integer.parseInt(getLineTString(currentLine));
+    }
+    
+    private static String getLineTString(String currentLine){
+    	return currentLine.substring(currentLine.indexOf("t=\"")+3,currentLine.indexOf("\"", currentLine.indexOf("t=\"")+3));
+    }
+    
+    private static String setLineTValue(String line, String tVal){
+    	return line = line.substring(0,line.indexOf("t=\"")+3)+tVal+
+    	line.substring(line.indexOf("\"",line.indexOf("t=\"")+3));
+    }
+    
+    private static String setLineTValue(String line, int tVal){
+    	return line = line.substring(0,line.indexOf("t=\"")+3)+tVal+
+    	line.substring(line.indexOf("\"",line.indexOf("t=\"")+3));
+    }
+    
+    private static int getLineWValue(String currentLine){
+    	return Integer.parseInt(getLineWString(currentLine));
+    }
+    
+    private static String getLineWString(String currentLine){
+    	return currentLine.substring(currentLine.indexOf("w=\"")+3,currentLine.indexOf("\"", currentLine.indexOf("w=\"")+3));
+    }
+    
+    private static String setLineWValue(String line, String wVal){
+    	return line = line.substring(0,line.indexOf("w=\"")+3)+wVal+
+    	line.substring(line.indexOf("\"",line.indexOf("w=\"")+3));
+    }
 
-        StringTokenizer read = new StringTokenizer(input, "\"", false);
-        if (read.hasMoreTokens()) {
-            read.nextToken();
-            if (read.hasMoreTokens()) {
-                temp = Integer.parseInt((read.nextToken()));
-            }
-        }
-        return temp;
+    private static String setLineWValue(String line, int wVal){
+    	return line = line.substring(0,line.indexOf("w=\"")+3)+wVal+
+    	line.substring(line.indexOf("\"",line.indexOf("w=\"")+3));
     }
-    private static boolean hasText(String input) {
-        if ((getText(input).equals("/notext"))) {
-            return false;
-        } else {
-            return true;
-        }
-
+    
+    private static int getLineHValue(String currentLine){
+    	return Integer.parseInt(getLineHString(currentLine));
     }
-    private static boolean hasNum(String input) {
-        if ((getNum(input)==-1)) {
-            return false;
-        } else {
-            return true;
-        }
-    }*/
-
-}//class
+    
+    private static String getLineHString(String currentLine){
+    	return currentLine.substring(currentLine.indexOf("h=\"")+3,currentLine.indexOf("\"", currentLine.indexOf("h=\"")+3));
+    }
+    
+    private static String setLineHValue(String line, String hVal){
+    	return line = line.substring(0,line.indexOf("h=\"")+3)+hVal+
+    	line.substring(line.indexOf("\"",line.indexOf("h=\"")+3));
+    }
+    
+    private static String setLineHValue(String line, int hVal){
+    	return line = line.substring(0,line.indexOf("h=\"")+3)+hVal+
+    	line.substring(line.indexOf("\"",line.indexOf("h=\"")+3));
+    }
+    
+    private static int[] getLinePValues(String in){
+    	in=getLinePString(in);
+    	String[] ar = in.split(",");
+    	int[] result = new int[ar.length];
+    	for(int i = 0;i<ar.length;i++){
+    		result[i]=Integer.parseInt(ar[i]);
+    	}
+    	return result;
+    }
+    
+    private static String getLinePString(String currentLine){
+    	return currentLine.substring(currentLine.indexOf("p=\"")+3,currentLine.indexOf("\"", currentLine.indexOf("p=\"")+3));
+    }
+    
+    private static String setLinePValue(String line, String pVal){
+    	return line = line.substring(0,line.indexOf("p=\"")+3)+pVal+
+    	line.substring(line.indexOf("\"",line.indexOf("p=\"")+3));
+    }
+    
+    private static String setLinePValue(String line, int[] pVals){
+    	String pVal = "";
+    	for(int a : pVals){
+    		pVal = pVal + a + ",";
+    	}
+    	if(pVal.charAt(pVal.length()-1)==',') pVal = pVal.substring(0,pVal.length()-1);
+    	return setLinePValue(line,pVal);
+    }
+    
+}
