@@ -1,0 +1,434 @@
+Commons: Ortega
+Start Time: Apr 19, 2010 7:15:00 AM
+End Time: Apr 19, 2010 10:45:00 AM
+Mod Time: Apr 20, 2010 11:01:41 AM
+Meal Name: Breakfast
+Venues: 
+    Venue Name: Hot Foods
+    Food Items:
+        Oatmeal false false
+        Make Your Own Waffles false false
+        Fresh Scrambled Eggs false false
+        Scrambled Egg Whites false false
+        Blueberry Pancakes false false
+        Home Fried Potatoes false false
+    Venue Name: Bakery
+    Food Items:
+        Bagels false false
+        Orange Scones false false
+Commons: Ortega
+Start Time: Apr 20, 2010 7:15:00 AM
+End Time: Apr 20, 2010 10:45:00 AM
+Mod Time: Apr 20, 2010 11:01:41 AM
+Meal Name: Breakfast
+Venues: 
+    Venue Name: Hot Foods
+    Food Items:
+        Oatmeal false false
+        Make Your Own Waffles false false
+        Fresh Scrambled Eggs false false
+        Scrambled Egg Whites false false
+        Texas Style French Toast false false
+        Sausage Links false false
+        Cottage Fried Potatoes false false
+    Venue Name: Bakery
+    Food Items:
+        Bagels false false
+        Walnut Cinn Swirl Coffee Cake (w/nuts) false false
+Commons: Ortega
+Start Time: Apr 21, 2010 7:15:00 AM
+End Time: Apr 21, 2010 10:45:00 AM
+Mod Time: Apr 20, 2010 11:01:41 AM
+Meal Name: Breakfast
+Venues: 
+    Venue Name: Hot Foods
+    Food Items:
+        Oatmeal false false
+        Make Your Own Waffles false false
+        Fresh Scrambled Eggs false false
+        Scrambled Egg Whites false false
+        Biscuit Sandwich W/ Sausage/egg & Cheese false false
+        Tater Tots false false
+    Venue Name: Bakery
+    Food Items:
+        Bagels false false
+        Pinch Bread false false
+Commons: Ortega
+Start Time: Apr 22, 2010 7:15:00 AM
+End Time: Apr 22, 2010 10:45:00 AM
+Mod Time: Apr 20, 2010 11:01:41 AM
+Meal Name: Breakfast
+Venues: 
+    Venue Name: Hot Foods
+    Food Items:
+        Oatmeal false false
+        Arroz Con Leche false false
+        Make Your Own Waffles false false
+        Fresh Scrambled Eggs false false
+        Scrambled Egg Whites false false
+        Whole Wheat Pancakes false false
+        Fried Red Potato With Onions false false
+    Venue Name: Bakery
+    Food Items:
+        Bagels false false
+        Applesauce Coffee Cake false false
+Commons: Ortega
+Start Time: Apr 23, 2010 7:15:00 AM
+End Time: Apr 23, 2010 10:45:00 AM
+Mod Time: Apr 20, 2010 11:01:41 AM
+Meal Name: Breakfast
+Venues: 
+    Venue Name: Hot Foods
+    Food Items:
+        Oatmeal false false
+        Make Your Own Waffles false false
+        Fresh Scrambled Eggs false false
+        Scrambled Egg Whites false false
+        Omelets To Order false false
+        Potatoes Obrien false false
+    Venue Name: Bakery
+    Food Items:
+        Bagels false false
+        Banana Choc Chip Muffins false false
+Commons: Ortega
+Start Time: Apr 19, 2010 11:45:00 AM
+End Time: Apr 19, 2010 2:00:00 PM
+Mod Time: Apr 20, 2010 11:01:41 AM
+Meal Name: Lunch
+Venues: 
+    Venue Name: Salads
+    Food Items:
+        Chef Salad false false
+        Caesar Salad false false
+    Venue Name: Hot Foods
+    Food Items:
+        Sausage Calzone false false
+        Sandwich Grilled Pastrami/swiss false false
+        Vegan Thai Tofu Curry And Vegetables false false
+        Fresh Broccoli Spears false false
+        Sandwiches Grilled To Order false false
+        Fish Sandwich false false
+        Vegan Black Bean Burger false false
+        Krinkle Cut French Fries false false
+        Vgt Roasted Vegetable Panini false false
+        Calamari Sushi Roll false false
+        Vegan Cucumber & Avocado Sushi Roll false false
+        Vgt Minestrone false false
+        Steamed Brown Rice false false
+        Basmati Rice false false
+        Vegan Pinto Beans false false
+        Flour Tortillas false false
+        Baked Potatoes false false
+    Venue Name: Bakery
+    Food Items:
+        Raisin Buns false false
+        Lemon Shortbread Cookies false false
+        Black And White Brownies false false
+Commons: Ortega
+Start Time: Apr 20, 2010 11:45:00 AM
+End Time: Apr 20, 2010 2:00:00 PM
+Mod Time: Apr 20, 2010 11:01:41 AM
+Meal Name: Lunch
+Venues: 
+    Venue Name: Salads
+    Food Items:
+        Tomato Dijon Salad false false
+        Fresh Fruit Salad false false
+    Venue Name: Hot Foods
+    Food Items:
+        Grilled Chicken Taco false false
+        Tri Tip Sandwich false false
+        Vgt Green Chili & Cheese Tamale false false
+        Onion Rings false false
+        Fresh Corn On The Cob false false
+        Sandwiches Grilled To Order false false
+        Turkey Burger false false
+        Veggie Burger false false
+        Krinkle Cut French Fries false false
+        Bacon Tomato Basil Pizza false false
+        Vgt Mushroom & Black Olive Pizza false false
+        Beef Teriyaki Sushi Roll false false
+        Vegan Vegetable Sushi Roll false false
+        Vegan Carrot And Curry Soup false false
+        Steamed Brown Rice false false
+        Sticky Rice false false
+        Vegan Black Beans false false
+        Flour Tortillas false false
+        Baked Potatoes false false
+    Venue Name: Bakery
+    Food Items:
+        Cornbread Muffins With Bluerries false false
+        White Chocolate Macadamia Cookies (w/nut false false
+        Carrot Cake Cupcakes (w/nuts) false false
+Commons: Ortega
+Start Time: Apr 21, 2010 11:45:00 AM
+End Time: Apr 21, 2010 2:00:00 PM
+Mod Time: Apr 20, 2010 11:01:41 AM
+Meal Name: Lunch
+Venues: 
+    Venue Name: Salads
+    Food Items:
+        Three Bean Salad false false
+        Spirals W/grld Chicken/s.d.tomato false false
+    Venue Name: Hot Foods
+    Food Items:
+        Pot Pie Turkey false false
+        Shrimp Pad Thai (w/nuts) false false
+        Asian Influenced Vegie Wrap false false
+        Steamed Peas false false
+        Sandwiches Grilled To Order false false
+        Chicken Burger false false
+        Vegan Black Bean Burger false false
+        Krinkle Cut French Fries false false
+        Vgt Tuscan Panini false false
+        California Club Sushi Roll false false
+        Asparagus & Egg Sushi Roll false false
+        Vgt Broccoli Cheese Soup false false
+        Steamed Brown Rice false false
+        Sticky Rice false false
+        Vegan Pinto Beans false false
+        Flour Tortillas false false
+        Baked Potatoes false false
+    Venue Name: Bakery
+    Food Items:
+        Ricotta Pepper Bread false false
+        M&m Cookies false false
+        Strawberry Bread false false
+Commons: Ortega
+Start Time: Apr 22, 2010 11:45:00 AM
+End Time: Apr 22, 2010 2:00:00 PM
+Mod Time: Apr 20, 2010 11:01:41 AM
+Meal Name: Lunch
+Venues: 
+    Venue Name: Salads
+    Food Items:
+        Spring Mix Salad With Feta & Craisins false false
+        Grilled Asparagus Salad false false
+    Venue Name: Hot Foods
+    Food Items:
+        Turkey Sub Sandwich false false
+        Pita Stuffed With Chicken Salad false false
+        Vegan Cashew Vegetable Tofu (w/nuts) false false
+        Fresh Spinach false false
+        Sandwiches Grilled To Order false false
+        Grilled Chix Brst Sandwch false false
+        Veggie Burger false false
+        Krinkle Cut French Fries false false
+        Vgt Cheese Pizza false false
+        California Sushi Roll false false
+        Tempura Yam & Avocado Sushi Roll false false
+        Vegan Mushroom Barley Soup false false
+        Steamed Brown Rice false false
+        Three Grain Pilaf (w/nuts) false false
+        Vegan Black Beans false false
+        Flour Tortillas false false
+        Baked Potatoes false false
+    Venue Name: Bakery
+    Food Items:
+        Wheat Germ Rolls false false
+        Chocolate Chip Cookies false false
+        5 Layer Bars (w/nuts) false false
+Commons: Ortega
+Start Time: Apr 23, 2010 11:45:00 AM
+End Time: Apr 23, 2010 2:00:00 PM
+Mod Time: Apr 20, 2010 11:01:41 AM
+Meal Name: Lunch
+Venues: 
+    Venue Name: Salads
+    Food Items:
+        Vgt Green Bean Provencal Salad false false
+        Chicken Curry Pasta Salad (w/nuts) false false
+    Venue Name: Hot Foods
+    Food Items:
+        Hot Turkey Sandwich false false
+        Fresh Mashed Potatoes false false
+        Fish & Chips false false
+        Manicotti With Marinara Sauce false false
+        Stir Fry Broccoli & Veggie false false
+        Sandwiches Grilled To Order false false
+        Charburger false false
+        Veggie Burger false false
+        Krinkle Cut French Fries false false
+        Vgt Roasted Vegetable Panini false false
+        Grilled Ahi Tuna Sushi Roll false false
+        Vegan Vegetable Sushi Roll false false
+        New England Clam Chowder false false
+        Three Grain Pilaf (w/nuts) false false
+        Jasmine Rice false false
+        Vegan Pinto Beans false false
+        Flour Tortillas false false
+        Baked Potatoes false false
+    Venue Name: Bakery
+    Food Items:
+        Garlic French Bread false false
+        Oatmeal Lace Cookies false false
+        Banana Choc Chip Bread false false
+Commons: Ortega
+Start Time: Apr 19, 2010 5:00:00 PM
+End Time: Apr 19, 2010 8:00:00 PM
+Mod Time: Apr 20, 2010 11:01:41 AM
+Meal Name: Dinner
+Venues: 
+    Venue Name: Salads
+    Food Items:
+        Ambrosia Salad false false
+    Venue Name: Hot Foods
+    Food Items:
+        Pork Loin Roast With Garlic And Ginger false false
+        Sole Piccata false false
+        Vegan Vegetabletacos false false
+        Rice Pilaf false false
+        Fresh Spinach false false
+        Mixed Vegetables false false
+        Vgt Cheese Pizza false false
+        Calamari Sushi Roll false false
+        Vegan Cucumber & Avocado Sushi Roll false false
+        Vgt Potato Cheese Soup false false
+        Marinara Sauce With Meatballs false false
+        Creamy Pesto Sauce false false
+        Penne Pasta false false
+        Steamed Brown Rice false false
+        Basmati Rice false false
+        Vegan Pinto Beans false false
+        Flour Tortillas false false
+        Baked Potatoes false false
+    Venue Name: Bakery
+    Food Items:
+        Orange Cinnamon Swirl Bread false false
+        Ice Cream Sundaes (w/nuts) false false
+        Chocolate Chip Cake false false
+Commons: Ortega
+Start Time: Apr 20, 2010 5:00:00 PM
+End Time: Apr 20, 2010 8:00:00 PM
+Mod Time: Apr 20, 2010 11:01:41 AM
+Meal Name: Dinner
+Venues: 
+    Venue Name: Salads
+    Food Items:
+        Caesar Salad Bar false false
+        Curry Couscous Salad W/dried Fruit & Nut false false
+    Venue Name: Hot Foods
+    Food Items:
+        Chicken Orange false false
+        Tamales With Chili false false
+        Cheese Lasagna false false
+        Mexican Rice false false
+        Steamed Zucchini false false
+        Fresh Steamed Carrots false false
+        Vgt Cheese Pizza false false
+        Beef Teriyaki Sushi Roll false false
+        Vegan Vegetable Sushi Roll false false
+        Chicken Noodle Soup false false
+        Marinara Sauce W/meat false false
+        Vgt Rotelli false false
+        Steamed Brown Rice false false
+        Sticky Rice false false
+        Vegan Black Beans false false
+        Flour Tortillas false false
+        Baked Potatoes false false
+    Venue Name: Bakery
+    Food Items:
+        Garlic French Bread false false
+        Red Velvet Cake false false
+Commons: Ortega
+Start Time: Apr 21, 2010 5:00:00 PM
+End Time: Apr 21, 2010 8:00:00 PM
+Mod Time: Apr 20, 2010 11:01:41 AM
+Meal Name: Dinner
+Venues: 
+    Venue Name: Salads
+    Food Items:
+        Vgn Broccoli And Bean Salad false false
+    Venue Name: Hot Foods
+    Food Items:
+        Sweet And Tangy Spare Ribs false false
+        Carne Asada Soft Corn Tacos false false
+        Vgt Pot Stickers false false
+        Roasted Red Potato Wedges false false
+        Fresh Broccoli Spears false false
+        Fresh Steamed Cauliflower false false
+        Burrito Bar false false
+        Vgt Cheese Pizza false false
+        California Club Sushi Roll false false
+        Asparagus & Egg Sushi Roll false false
+        Vegan Mixed Grain Soup false false
+        Red Clam Sauce false false
+        Vgt Mushroom Cream Sauce false false
+        Linguini Pasta false false
+        Steamed Brown Rice false false
+        Sticky Rice false false
+        Vegan Pinto Beans false false
+        Flour Tortillas false false
+        Baked Potatoes false false
+    Venue Name: Bakery
+    Food Items:
+        Pesto Bread false false
+        Pumpkin Pie false false
+Commons: Ortega
+Start Time: Apr 22, 2010 5:00:00 PM
+End Time: Apr 22, 2010 8:00:00 PM
+Mod Time: Apr 20, 2010 11:01:41 AM
+Meal Name: Dinner
+Venues: 
+    Venue Name: Salads
+    Food Items:
+        Nicoise Salad false false
+    Venue Name: Hot Foods
+    Food Items:
+        Herb Roasted Chicken false false
+        Lemon Baked Fresh Snapper false false
+        Vegetable Empanadas Vgt false false
+        Oven Browned Potatoes false false
+        Fresh Broccoli Spears false false
+        Fresh Corn On The Cob false false
+        Waffle Bar false false
+        Vgt Cheese Pizza false false
+        California Sushi Roll false false
+        Tempura Yam & Avocado Sushi Roll false false
+        Vegan Chickpea & Vegetable Soup false false
+        Chicken And Mushroom Marinara Sauce false false
+        Vegan Roasted Pepper Marinara false false
+        Spaghetti Pasta false false
+        Steamed Brown Rice false false
+        Three Grain Pilaf (w/nuts) false false
+        Vegan Black Beans false false
+        Flour Tortillas false false
+        Baked Potatoes false false
+    Venue Name: Bakery
+    Food Items:
+        Whole Wheat Bread false false
+        Strawberry Pie false false
+Commons: Ortega
+Start Time: Apr 23, 2010 5:00:00 PM
+End Time: Apr 23, 2010 8:00:00 PM
+Mod Time: Apr 20, 2010 11:01:41 AM
+Meal Name: Dinner
+Venues: 
+    Venue Name: Salads
+    Food Items:
+        Chix Sesame Noodle Salad false false
+    Venue Name: Hot Foods
+    Food Items:
+        Bbq Chicken false false
+        Ginger Beef Stir Fry false false
+        Vgt Barley Stuffed Peppers (w/nuts) false false
+        Scalloped Potatoes false false
+        Italian Green Beans false false
+        Steamed Whole Baby Carrot false false
+        Nacho Bar false false
+        Vgt Cheese Pizza false false
+        Grilled Ahi Tuna Sushi Roll false false
+        Vegan Vegetable Sushi Roll false false
+        Vegan Lentil & Brown Rice Soup false false
+        Marinara Sauce With Shrimp false false
+        Garlic Cream Sauce false false
+        Vgt Pasta Shells false false
+        Three Grain Pilaf (w/nuts) false false
+        Jasmine Rice false false
+        Vegan Pinto Beans false false
+        Flour Tortillas false false
+        Baked Potatoes false false
+    Venue Name: Bakery
+    Food Items:
+        Almond Braids (contains Nuts) false false
+        Fresh Orange Cake W/orange Butter Cream false false

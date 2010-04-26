@@ -8,14 +8,14 @@ public class TestJScrape {
 //		UCSBJMenuScraper carrillo = new UCSBJMenuScraper("docs/Menus/carrillo4.19.xml", 1);
 //		carrillo.printAll();
 		
-		UCSBJMenuScraper portola = new UCSBJMenuScraper("docs/Menus/portola4.19.xml", 1);
-		portola.printAll();
+//		UCSBJMenuScraper portola = new UCSBJMenuScraper("docs/Menus/portola4.19.xml", 1);
+//		portola.printAll();
 		
 //		UCSBJMenuScraper dlg = new UCSBJMenuScraper("docs/Menus/dlg4.19.xml", 1);
 //		dlg.printAll();
 		
-//		UCSBJMenuScraper ortega = new UCSBJMenuScraper("docs/Menus/ortega4.19.xml", 1);
-//		ortega.printAll();
+		UCSBJMenuScraper ortega = new UCSBJMenuScraper("docs/Menus/ortega4.19.xml", 1);
+		ortega.printAll();
 
 	}
 

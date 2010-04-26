@@ -1,0 +1,670 @@
+Commons: De La Guerra
+Start Time: Apr 19, 2010 11:00:00 AM
+End Time: Apr 19, 2010 2:30:00 PM
+Mod Time: Apr 16, 2010 11:47:32 AM
+Meal Name: Lunch
+Venues: 
+    Venue Name: Blue Plate Special
+    Food Items:
+        Vegan Black Bean Soup false false
+        Vgt Greek Pita Sandwich false false
+        Fresh Broccoli Spears false false
+        Baked Potato false false
+    Venue Name: Taqueria (East Side)
+    Food Items:
+        Shredded Beef Tostada false false
+        Vgt Roasted Corn & Chiles Quesadilla false false
+        Vegan Rice W/cilantro And Onions false false
+        Vegan Pinto Beans false false
+        Flour Tortilla false false
+        Corn Tortillas false false
+        Roasted Tomato & Chile Salsa false false
+    Venue Name: Pizza
+    Food Items:
+        Pepperoni Pizza false false
+        Vgt Cheese Pizza false false
+        Pizza Sticks false false
+    Venue Name: To Order
+    Food Items:
+        Thai Chicken And Vegetable Curry false false
+        Vgt Pot Stickers false false
+        Vegan Steamed White Rice false false
+        Brown Rice false false
+    Venue Name: Grill (Cafe)
+    Food Items:
+        Cheeseburger false false
+        Vgt Black Bean Burger false false
+        Hot Dogs false false
+        Krinkle Cut French Fries false false
+    Venue Name: Salads/Deli (West Side)
+    Food Items:
+        Caesar Salad false false
+        Vegan Marinated Mushrooms false false
+    Venue Name: Bakery
+    Food Items:
+        Cornbread Muffin false false
+        Intense Chocolate Bread false false
+        M&m Bars false false
+Commons: De La Guerra
+Start Time: Apr 20, 2010 11:00:00 AM
+End Time: Apr 20, 2010 2:30:00 PM
+Mod Time: Apr 16, 2010 11:47:32 AM
+Meal Name: Lunch
+Venues: 
+    Venue Name: Blue Plate Special
+    Food Items:
+        Turkey Rice Soup false false
+        Bbq Beef On Bun false false
+        Vegan Fresh Sauteed Spinach false false
+        Baked Potato false false
+    Venue Name: Taqueria (East Side)
+    Food Items:
+        Chili Colorado Burrito false false
+        Vgt Tostada W/ Homemade Shell false false
+        Vegan Yellow Rice false false
+        Vegan Pinto Beans false false
+        Flour Tortilla false false
+        Corn Tortillas false false
+        Fresh Tomato Salsa false false
+    Venue Name: Pizza
+    Food Items:
+        Ham & Cheese Pizza false false
+        Vgt Three Cheese Pizza false false
+        Pizza Sticks false false
+    Venue Name: To Order
+    Food Items:
+        Chicken Chop Suey false false
+        Vgt Egg Foo Yung false false
+        Vegan Steamed White Rice false false
+        Brown Rice false false
+    Venue Name: Grill (Cafe)
+    Food Items:
+        Charburger false false
+        Vgt Black Bean Burger false false
+        Turkey Burger false false
+        Shoestring French Fries false false
+    Venue Name: Salads/Deli (West Side)
+    Food Items:
+        Vegan Chinese Broccoli Salad false false
+        Vgt Yogurt Potato Salad false false
+    Venue Name: Bakery
+    Food Items:
+        Herb Biscuits false false
+        Pecan Pie Bars (w/nuts) false false
+        Chocolate Chip Cookies false false
+Commons: De La Guerra
+Start Time: Apr 21, 2010 11:00:00 AM
+End Time: Apr 21, 2010 2:30:00 PM
+Mod Time: Apr 16, 2010 11:47:32 AM
+Meal Name: Lunch
+Venues: 
+    Venue Name: Blue Plate Special
+    Food Items:
+        Vgt Corn Chowder false false
+        Reuben Sandwich false false
+        Fresh Cauliflower false false
+        Baked Potato false false
+    Venue Name: Taqueria (East Side)
+    Food Items:
+        Chicken Tostada false false
+        Vegan Vegetable Enchiladas false false
+        Vegan Green Rice false false
+        Vegan Refried Black Beans false false
+        Flour Tortilla false false
+        Corn Tortillas false false
+    Venue Name: Pizza
+    Food Items:
+        Bacon Tomato Basil Pizza false false
+        Vgt Cheese Pizza false false
+        Pizza Sticks false false
+    Venue Name: To Order
+    Food Items:
+        Meat Sauce false false
+        Spaghetti Pasta false false
+        Cheese Sauce false false
+        Rotelli Pasta false false
+        Vegan Steamed White Rice false false
+        Brown Rice false false
+    Venue Name: Grill (Cafe)
+    Food Items:
+        Charburger false false
+        Vgt Gardenburger false false
+        English Muffin Sandwich false false
+        Tater Tots false false
+    Venue Name: Salads/Deli (West Side)
+    Food Items:
+        Caesar Salad false false
+        Vegan Thai Cucumber Salad false false
+    Venue Name: Bakery
+    Food Items:
+        Potato Rolls false false
+        Toll House Bars false false
+        Carrot Cake W/ Cream Ch Icing (w/nuts false false
+Commons: De La Guerra
+Start Time: Apr 22, 2010 11:00:00 AM
+End Time: Apr 22, 2010 2:30:00 PM
+Mod Time: Apr 16, 2010 11:47:32 AM
+Meal Name: Lunch
+Venues: 
+    Venue Name: Blue Plate Special
+    Food Items:
+        Vegan Mixed Bean & Barley Soup false false
+        Vgt Grilled Vegetable Wrap false false
+        Fresh Steamed Carrots false false
+        Baked Potato false false
+    Venue Name: Taqueria (East Side)
+    Food Items:
+        Pork Sopes false false
+        Vegan Soft Taco W/corn Zucchini & Chiles false false
+        Vegan Rice W/cilantro And Onions false false
+        Vegan Refried Black Beans false false
+        Flour Tortilla false false
+        Corn Tortillas false false
+        Avocado And Tomato Salsa false false
+    Venue Name: Pizza
+    Food Items:
+        Bbq Chicken Pizza false false
+        Vegan Vegetable Pizza (no Cheese) false false
+        Pizza Sticks false false
+    Venue Name: To Order
+    Food Items:
+        Vgt Penne W/ Rosemary Cream Sauce false false
+        Vegan Mushroom Pepper Marinara Sauce false false
+        Linguini Pasta false false
+        Vegan Steamed White Rice false false
+        Brown Rice false false
+    Venue Name: Grill (Cafe)
+    Food Items:
+        Charburger false false
+        Vgt Grilled Portobello Burger false false
+        Grilled Tuna & Cheese On Sourdough false false
+        Tater Tots false false
+    Venue Name: Salads/Deli (West Side)
+    Food Items:
+        Vgt Red Potato Salad With Dill false false
+        Vegan Jicama Pico D Gallo Salad false false
+    Venue Name: Bakery
+    Food Items:
+        Ginger Bread false false
+        Rice Krispie Treats false false
+        Oatmeal Raisin Cookies (w/nuts false false
+Commons: De La Guerra
+Start Time: Apr 23, 2010 11:00:00 AM
+End Time: Apr 23, 2010 2:30:00 PM
+Mod Time: Apr 16, 2010 11:47:32 AM
+Meal Name: Lunch
+Venues: 
+    Venue Name: Blue Plate Special
+    Food Items:
+        Vegan Tortilla Soup false false
+        Turkey Sub Sandwich false false
+        Steamed Zucchini false false
+        Baked Potato false false
+    Venue Name: Taqueria (East Side)
+    Food Items:
+        Beef Fried Tacos false false
+        Vgt Black Bean & Rice Burrito false false
+        Vgt Rice With Corn And Roasted Chiles false false
+        Vegan Pinto Beans false false
+        Flour Tortilla false false
+        Corn Tortillas false false
+        Fire Roasted Tomato Salsa false false
+    Venue Name: Pizza
+    Food Items:
+        Sausage Calzone false false
+        Vgt Three Cheese Pizza false false
+        Pizza Sticks false false
+    Venue Name: To Order
+    Food Items:
+        Green Beef Curry Over Rice false false
+        Vegan Thai Curry Tofu And Vegetables false false
+        Vegan Steamed White Rice false false
+        Brown Rice false false
+    Venue Name: Grill (Cafe)
+    Food Items:
+        Cheeseburger false false
+        Vgt Black Bean Burger false false
+        Turkey Corn Dogs false false
+        Shoestring French Fries false false
+    Venue Name: Salads/Deli (West Side)
+    Food Items:
+        Chicken Caesar Salad false false
+        Vgt California Coleslaw false false
+    Venue Name: Bakery
+    Food Items:
+        Cheese Rolls false false
+        White Cupcakes false false
+        Zebra Bars (w/nuts) false false
+Commons: De La Guerra
+Start Time: Apr 19, 2010 5:00:00 PM
+End Time: Apr 19, 2010 8:00:00 PM
+Mod Time: Apr 16, 2010 11:47:32 AM
+Meal Name: Dinner
+Venues: 
+    Venue Name: Blue Plate Special
+    Food Items:
+        French Onion Soup false false
+        Tri Tip Roast false false
+        Vegan Ratatouille With White Beans false false
+        Roasted Potato Wedges false false
+        Fresh Steamed Carrots false false
+        Baked Potato false false
+    Venue Name: Taqueria (East Side)
+    Food Items:
+        Chicken And Bean Wet Burrito false false
+        Vegan Vegetabletacos false false
+        Vegan Rice W/cilantro And Onions false false
+        Vegan Pinto Beans false false
+        Flour Tortilla false false
+        Fire Roasted Tomato Salsa false false
+    Venue Name: Pizza
+    Food Items:
+        Pepperoni Pizza false false
+        Vgt Cheese Pizza false false
+        Pizza Sticks false false
+    Venue Name: To Order
+    Food Items:
+        Kung Pao Chicken (w/nuts) false false
+        Vegan Stir Fry Noodles & Vegetables false false
+        Vegan Steamed White Rice false false
+        Brown Rice false false
+    Venue Name: Salads/Deli (West Side)
+    Food Items:
+        Caesar Salad false false
+    Venue Name: Bakery
+    Food Items:
+        Three Grain Bread false false
+        Brownie Pie (w/nuts) false false
+Commons: De La Guerra
+Start Time: Apr 20, 2010 5:00:00 PM
+End Time: Apr 20, 2010 8:00:00 PM
+Mod Time: Apr 16, 2010 11:47:32 AM
+Meal Name: Dinner
+Venues: 
+    Venue Name: Blue Plate Special
+    Food Items:
+        Vgt Tomato Rice Soup false false
+        Grilled Chicken Quarters false false
+        Vegan Stir Fry Vegetables false false
+        Mashed Red Potatoes false false
+        Chicken Gravy false false
+        Baked Potato false false
+    Venue Name: Taqueria (East Side)
+    Food Items:
+        Carnitas Taco false false
+        Vgt Bean & Cheese Sopes false false
+        Vegan Yellow Rice false false
+        Vegan Pinto Beans false false
+        Flour Tortilla false false
+        Corn Tortillas false false
+        Fresh Tomato Salsa false false
+    Venue Name: Pizza
+    Food Items:
+        Ham & Cheese Pizza false false
+        Vgt Three Cheese Pizza false false
+        Pizza Sticks false false
+    Venue Name: To Order
+    Food Items:
+        Beef Teriayaki false false
+        Vegan Vegetable Teriyaki Rice Bowl false false
+        Vegan Steamed White Rice false false
+        Brown Rice false false
+    Venue Name: Salads/Deli (West Side)
+    Food Items:
+        Caesar Salad false false
+    Venue Name: Bakery
+    Food Items:
+        Onion Bread false false
+        Cream Cheese Pie false false
+Commons: De La Guerra
+Start Time: Apr 21, 2010 5:00:00 PM
+End Time: Apr 21, 2010 8:00:00 PM
+Mod Time: Apr 16, 2010 11:47:32 AM
+Meal Name: Dinner
+Venues: 
+    Venue Name: Blue Plate Special
+    Food Items:
+        Vgt Potato Leek Soup false false
+        Pork Loin Roast false false
+        Rice Pilaf false false
+        Stuffed Zucchini false false
+        Italian Mixed Vegetables false false
+        Baked Potato false false
+    Venue Name: Taqueria (East Side)
+    Food Items:
+        Fish Tacos false false
+        Vgt Bean And Cheese Burrito false false
+        Vegan Green Rice false false
+        Vegan Refried Black Beans false false
+        Flour Tortilla false false
+        Corn Tortillas false false
+    Venue Name: Pizza
+    Food Items:
+        Bacon Tomato Basil Pizza false false
+        Vgt Cheese Pizza false false
+        Pizza Sticks false false
+    Venue Name: To Order
+    Food Items:
+        General Tsos Chicken false false
+        Vegan Lees Vegetable Chow Mein false false
+        Brown Rice false false
+        Vegan Steamed White Rice false false
+    Venue Name: Salads/Deli (West Side)
+    Food Items:
+        Caesar Salad false false
+    Venue Name: Bakery
+    Food Items:
+        Sesame Bread false false
+        Lemon Pie false false
+Commons: De La Guerra
+Start Time: Apr 22, 2010 5:00:00 PM
+End Time: Apr 22, 2010 8:00:00 PM
+Mod Time: Apr 16, 2010 11:47:32 AM
+Meal Name: Dinner
+Venues: 
+    Venue Name: Blue Plate Special
+    Food Items:
+        Vegan Split Pea Soup false false
+        Grilled Sustainable Fish false false
+        Vegan Three Bean Pilaf false false
+        Vegan Fresh Vegetable Medley false false
+        Vegan Stuffed Peppers (w/nuts) false false
+        Baked Potato false false
+    Venue Name: Taqueria (East Side)
+    Food Items:
+        Beef Soft Tacos false false
+        Vegan Vegetable Enchiladas false false
+        Vegan Rice W/cilantro And Onions false false
+        Vegan Refried Black Beans false false
+        Flour Tortilla false false
+        Corn Tortillas false false
+        Avocado And Tomato Salsa false false
+    Venue Name: Pizza
+    Food Items:
+        Bbq Chicken Pizza false false
+        Vegan Vegetable Pizza (no Cheese) false false
+        Pizza Sticks false false
+    Venue Name: To Order
+    Food Items:
+        Chicken With Polynesian Bbq Sauce false false
+        Vegan Spicy Vegetable Stir Fry false false
+        Vegan Steamed White Rice false false
+        Brown Rice false false
+    Venue Name: Salads/Deli (West Side)
+    Food Items:
+        Caesar Salad false false
+    Venue Name: Bakery
+    Food Items:
+        Olive Rolls false false
+        Fresh Strawberry Pie false false
+Commons: De La Guerra
+Start Time: Apr 23, 2010 5:00:00 PM
+End Time: Apr 23, 2010 8:00:00 PM
+Mod Time: Apr 16, 2010 11:47:32 AM
+Meal Name: Dinner
+Venues: 
+    Venue Name: Blue Plate Special
+    Food Items:
+        Vegan Far East Vegetable Soup false false
+        Charburger false false
+        Vgt Gardenburger false false
+        Shoestring French Fries false false
+        Vegan Fresh Vegetable Medley false false
+        Baked Potato false false
+    Venue Name: Taqueria (East Side)
+    Food Items:
+        Chicken Fried Taquitos false false
+        Vgt Black Bean Enchiladas false false
+        Vegan Rice W/cilantro And Onions false false
+        Vegan Black Beans false false
+        Flour Tortilla false false
+        Corn Tortillas false false
+        Fire Roasted Tomato Salsa false false
+    Venue Name: Pizza
+    Food Items:
+        Calzone Sausage And Mushroom false false
+        Vgt Three Cheese Pizza false false
+        Pizza Sticks false false
+    Venue Name: To Order
+    Food Items:
+        Meat Sauce false false
+        Spaghetti Pasta false false
+        Vgt Pasta Primavera false false
+        Vegan Steamed White Rice false false
+        Brown Rice false false
+    Venue Name: Salads/Deli (West Side)
+    Food Items:
+        Caesar Salad false false
+    Venue Name: Bakery
+    Food Items:
+        Yellow Cake With Buttercream Frosting false false
+Commons: De La Guerra
+Start Time: Apr 24, 2010 5:00:00 PM
+End Time: Apr 24, 2010 8:00:00 PM
+Mod Time: Apr 16, 2010 11:47:32 AM
+Meal Name: Dinner
+Venues: 
+    Venue Name: Blue Plate Special
+    Food Items:
+        Vegan Vegetable Soup false false
+        Bbq Pork Spare Ribs false false
+        Vgt Macaroni And Cheese false false
+        French Cut Green Beans false false
+        Vegan Steamd Parsley Red Potatoes false false
+        Baked Potato false false
+    Venue Name: Taqueria (East Side)
+    Food Items:
+        Chimichangas (chicken) false false
+        Vgt Vegetable Tacos false false
+        Vegan Spanish Rice false false
+        Vegan Pinto Beans false false
+        Flour Tortilla false false
+        Corn Tortillas false false
+        Black Bean Salsa false false
+    Venue Name: Pizza
+    Food Items:
+        Salami Pizza false false
+        Vgt Cheese Pizza false false
+        Pizza Sticks false false
+    Venue Name: To Order
+    Food Items:
+        Marinara Sauce W/sausage false false
+        Bowtie Pasta false false
+        Vegan Garden Vegetable Marinara Sauce false false
+        Linguini Pasta false false
+        Brown Rice false false
+        Vegan Steamed White Rice false false
+    Venue Name: Salads/Deli (West Side)
+    Food Items:
+        Caesar Salad false false
+    Venue Name: Bakery
+    Food Items:
+        Parmesan Herb Bread false false
+        Banana Cream Pie false false
+Commons: De La Guerra
+Start Time: Apr 25, 2010 5:00:00 PM
+End Time: Apr 25, 2010 8:00:00 PM
+Mod Time: Apr 16, 2010 11:47:32 AM
+Meal Name: Dinner
+Venues: 
+    Venue Name: Blue Plate Special
+    Food Items:
+        Grilled Chicken Breast false false
+        Vgt Vegetable Cutlet false false
+        Peas And Mushrooms false false
+        Rice Pilaf false false
+        Baked Potato false false
+    Venue Name: Taqueria (East Side)
+    Food Items:
+        Beef Fajitas false false
+        Vgt Bean And Rice Burrito false false
+        Vgt Rice With Corn And Roasted Chiles false false
+        Vegan Pinto Beans false false
+        Flour Tortilla false false
+        Corn Tortillas false false
+        Tomato & Roasted Corn Salsa false false
+    Venue Name: Pizza
+    Food Items:
+        Ham & Pineapple Pizza false false
+        Vgt Tomato Basil Pizza false false
+        Pizza Sticks false false
+    Venue Name: To Order
+    Food Items:
+        Meat Sauce false false
+        Rotelli Pasta false false
+        Vegan Light Tomato Sauce false false
+        Linguini Pasta false false
+        Brown Rice false false
+        Vegan Steamed White Rice false false
+    Venue Name: Salads/Deli (West Side)
+    Food Items:
+        Caesar Salad false false
+    Venue Name: Bakery
+    Food Items:
+        Chocolate Chip Cake false false
+        Sour Cream & Chives Rolls false false
+Commons: De La Guerra
+Start Time: Apr 24, 2010 10:30:00 AM
+End Time: Apr 24, 2010 2:00:00 PM
+Mod Time: Apr 16, 2010 11:47:32 AM
+Meal Name: Brunch
+Venues: 
+    Venue Name: Blue Plate Special
+    Food Items:
+        Chicken Velvet Soup false false
+        Grilled Ham & Swiss On Sourdough false false
+        Corn false false
+        Baked Potato false false
+        Vegan Steamed White Rice false false
+        Brown Rice false false
+    Venue Name: Pizza
+    Food Items:
+        Salami Pizza false false
+        Vgt Cheese Pizza false false
+        Pizza Sticks false false
+    Venue Name: Grill (Cafe)
+    Food Items:
+        Vgt Arroz Con Leche false false
+        Vgt Fresh Scrambled Eggs false false
+        Vgt Scrambled Egg Whites false false
+        Vgt French Toast false false
+        Sausage Links false false
+        Potatoes Obrien false false
+        Make Your Own Waffles false false
+    Venue Name: Salads/Deli (West Side)
+    Food Items:
+        Vegan Summer Fruit Compote false false
+        Sliced Cantalope false false
+        Sliced Honeydew false false
+        Grapefruit Halves false false
+    Venue Name: Bakery
+    Food Items:
+        Lemon Yogurt Muffin false false
+        Brunch Coffee Cake false false
+        Bagels false false
+Commons: De La Guerra
+Start Time: Apr 25, 2010 10:30:00 AM
+End Time: Apr 25, 2010 2:00:00 PM
+Mod Time: Apr 16, 2010 11:47:32 AM
+Meal Name: Brunch
+Venues: 
+    Venue Name: Blue Plate Special
+    Food Items:
+        Vgt Broccoli Cheese Soup false false
+        Vgt Spinach Lasagna false false
+        Green Beans false false
+        Baked Potato false false
+        Basmati Rice false false
+        Brown Rice false false
+    Venue Name: Pizza
+    Food Items:
+        Ham & Pineapple Pizza false false
+        Vgt Tomato Basil Pizza false false
+        Pizza Sticks false false
+    Venue Name: Grill (Cafe)
+    Food Items:
+        Vgt Cream Of Wheat false false
+        Vgt Breakfast Burrito false false
+        Vgt Fresh Scrambled Eggs false false
+        Vgt Scrambled Egg Whites false false
+        Bacon false false
+        Tater Tots false false
+        Make Your Own Waffles false false
+    Venue Name: Salads/Deli (West Side)
+    Food Items:
+        Vgt Macaroni Salad false false
+        Sliced Cantalope false false
+        Sliced Honeydew false false
+        Grapefruit Halves false false
+    Venue Name: Bakery
+    Food Items:
+        Banana Choc Chip Muffin false false
+        Pecan Sour Cream Coffee Cake (w/nuts) false false
+        Bagels false false
+Commons: De La Guerra
+Start Time: Apr 19, 2010 9:00:00 PM
+End Time: Apr 19, 2010 11:00:00 PM
+Mod Time: Apr 16, 2010 11:47:32 AM
+Meal Name: Late Night
+Venues: 
+    Venue Name: Grill (Cafe)
+    Food Items:
+        Cheeseburger false false
+        Vgt Gardenburger false false
+        Vgt Grilled Cheese Sandwich false false
+        Grilled Hawaiian Ham & Cheese Sandwich false false
+        Shoestring French Fries false false
+        Caesar Salad false false
+    Venue Name: Bakery
+    Food Items:
+        Rice Krispie Treats false false
+Commons: De La Guerra
+Start Time: Apr 20, 2010 9:00:00 PM
+End Time: Apr 20, 2010 11:00:00 PM
+Mod Time: Apr 16, 2010 11:47:32 AM
+Meal Name: Late Night
+Venues: 
+    Venue Name: Grill (Cafe)
+    Food Items:
+        Charburger false false
+        Vgt Gardenburger false false
+        Vgt Grilled Cheese Sandwich false false
+        Corn Dogs false false
+        Shoestring French Fries false false
+        Caesar Salad false false
+    Venue Name: Bakery
+    Food Items:
+        Confetti Cake W/ Butter Cream Icing false false
+Commons: De La Guerra
+Start Time: Apr 21, 2010 9:00:00 PM
+End Time: Apr 21, 2010 11:00:00 PM
+Mod Time: Apr 16, 2010 11:47:32 AM
+Meal Name: Late Night
+Venues: 
+    Venue Name: Grill (Cafe)
+    Food Items:
+        Cheeseburger false false
+        Vgt Gardenburger false false
+        Vgt Grilled Cheese Sandwich false false
+        Grilled Roast Beef & Swiss On Sourdough false false
+        Shoestring French Fries false false
+        Caesar Salad false false
+    Venue Name: Bakery
+    Food Items:
+        Toffee Squares (w/nuts) false false
+Commons: De La Guerra
+Start Time: Apr 22, 2010 9:00:00 PM
+End Time: Apr 22, 2010 11:00:00 PM
+Mod Time: Apr 16, 2010 11:47:32 AM
+Meal Name: Late Night
+Venues: 
+    Venue Name: Grill (Cafe)
+    Food Items:
+        Charburger false false
+        Vgt Black Bean Burger false false
+        Vgt Grilled Cheese Sandwich false false
+        Chicken Burger false false
+        Krinkle Cut French Fries false false
+        Caesar Salad false false
+    Venue Name: Bakery
+    Food Items:

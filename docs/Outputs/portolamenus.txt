@@ -1,0 +1,495 @@
+Commons: Portola
+Start Time: Apr 19, 2010 7:00:00 AM
+End Time: Apr 19, 2010 10:30:00 AM
+Mod Time: Apr 16, 2010 11:56:38 AM
+Meal Name: Breakfast
+Venues: 
+    Venue Name: Hot Foods
+    Food Items:
+        Fresh Scrambled Eggs false false
+        Buttermilk Pancakes false false
+        Tater Tots false false
+        Grilled Ham false false
+        Oatmeal false false
+    Venue Name: Specialty Line
+    Food Items:
+        Omelets To Order false false
+        Breakfast Burrito false false
+        Waffles false false
+    Venue Name: Bakery
+    Food Items:
+        Bagels And Cream Cheese false false
+        Blueberry Muffins false false
+Commons: Portola
+Start Time: Apr 20, 2010 7:00:00 AM
+End Time: Apr 20, 2010 10:30:00 AM
+Mod Time: Apr 16, 2010 11:56:38 AM
+Meal Name: Breakfast
+Venues: 
+    Venue Name: Hot Foods
+    Food Items:
+        Fresh Scrambled Eggs false false
+        Whole Wheat Pancakes false false
+        Fried Potatoes And Onions false false
+        Oatmeal false false
+    Venue Name: Specialty Line
+    Food Items:
+        Omelets To Order false false
+        Bacon Egg Croissant false false
+        Waffles false false
+    Venue Name: Bakery
+    Food Items:
+        Apple Oat Coffee Cake false false
+        Bagels And Cream Cheese false false
+Commons: Portola
+Start Time: Apr 21, 2010 7:00:00 AM
+End Time: Apr 21, 2010 10:30:00 AM
+Mod Time: Apr 16, 2010 11:56:38 AM
+Meal Name: Breakfast
+Venues: 
+    Venue Name: Hot Foods
+    Food Items:
+        Fresh Scrambled Eggs false false
+        Sausage Patties false false
+        French Toast false false
+        Blueberry Sauce false false
+        Potatoes Obrien false false
+        Oatmeal false false
+    Venue Name: Specialty Line
+    Food Items:
+        Omelets To Order false false
+        Breakfast Sandwich false false
+        Waffles false false
+    Venue Name: Bakery
+    Food Items:
+        Bagels And Cream Cheese false false
+        Buns Sticky (v) (w/nuts) false false
+Commons: Portola
+Start Time: Apr 22, 2010 7:00:00 AM
+End Time: Apr 22, 2010 10:30:00 AM
+Mod Time: Apr 16, 2010 11:56:38 AM
+Meal Name: Breakfast
+Venues: 
+    Venue Name: Hot Foods
+    Food Items:
+        Fresh Scrambled Eggs false false
+        Raspberry Pancakes false false
+        Fresh Hash Brown false false
+        Oatmeal false false
+    Venue Name: Specialty Line
+    Food Items:
+        Chilequilles false false
+        Omelets To Order false false
+        Waffles false false
+    Venue Name: Bakery
+    Food Items:
+        Pan Dulce false false
+        Bagels And Cream Cheese false false
+Commons: Portola
+Start Time: Apr 23, 2010 7:00:00 AM
+End Time: Apr 23, 2010 10:30:00 AM
+Mod Time: Apr 16, 2010 11:56:38 AM
+Meal Name: Breakfast
+Venues: 
+    Venue Name: Hot Foods
+    Food Items:
+        Fresh Scrambled Eggs false false
+        Apple Crepes With Sour Cream Garnish false false
+        Cottage Fried Potatoes false false
+        Kielbasa Sausage With Grilled Onions false false
+        Oatmeal false false
+    Venue Name: Specialty Line
+    Food Items:
+        Omelets To Order false false
+        Breakfast Burrito false false
+        Waffles false false
+    Venue Name: Bakery
+    Food Items:
+        Donuts false false
+        Bagels And Cream Cheese false false
+Commons: Portola
+Start Time: Apr 19, 2010 12:00:00 PM
+End Time: Apr 19, 2010 2:30:00 PM
+Mod Time: Apr 16, 2010 11:56:38 AM
+Meal Name: Lunch
+Venues: 
+    Venue Name: Salads
+    Food Items:
+        Salad Crab false false
+        Santa Fe Salad false false
+    Venue Name: Hot Foods
+    Food Items:
+        Sloppy Joe Sandwich false false
+        Mahi Mahi With Fruit Salsa false false
+        Vgtgrilled Vegetable Black Bean Burrito false false
+        Shoestring Fries false false
+        Fresh Broccoli Spears false false
+        Steamed Crookneck Squash false false
+        Vegan Soup Cabbage false false
+        Brown Rice false false
+        Baked Potato false false
+    Venue Name: Specialty Line
+    Food Items:
+        Sizzle Line false false
+        Sushi Tempura Yam & Avo Roll false false
+        Delicatessan Line false false
+    Venue Name: Bakery
+    Food Items:
+        Jalepeno Rolls false false
+        Cookies Lemon Glazed false false
+Commons: Portola
+Start Time: Apr 20, 2010 12:00:00 PM
+End Time: Apr 20, 2010 2:30:00 PM
+Mod Time: Apr 16, 2010 11:56:38 AM
+Meal Name: Lunch
+Venues: 
+    Venue Name: Salads
+    Food Items:
+        Tossed Antipasta Salad false false
+        Apple Nut Waldorf Salad (w/nuts) false false
+    Venue Name: Hot Foods
+    Food Items:
+        Sweet & Sour Pork false false
+        White Rice false false
+        Chicken Patty Sandwich On Sesame Bun false false
+        Vgt Spinach Turnover false false
+        Waffle Cut French Fries false false
+        Mixed Vegetables false false
+        Vgt Fresh Broccoli W/cheese Sauce false false
+        Vegan Navy Bean Soup false false
+        Baked Potato false false
+        Basmati Rice false false
+    Venue Name: Specialty Line
+    Food Items:
+        Mexican Line false false
+        Delicatessan Line false false
+        Sizzle Line false false
+    Venue Name: Bakery
+    Food Items:
+        Homemade Rolls false false
+        Chocolate Chip Cookies false false
+Commons: Portola
+Start Time: Apr 21, 2010 12:00:00 PM
+End Time: Apr 21, 2010 2:30:00 PM
+Mod Time: Apr 16, 2010 11:56:38 AM
+Meal Name: Lunch
+Venues: 
+    Venue Name: Salads
+    Food Items:
+        Salad Rice/ Shrimp & Pea false false
+        Orange Cream Fruit Salad false false
+    Venue Name: Hot Foods
+    Food Items:
+        Vgt Macaroni And Cheese false false
+        Grilled Pork Chops false false
+        Vegan Potato Enchiladas false false
+        Corn false false
+        Vegan Fresh Vegetable Medley false false
+        Turkey Noodle Soup false false
+        Baked Potato false false
+        Sticky Rice false false
+    Venue Name: Specialty Line
+    Food Items:
+        Quesadilla Line false false
+        Delicatessan Line false false
+        Sizzle Line false false
+    Venue Name: Bakery
+    Food Items:
+        Herb Focaccia false false
+        Cookies Ginger (v) false false
+Commons: Portola
+Start Time: Apr 22, 2010 12:00:00 PM
+End Time: Apr 22, 2010 2:30:00 PM
+Mod Time: Apr 16, 2010 11:56:38 AM
+Meal Name: Lunch
+Venues: 
+    Venue Name: Salads
+    Food Items:
+        Tortellini Salad false false
+        Salad Greek Eggplant false false
+    Venue Name: Hot Foods
+    Food Items:
+        Monte Cristo Sandwich false false
+        Fish Chefs Choice false false
+        Vegan Fresh Herb Polenta W/marinara false false
+        Vegan Three Bean Pilaf false false
+        Fresh Asparagus Spears W/hollandaise false false
+        Cauliflower & Broccoli Mix false false
+        Vegan Lentil & Brown Rice Soup false false
+        Baked Potato false false
+        Brown Rice false false
+    Venue Name: Specialty Line
+    Food Items:
+        Stir Fry Line (w/nuts) false false
+        Delicatessan Line false false
+        Sizzle Line false false
+    Venue Name: Bakery
+    Food Items:
+        Cornbread false false
+        Cupcakes Janets Carrot (w/nuts) false false
+Commons: Portola
+Start Time: Apr 23, 2010 12:00:00 PM
+End Time: Apr 23, 2010 2:30:00 PM
+Mod Time: Apr 16, 2010 11:56:38 AM
+Meal Name: Lunch
+Venues: 
+    Venue Name: Salads
+    Food Items:
+        Vgt Green Beans Provencal false false
+        Pasta Nicoise Salad false false
+    Venue Name: Hot Foods
+    Food Items:
+        Chicken Salad Pita Sandwich false false
+        Meatball Calzone false false
+        Vegan Roasted Vegetables false false
+        Steak Fries false false
+        Steamed Zucchini false false
+        Fresh Cauliflower false false
+        Clam Chowder false false
+        Jasmine Rice false false
+        Baked Potato false false
+    Venue Name: Specialty Line
+    Food Items:
+        Sushi California Club Roll false false
+        Delicatessan Line false false
+        Sizzle Line false false
+    Venue Name: Bakery
+    Food Items:
+        Crusty French Bread false false
+        Toffee Square Bars (w/nuts) false false
+Commons: Portola
+Start Time: Apr 19, 2010 5:00:00 PM
+End Time: Apr 19, 2010 8:00:00 PM
+Mod Time: Apr 16, 2010 11:56:38 AM
+Meal Name: Dinner
+Venues: 
+    Venue Name: Hot Foods
+    Food Items:
+        Turkey Pot Pie false false
+        Beef Fajitas false false
+        Vgt Eggplant Parmesan false false
+        Mexican Rice false false
+        Cauliflower & Broccoli Mix false false
+        Vegan Fresh Vegetable Medley false false
+        Vgt Cream Of Broccoli Soup false false
+        Baked Potato false false
+        Brown Rice false false
+    Venue Name: Specialty Line
+    Food Items:
+        Pasta Bar Alfredo false false
+        Caesar Salad false false
+        Rustic French Bread false false
+        Sizzle Line false false
+    Venue Name: Bakery
+    Food Items:
+        Homemade Bread false false
+        Cream Cheese Brownie Pie false false
+Commons: Portola
+Start Time: Apr 20, 2010 5:00:00 PM
+End Time: Apr 20, 2010 8:00:00 PM
+Mod Time: Apr 16, 2010 11:56:38 AM
+Meal Name: Dinner
+Venues: 
+    Venue Name: Hot Foods
+    Food Items:
+        Moroccan Chicken (w/nuts) false false
+        Bbq Pork Spare Ribs false false
+        Stuffed Zucchini false false
+        Oven Browned Potatoes false false
+        Spinach Stir Fried W/ Garlic false false
+        Fresh Cauliflower false false
+        Vgt Soup Vegetable French Onion false false
+        Sticky Rice false false
+        Baked Potato false false
+    Venue Name: Specialty Line
+    Food Items:
+        Pizza Line false false
+        Caesar Salad false false
+        Rustic French Bread false false
+        Sizzle Line false false
+    Venue Name: Bakery
+    Food Items:
+        Sun Dried Tomato Bread false false
+        German Chocolate Cake W/ Icing (w/nuts) false false
+Commons: Portola
+Start Time: Apr 21, 2010 5:00:00 PM
+End Time: Apr 21, 2010 8:00:00 PM
+Mod Time: Apr 16, 2010 11:56:38 AM
+Meal Name: Dinner
+Venues: 
+    Venue Name: Hot Foods
+    Food Items:
+        Fried Chicken false false
+        Beef Strogonoff false false
+        Tomatoes Stuffed With Broccoli false false
+        Fresh Mashed Potatoes false false
+        Mushroom Gravy false false
+        Vgt Buttered Noodles false false
+        4 Vegan Collard Greens, South African false false
+        Stir Fry Carrot/cabbage/pea Pod/squash false false
+        Vgt Vegetable Tortellini Soup false false
+        Baked Potato false false
+        Sticky Rice false false
+    Venue Name: Specialty Line
+    Food Items:
+        Pasta Bar false false
+        Rustic French Bread false false
+        Caesar Salad false false
+        Sizzle Line false false
+    Venue Name: Bakery
+    Food Items:
+        Cookies & Cream Cheesecake false false
+        Herb Biscuits false false
+Commons: Portola
+Start Time: Apr 22, 2010 5:00:00 PM
+End Time: Apr 22, 2010 8:00:00 PM
+Mod Time: Apr 16, 2010 11:56:38 AM
+Meal Name: Dinner
+Venues: 
+    Venue Name: Hot Foods
+    Food Items:
+        Arroz Con Pollo false false
+        Vegan Potato Enchiladas false false
+        Linguini W/scallops false false
+        Vgt Risotto Con Funghi false false
+        Refried Beans false false
+        Roasted Red Potato Wedges false false
+        Vegan Steamed Veggies false false
+        Spanish Corn false false
+        Vegan Hearty Vegetable Soup false false
+        White Rice false false
+        Baked Potato false false
+    Venue Name: Specialty Line
+    Food Items:
+        Turkey Burger Bar false false
+        Sizzle Line false false
+    Venue Name: Bakery
+    Food Items:
+        Wheat Germ Bread false false
+        Strawberry Shortcake false false
+Commons: Portola
+Start Time: Apr 23, 2010 5:00:00 PM
+End Time: Apr 23, 2010 8:00:00 PM
+Mod Time: Apr 16, 2010 11:56:38 AM
+Meal Name: Dinner
+Venues: 
+    Venue Name: Hot Foods
+    Food Items:
+        Chicken Teriyaki Quarters false false
+        Fish Swai false false
+        Vgt Artichokes And Farfalle false false
+        Yellow Rice false false
+        Braised Bok Choy false false
+        Vegan Steamed Veggies false false
+        New England Clam Chowder false false
+        Basmati Rice false false
+        Baked Potato false false
+    Venue Name: Specialty Line
+    Food Items:
+        Taco Nacho Line false false
+    Venue Name: Bakery
+    Food Items:
+        Sunflower Whole Wht (lf) false false
+        Blonde Brownies (w/nuts) false false
+Commons: Portola
+Start Time: Apr 24, 2010 5:00:00 PM
+End Time: Apr 24, 2010 8:00:00 PM
+Mod Time: Apr 16, 2010 11:56:38 AM
+Meal Name: Dinner
+Venues: 
+    Venue Name: Hot Foods
+    Food Items:
+        Chicken Grilled Breast (lf) false false
+        Fried Clams false false
+        Vgt Potato Gordas W/black Beans false false
+        Cauliflower Au Gratin false false
+        Wax Beans false false
+        Vgt Cream Of Tomato Soup false false
+        Rice Pilaf false false
+        Baked Potato false false
+        Jasmine Rice false false
+    Venue Name: Specialty Line
+    Food Items:
+        Sizzle Line false false
+    Venue Name: Bakery
+    Food Items:
+        Hawaiian Sweet Bread false false
+        Peach Cobbler false false
+Commons: Portola
+Start Time: Apr 25, 2010 5:00:00 PM
+End Time: Apr 25, 2010 8:00:00 PM
+Mod Time: Apr 16, 2010 11:56:38 AM
+Meal Name: Dinner
+Venues: 
+    Venue Name: Hot Foods
+    Food Items:
+        Chicken Breast Piccata false false
+        Roast Beef W/hunters Sauce false false
+        Vegan Vegetable Chow Mein false false
+        Vegan Rice W/cilantro And Onions false false
+        Fresh Broccoli Spears false false
+        Vegan Morrocan Lemon Carrots false false
+        Vegan Spaghetti Soup false false
+        Baked Potato false false
+        White Rice false false
+    Venue Name: Specialty Line
+    Food Items:
+        Sizzle Line false false
+    Venue Name: Bakery
+    Food Items:
+        Irish Soda Bread false false
+        Marble Cake false false
+Commons: Portola
+Start Time: Apr 24, 2010 10:30:00 AM
+End Time: Apr 24, 2010 2:00:00 PM
+Mod Time: Apr 16, 2010 11:56:38 AM
+Meal Name: Brunch
+Venues: 
+    Venue Name: Hot Foods
+    Food Items:
+        Coleslaw false false
+        Fresh Scrambled Eggs false false
+        Buttermilk Pancakes false false
+        Fresh Hash Brown false false
+        Chicken Parmesan false false
+        Reuben Sandwich false false
+        French Cut Green Beans false false
+        Oatmeal false false
+        Vegan Lentil & Brown Rice Soup false false
+        Baked Potato false false
+        Brown Rice false false
+    Venue Name: Specialty Line
+    Food Items:
+        Omelets To Order false false
+        Delicatessan Line false false
+    Venue Name: Bakery
+    Food Items:
+        Lemon Poppyseed Muffins false false
+        Bagels And Cream Cheese false false
+Commons: Portola
+Start Time: Apr 25, 2010 10:30:00 AM
+End Time: Apr 25, 2010 2:00:00 PM
+Mod Time: Apr 16, 2010 11:56:38 AM
+Meal Name: Brunch
+Venues: 
+    Venue Name: Hot Foods
+    Food Items:
+        Vegan Fruit Compote false false
+        Fresh Scrambled Eggs false false
+        Thick Egg Bread French Toast false false
+        Potatoes Obrien false false
+        Turkey Sub Sandwich false false
+        Vgt Quiche Spinach false false
+        Vegan Steamed Veggies false false
+        Oatmeal false false
+        Vgt Potato Cheese Soup false false
+        Baked Potato false false
+        Basmati Rice false false
+    Venue Name: Specialty Line
+    Food Items:
+        Omelets To Order false false
+        Delicatessan Line false false
+    Venue Name: Bakery
+    Food Items:
+        Bagels And Cream Cheese false false
+        Bread Chocolate Chip Banana false false
