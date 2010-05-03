@@ -82,30 +82,30 @@ public class MealMenu {
 		return mealName;
 	}
 	
-	/**	creates and return an Interval from the start and end values of this meal. The Interval represents the time 
+	/**	creates and return an <code>Interval</code> object from the start and end values of this meal. The <code>Interval</code> represents the time 
 	 * during which the meal is being served.
-	 * @return interval the interval representing the time during which the meal is served
+	 * @return interval the <code>Interval</code> representing the time during which the meal is served
 	 */
 	public Interval getMealInterval(){
 		return new Interval(startMillis, endMillis);
 	}
 	
-	/** creates and returns a DateTime object from the mod time of this meal. The DateTime is the time at which this MealMenu
-	 * information was last modified.
+	/** creates and returns a <code>DateTime</code> object from the modTime of this meal. 
+	 * The <code>DateTime</code> is the time at which this <code>MealMenu</code> object's information was last modified.
 	 * @return the DateTime at which this MealMenu was last modified.
 	 */
 	public DateTime getModDate() {
 		return new DateTime(modMillis);
 	}
 	
-	/**	sets the modDate of this MealMenu to the specified modDate
-	 * @param modDate DateTime containing the modDate that will be used
+	/**	sets the modDate of this <code>MealMenu</code> to the specified modDate
+	 * @param modDate <code>DateTime</code> containing the modDate that will be used
 	 */
 	public void setModDate(DateTime modDate) {
 		this.modMillis = modDate.getMillis();
 	}
 	
-	/** sets the modDate of this MealMenu to the specified modDate
+	/** sets the modDate of this <code>MealMenu</code> to the specified modDate
 	 * @param modMilis time represented by the milliseonds since the epoch of java to use as the new modification date
 	 */
 	public void setModDate(long modMillis){

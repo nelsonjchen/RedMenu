@@ -17,22 +17,21 @@ public class UCSBJMenuScraper {
      private ArrayList<MealMenu> menus = new ArrayList<MealMenu>();
     
     
-    /** Constructs a UCSBJMenuScraper object, creating a UCSBMenuFile from the specified filename or absolute URL, and mode. 
-     * The constructor parses the file and populates this objects' MealMenu arraylist.
+    /** Constructs a <code>UCSBJMenuScraper</code> object, using a <code>UCSBMenuFile</code> created from the specified filename or absolute URL, and mode. 
+     * The constructor parses the file and populates this objects' <code>MealMenu</code> collection.
      * <p>
      * The URL must be absolute.
      * @param filename name or absolute URL to the XML file that is to be parsed.
-     * @param local boolean value specifying if the filename points to a local file (<code>true</code>) or a remote file (<code>false</code>).
+     * @param local <code>boolean</code> value specifying if the filename points to a local file (<code>true</code>) or a remote file (<code>false</code>).
      */
     public UCSBJMenuScraper(String filename, boolean local) {
     	this((local) ? new LocalUCSBMenuFile(filename) : new RemoteUCSBMenuFile(filename));
     }
     
-    /** Constructs a UCSBJMenuScraper object, reading from the UCSBMenuFile specified. 
-     * The constructor parses the file and populates this objects' MealMenu arraylist.
-     * @param file the specified UCSBMenuFile
-     * @exception can throw LineErrorException if an unknown parsing error occurs.
-     * @throws can throw LineErrorException if an unknown parsing error occurs, in which case the file should be reported to administrators
+    /** Constructs a <code>UCSBJMenuScraper</code> object, reading from the <code>UCSBMenuFile</code> specified. 
+     * The constructor parses the file and populates this objects' <code>UCSBMenuFile</code> collection.
+     * @param file the specified <code>UCSBMenuFile</code>
+     * @throws can throw <code>LineErrorException</code> if an unknown parsing error occurs, in which case the file should be reported to administrators
      */
     public UCSBJMenuScraper(UCSBMenuFile file) {    	
         this.file = file;
@@ -224,15 +223,15 @@ public class UCSBJMenuScraper {
     }
     
     
-    /** retrieves the ArrayList of MenuMenu objects that was populated by the constructor of this object and returns the list.
-     * @return the populated list of MealMenus
+    /** retrieves the <code>ArrayList</code> of <code>MenuMenu</code> objects that was populated by the constructor of this object and returns the list.
+     * @return the populated list of <code>MenuMenu</code> objects
      */
     public ArrayList<MealMenu> getMenus() {
 		return menus;
 	}
     
     
-    /** Prints each MealMenu in this Scraper to System.out in a clean format. 
+    /** Prints each <code>MealMenu</code> in this Scraper to <code>System.out</code> in a clean format. 
      * 
      */
     public void printAll(){

@@ -12,10 +12,10 @@ public class FoodItem {
 	
 	
 	/**
-	 * Constructs a new FoodItem object from the given name and values for vegan and vegetarian.s
-	 * @param name Name of the food this FoodItem object represents.
-	 * @param vegan Boolean value representing whether of not the FoodItem is vegan.
-	 * @param vegetarian Boolean value representing whether or not the FoodItem is vegetarian.
+	 * Constructs a new <code>FoodItem</code> object from the given name and values for vegan and vegetarian.s
+	 * @param name Name of the food this <code>FoodItem</code> object represents.
+	 * @param vegan <code>Boolean</code> value representing whether of not the <code>FoodItem</code> is vegan.
+	 * @param vegetarian <code>Boolean</code> value representing whether or not the FoodItem is vegetarian.
 	 */
 	public FoodItem(String name, boolean vegan, boolean vegetarian) {
 		this.name = name;

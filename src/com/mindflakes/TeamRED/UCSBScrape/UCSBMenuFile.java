@@ -1,7 +1,7 @@
 package com.mindflakes.TeamRED.UCSBScrape;
 import java.util.Scanner;
 
-/** An object that reads an XML file representing a UCSB Dining Commons Menu line by line. Uses a scanner object to retrieve data line by line.
+/** An object that reads an XML file representing a UCSB Dining Commons Menu line by line. Uses a <code>Scanner</code> object to retrieve data line by line.
  * @author Johan Henkens
  * @see Scanner
  */
