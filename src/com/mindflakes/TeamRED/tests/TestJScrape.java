@@ -21,7 +21,8 @@ public class TestJScrape {
 //		UCSBJMenuScraper dlg = new UCSBJMenuScraper("docs/Menus/dlg4.19.xml", 1);
 //		dlg.printAll();
 		
-		UCSBJMenuScraper ortega = new UCSBJMenuScraper("docs/Menus/ortega4.19.xml", 1);
+//		UCSBJMenuScraper ortega = new UCSBJMenuScraper("docs/Menus/ortega4.19.xml", 1);
+		UCSBJMenuScraper ortega = new UCSBJMenuScraper("https://docs.google.com/viewer?url=http://www.housing.ucsb.edu/dining/menu/carrillo/ThisWeekMenu.pdf&a=gt", 0);
 		ortega.printAll();
 
 	}

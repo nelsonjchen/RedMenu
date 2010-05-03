@@ -5,18 +5,16 @@ import org.joda.time.DateTime;
 import com.mindflakes.TeamRED.menuClasses.*;
 
 public class UCSBJMenuScraper {
-    private UCSBMenuFile file;
-    //private static String date[] = new String[7];
-    private  ArrayList<MealMenu> menus = new ArrayList<MealMenu>();
+     private UCSBMenuFile file;
+     private ArrayList<MealMenu> menus = new ArrayList<MealMenu>();
     
-  
     
-    public UCSBJMenuScraper(String filename, int mode) {    	
-        if (mode==1) {
-            file = new LocalUCSBMenuFile(filename);
-        } else if (mode==0) {
-            file = new RemoteUCSBMenuFile(filename);
-        }
+    public UCSBJMenuScraper(String filename, int mode) {
+    	this((mode==1) ? new LocalUCSBMenuFile(filename) : new RemoteUCSBMenuFile(filename));
+    }
+    
+    public UCSBJMenuScraper(UCSBMenuFile file) {    	
+        this.file = file;
         String currentLine = file.nextLine();
         ArrayList<ArrayList<String> > breakfasts = new ArrayList<ArrayList<String>>(7);
         ArrayList<ArrayList<String> > lunches = new ArrayList<ArrayList<String>>(7);

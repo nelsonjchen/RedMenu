@@ -1,0 +1,116 @@
+<class-diagram version="0.9.86" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true">  
+  <class corner="BOTTOM_RIGHT" language="java" name="com.mindflakes.TeamRED.menuClasses.FoodItem" project="REDMenu" 
+    file="/REDMenu/src/com/mindflakes/TeamRED/menuClasses/FoodItem.java" binary="false">    
+    <position x="88" y="169" width="216" height="179"/>    
+    <display autosize="false" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="com.mindflakes.TeamRED.menuClasses.MealMenu" project="REDMenu" 
+    file="/REDMenu/src/com/mindflakes/TeamRED/menuClasses/MealMenu.java" binary="false">    
+    <position x="391" y="-49" width="349" height="291"/>    
+    <display autosize="false" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="com.mindflakes.TeamRED.menuClasses.Venue" project="REDMenu" 
+    file="/REDMenu/src/com/mindflakes/TeamRED/menuClasses/Venue.java" binary="false">    
+    <position x="86" y="-48" width="220" height="147"/>    
+    <display autosize="false" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="com.mindflakes.TeamRED.UCSBScrape.UCSBJMenuScraper" 
+    project="REDMenu" file="/REDMenu/src/com/mindflakes/TeamRED/UCSBScrape/UCSBJMenuScraper.java" binary="false">    
+    <position x="869" y="-42" width="223" height="115"/>    
+    <display autosize="false" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="false"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="com.mindflakes.TeamRED.UCSBScrape.UCSBMenuFile" project="REDMenu" 
+    file="/REDMenu/src/com/mindflakes/TeamRED/UCSBScrape/UCSBMenuFile.java" binary="false">    
+    <position x="688" y="490" width="177" height="83"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="com.mindflakes.TeamRED.UCSBScrape.RemoteUCSBMenuFile" 
+    project="REDMenu" file="/REDMenu/src/com/mindflakes/TeamRED/UCSBScrape/RemoteUCSBMenuFile.java" binary="false">    
+    <position x="439" y="432" width="177" height="67"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <class corner="BOTTOM_RIGHT" language="java" name="com.mindflakes.TeamRED.UCSBScrape.LocalUCSBMenuFile" 
+    project="REDMenu" file="/REDMenu/src/com/mindflakes/TeamRED/UCSBScrape/LocalUCSBMenuFile.java" binary="false">    
+    <position x="531" y="558" width="-1" height="-1"/>    
+    <display autosize="true" package="true" initial-value="false" signature="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true"/>      
+      <operations public="true" package="true" protected="true" private="true"/>    
+    </display>  
+  </class>  
+  <association>    
+    <source project="REDMenu" name="com.mindflakes.TeamRED.UCSBScrape.UCSBJMenuScraper" 
+      file="/REDMenu/src/com/mindflakes/TeamRED/UCSBScrape/UCSBJMenuScraper.java" binary="false" navigable="false">      
+      <attribute name="menus"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="REDMenu" name="com.mindflakes.TeamRED.menuClasses.MealMenu" 
+      file="/REDMenu/src/com/mindflakes/TeamRED/menuClasses/MealMenu.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization>    
+    <source project="REDMenu" name="com.mindflakes.TeamRED.UCSBScrape.LocalUCSBMenuFile" 
+      file="/REDMenu/src/com/mindflakes/TeamRED/UCSBScrape/LocalUCSBMenuFile.java" binary="false"/>    
+    <target project="REDMenu" name="com.mindflakes.TeamRED.UCSBScrape.UCSBMenuFile" 
+      file="/REDMenu/src/com/mindflakes/TeamRED/UCSBScrape/UCSBMenuFile.java" binary="false"/>  
+  </generalization>  
+  <association>    
+    <source project="REDMenu" name="com.mindflakes.TeamRED.menuClasses.Venue" 
+      file="/REDMenu/src/com/mindflakes/TeamRED/menuClasses/Venue.java" binary="false" navigable="false">      
+      <attribute name="foodItems"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="REDMenu" name="com.mindflakes.TeamRED.menuClasses.FoodItem" 
+      file="/REDMenu/src/com/mindflakes/TeamRED/menuClasses/FoodItem.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="REDMenu" name="com.mindflakes.TeamRED.UCSBScrape.UCSBJMenuScraper" 
+      file="/REDMenu/src/com/mindflakes/TeamRED/UCSBScrape/UCSBJMenuScraper.java" binary="false" navigable="false">      
+      <attribute name="file"/>      
+      <multiplicity minimum="0" maximum="1"/>    
+    </source>    
+    <target project="REDMenu" name="com.mindflakes.TeamRED.UCSBScrape.UCSBMenuFile" 
+      file="/REDMenu/src/com/mindflakes/TeamRED/UCSBScrape/UCSBMenuFile.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association>    
+    <source project="REDMenu" name="com.mindflakes.TeamRED.menuClasses.MealMenu" 
+      file="/REDMenu/src/com/mindflakes/TeamRED/menuClasses/MealMenu.java" binary="false" navigable="false">      
+      <attribute name="venues"/>      
+      <multiplicity minimum="0" maximum="2147483647"/>    
+    </source>    
+    <target project="REDMenu" name="com.mindflakes.TeamRED.menuClasses.Venue" 
+      file="/REDMenu/src/com/mindflakes/TeamRED/menuClasses/Venue.java" binary="false" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization>    
+    <source project="REDMenu" name="com.mindflakes.TeamRED.UCSBScrape.RemoteUCSBMenuFile" 
+      file="/REDMenu/src/com/mindflakes/TeamRED/UCSBScrape/RemoteUCSBMenuFile.java" binary="false"/>    
+    <target project="REDMenu" name="com.mindflakes.TeamRED.UCSBScrape.UCSBMenuFile" 
+      file="/REDMenu/src/com/mindflakes/TeamRED/UCSBScrape/UCSBMenuFile.java" binary="false"/>  
+  </generalization>  
+  <classifier-display autosize="true" package="true" initial-value="false" signature="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true"/>    
+    <operations public="true" package="true" protected="true" private="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

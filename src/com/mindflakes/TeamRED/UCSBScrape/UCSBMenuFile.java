@@ -2,7 +2,7 @@ package com.mindflakes.TeamRED.UCSBScrape;
 import java.util.Scanner;
 
 public abstract class UCSBMenuFile {
-	Scanner sc;
+	protected Scanner sc;
 	/**
 	 * Used to read the next line of the File or URL
 	 * @return The next line of the File or URL as passed by the BufferedReader. Will return null if end of file is reached or nonexistant file is used

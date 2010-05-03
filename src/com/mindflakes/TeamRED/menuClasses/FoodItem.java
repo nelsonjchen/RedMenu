@@ -2,8 +2,8 @@ package com.mindflakes.TeamRED.menuClasses;
 
 public class FoodItem {
 	private String name;
-	boolean vegan;
-	boolean vegetarian;
+	private boolean vegan;
+	private boolean vegetarian;
 	public FoodItem(String name, boolean vegan, boolean vegetarian) {
 		this.name = name;
 		this.vegan = vegan;
