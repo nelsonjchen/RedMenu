@@ -4,15 +4,36 @@ import org.joda.time.format.DateTimeFormat;
 import org.joda.time.DateTime;
 import com.mindflakes.TeamRED.menuClasses.*;
 
+/** A class that 'scrapes' data from a UCSB XML Menu, creating populated MealMenu objects which can be much more easily worked with.
+ * Uses the Joda Time library for all time-based calculations and data, storing each time as the long returned by DateTime.getMillis().
+ * Although there is not any error detection code implemented in the scraper, the scraper does try to estimate what each line represents
+ * by creating 'columns' of similar values for word positioning and comparing each line against existing values to find its place.
+ * The scraper also checks for some signals of irrelevant lines such as a line font size (determined by text height) that is too small.
+ * @author Johan Henkens
+ *
+ */
 public class UCSBJMenuScraper {
      private UCSBMenuFile file;
      private ArrayList<MealMenu> menus = new ArrayList<MealMenu>();
     
     
-    public UCSBJMenuScraper(String filename, int mode) {
-    	this((mode==1) ? new LocalUCSBMenuFile(filename) : new RemoteUCSBMenuFile(filename));
+    /** Constructs a UCSBJMenuScraper object, creating a UCSBMenuFile from the specified filename or absolute URL, and mode. 
+     * The constructor parses the file and populates this objects' MealMenu arraylist.
+     * <p>
+     * The URL must be absolute.
+     * @param filename name or absolute URL to the XML file that is to be parsed.
+     * @param local boolean value specifying if the filename points to a local file (<code>true</code>) or a remote file (<code>false</code>).
+     */
+    public UCSBJMenuScraper(String filename, boolean local) {
+    	this((local) ? new LocalUCSBMenuFile(filename) : new RemoteUCSBMenuFile(filename));
     }
     
+    /** Constructs a UCSBJMenuScraper object, reading from the UCSBMenuFile specified. 
+     * The constructor parses the file and populates this objects' MealMenu arraylist.
+     * @param file the specified UCSBMenuFile
+     * @exception can throw LineErrorException if an unknown parsing error occurs.
+     * @throws can throw LineErrorException if an unknown parsing error occurs, in which case the file should be reported to administrators
+     */
     public UCSBJMenuScraper(UCSBMenuFile file) {    	
         this.file = file;
         String currentLine = file.nextLine();
@@ -203,10 +224,17 @@ public class UCSBJMenuScraper {
     }
     
     
+    /** retrieves the ArrayList of MenuMenu objects that was populated by the constructor of this object and returns the list.
+     * @return the populated list of MealMenus
+     */
     public ArrayList<MealMenu> getMenus() {
 		return menus;
 	}
     
+    
+    /** Prints each MealMenu in this Scraper to System.out in a clean format. 
+     * 
+     */
     public void printAll(){
     	for(MealMenu menu : menus){
     		System.out.println("Commons: " + menu.getCommonsName());

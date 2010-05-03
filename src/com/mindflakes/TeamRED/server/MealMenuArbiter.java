@@ -20,7 +20,9 @@ public class MealMenuArbiter {
 		DatastoreService service = DatastoreServiceFactory.getDatastoreService();
 		AnnotationObjectDatastore datastore = new AnnotationObjectDatastore(service);
 		
-		ArrayList<MealMenu> menus = (new UCSBJMenuScraper(filename, mode)).getMenus();
+		// Altered constructor of object to work with new constructor. 
+		// mergeMenu method could be changed to instead accept a boolean input to make this cleaner
+		ArrayList<MealMenu> menus = (new UCSBJMenuScraper(filename, (mode==1) ? true : false)).getMenus();
         for (MealMenu m : menus) {
         	datastore.store().instance(m).returnKeyNow();
         }

@@ -22,7 +22,7 @@ public class TestJScrape {
 //		dlg.printAll();
 		
 //		UCSBJMenuScraper ortega = new UCSBJMenuScraper("docs/Menus/ortega4.19.xml", 1);
-		UCSBJMenuScraper ortega = new UCSBJMenuScraper("https://docs.google.com/viewer?url=http://www.housing.ucsb.edu/dining/menu/carrillo/ThisWeekMenu.pdf&a=gt", 0);
+		UCSBJMenuScraper ortega = new UCSBJMenuScraper("https://docs.google.com/viewer?url=http://www.housing.ucsb.edu/dining/menu/carrillo/ThisWeekMenu.pdf&a=gt", false);
 		ortega.printAll();
 
 	}
