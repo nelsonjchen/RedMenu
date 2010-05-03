@@ -1,8 +1,15 @@
-package com.mindflakes.TeamRED.UCSBScrape;
+package com.mindflakes.TeamRED.tests;
+
+import com.mindflakes.TeamRED.UCSBScrape.LocalUCSBMenuFile;
+import com.mindflakes.TeamRED.UCSBScrape.RemoteUCSBMenuFile;
+import com.mindflakes.TeamRED.UCSBScrape.UCSBJMenuScraper;
+import com.mindflakes.TeamRED.UCSBScrape.UCSBMenuFile;
 
 public class TestJScrape {
 	
 	public static void main(String[] args){
+//		UCSBMenuFile file = new RemoteUCSBMenuFile("https://docs.google.com/viewer?url=http://www.housing.ucsb.edu/dining/menu/ortega/ThisWeekMenu.pdf&a=gt");
+//		UCSBMenuFile file2 = new LocalUCSBMenuFile("docs/viewer.xml");
 //		UCSBJMenuScraper scrape = new UCSBJMenuScraper("http://localhost/carrillo.xml",0);
 		
 //		UCSBJMenuScraper carrillo = new UCSBJMenuScraper("docs/Menus/carrillo4.19.xml", 1);
