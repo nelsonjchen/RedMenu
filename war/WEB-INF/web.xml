@@ -4,14 +4,13 @@ xmlns="http://java.sun.com/xml/ns/javaee"
 xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
-	<servlet>
-		<servlet-name>REDMenu</servlet-name>
-		<servlet-class>com.mindflakes.TeamRED.redMenu.REDMenuServlet</servlet-class>
-	</servlet>
+
 	<servlet-mapping>
-		<servlet-name>REDMenu</servlet-name>
-		<url-pattern>/redmenu</url-pattern>
+		<servlet-name>MealMenuFeedRouter</servlet-name>
+		<url-pattern>/feed/*</url-pattern>
+		<servlet-class>com.mindflakes.TeamRED.server.MealMenuFeedRouter</servlet-class>
 	</servlet-mapping>
+	
 	<welcome-file-list>
 		<welcome-file>upcoming.jsp</welcome-file>
 	</welcome-file-list>
