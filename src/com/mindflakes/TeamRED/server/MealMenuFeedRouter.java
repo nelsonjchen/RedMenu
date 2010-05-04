@@ -14,10 +14,11 @@ public class MealMenuFeedRouter extends HttpServlet{
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) 
 	throws IOException{
 	final String path = req.getPathInfo();
-	Pattern MEAL_COMMON_PATTERN = Pattern.compile("/feed/(.*?)");
-	Matcher m = null;
+	Pattern MEAL_COMMON_PATTERN = Pattern.compile("/(\\w+)");
 	
+	Matcher m = null;
 	m = MEAL_COMMON_PATTERN.matcher(path);
+	resp.getWriter().print("current path: " + path + "\n");
 	if (m.matches()) {
 		final String common = m.group(1);
 		resp.getWriter().print("Matched common: " + common);
