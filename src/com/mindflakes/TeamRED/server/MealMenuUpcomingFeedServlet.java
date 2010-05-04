@@ -10,8 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 public class MealMenuUpcomingFeedServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
     throws IOException {
-		final String pathinfo = req.getPathInfo();
-		
+
+		req.getAttribute("common");
+		resp.getWriter().print("got passed ortega!");
 		
 	}
 }
