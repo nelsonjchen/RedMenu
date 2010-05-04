@@ -339,6 +339,15 @@ public class UCSBJMenuScraper {
     	if (in.contains("vegan")) {
     		return true;
     	} else {
+    		if (in.toLowerCase().contains("rice") && !(in.toLowerCase().contains("mexican"))) {
+    			return true;
+    		} else if (in.toLowerCase().equals("baked potato")) {
+    			return true;
+    		} else if (in.toLowerCase().equals("corn")) {
+    			return true;
+    		} else if (in.toLowerCase().equals("oatmeal")) {
+    			return true;
+    		}
     		return false;
     	}
     }
@@ -346,8 +355,18 @@ public class UCSBJMenuScraper {
     	in = in.toLowerCase();
     	if (in.contains("vgt")) {
     		return true;
-    	} else {
-    		return false;
+    	} else if(isVegan(in)) { 
+    		return true;
+    	}	else {
+    		if (in.toLowerCase().contains("pancake")) {
+    			return true;
+    		} else if (in.toLowerCase().contains("waffle")) {
+    			return true;
+    		} else if(in.toLowerCase().contains("tortilla")) {
+    			return true;
+    		} else {
+    			return false;
+    		}
     	}
     }
     
