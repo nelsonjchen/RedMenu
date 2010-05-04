@@ -8,8 +8,13 @@ http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet-mapping>
 		<servlet-name>MealMenuFeedRouter</servlet-name>
 		<url-pattern>/feed/*</url-pattern>
-		<servlet-class>com.mindflakes.TeamRED.server.MealMenuFeedRouter</servlet-class>
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>MealMenuFeedRouter</servlet-name>
+		<servlet-class>com.mindflakes.TeamRED.server.MealMenuFeedRouter</servlet-class>
+	</servlet>
+	
 	
 	<welcome-file-list>
 		<welcome-file>upcoming.jsp</welcome-file>
