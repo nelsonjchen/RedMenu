@@ -335,10 +335,20 @@ public class UCSBJMenuScraper {
     }
     
     private static boolean isVegan(String in){
-    	return false;
+    	in = in.toLowerCase();
+    	if (in.contains("vegan")) {
+    		return true;
+    	} else {
+    		return false;
+    	}
     }
     private static boolean isVgt(String in){
-    	return false;
+    	in = in.toLowerCase();
+    	if (in.contains("vgt")) {
+    		return true;
+    	} else {
+    		return false;
+    	}
     }
     
     private static void convertDatesToMMDDYYYY(String[] dates){
