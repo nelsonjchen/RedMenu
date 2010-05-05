@@ -41,4 +41,18 @@ public  class MealMenuUtil {
 		}
 		return append;
 	}
+	
+	public static String mealMenuSimpleRSSHTML(MealMenu menu) {
+		String append = "";
+
+		for (Venue v : menu.getVenues()) {
+			append += "<h4>" + v.getName() + "</h4>\n";
+			append += "<ul>\n";
+			for (FoodItem f: v.getFoodItems()) {
+				append += "<li>" + f.getName() + "</li>\n";
+			}
+			append += "</ul>\n";
+		}
+		return append;
+	}
 }

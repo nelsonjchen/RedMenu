@@ -5,6 +5,7 @@ import org.joda.time.Interval;
 import org.joda.time.format.DateTimeFormat;
 
 import com.vercer.engine.persist.annotation.Child;
+import com.vercer.engine.persist.annotation.Embed;
 import com.vercer.engine.persist.annotation.Key;
 
 import java.util.ArrayList;
