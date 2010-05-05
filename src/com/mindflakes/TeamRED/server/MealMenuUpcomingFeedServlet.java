@@ -11,8 +11,8 @@ public class MealMenuUpcomingFeedServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
     throws IOException {
 
-		req.getAttribute("common");
-		resp.getWriter().print("got passed ortega!");
+		String common = (String) req.getAttribute("common");
+		resp.getWriter().print("got passed " + common);
 		
 	}
 }
