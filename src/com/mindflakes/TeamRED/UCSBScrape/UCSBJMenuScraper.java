@@ -358,14 +358,22 @@ public class UCSBJMenuScraper {
     	} else if(isVegan(in)) { 
     		return true;
     	}	else {
-    		if (in.toLowerCase().contains("pancake")) {
-    			return true;
-    		} else if (in.toLowerCase().contains("waffle")) {
-    			return true;
-    		} else if(in.toLowerCase().contains("tortilla")) {
-    			return true;
-    		} else {
+    		//meats
+    		if (in.toLowerCase().contains("beef") || in.toLowerCase().contains("chicken") || 
+    				in.toLowerCase().contains("pork") || in.toLowerCase().contains("meat") || 
+    				in.toLowerCase().contains("bacon") || in.toLowerCase().contains("beef") ||
+    				in.toLowerCase().contains("fish") || in.toLowerCase().contains("turkey") || 
+    				in.toLowerCase().contains("ham") || in.toLowerCase().contains("patstrami") || 
+    				in.toLowerCase().contains("chop suey") || in.toLowerCase().contains("clam") ||
+    				in.toLowerCase().contains("salami") || in.toLowerCase().contains("pepperoni") || 
+    				in.toLowerCase().contains("sloppy joes") || in.toLowerCase().contains("charburger") || 
+    				in.toLowerCase().contains("ahi") || in.toLowerCase().contains("tuna") || 
+    				in.toLowerCase().contains("sausage") || in.toLowerCase().contains("shrimp") ) {
     			return false;
+    				
+
+    		} else {
+    			return true;
     		}
     	}
     }
