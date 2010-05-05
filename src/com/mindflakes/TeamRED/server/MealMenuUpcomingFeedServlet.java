@@ -27,6 +27,7 @@ import com.sun.syndication.feed.synd.SyndFeedImpl;
 import com.sun.syndication.io.FeedException;
 import com.sun.syndication.io.SyndFeedOutput;
 import com.vercer.engine.persist.annotation.AnnotationObjectDatastore;
+import static com.google.appengine.api.datastore.Query.FilterOperator.*;
 
 @SuppressWarnings("serial")
 
@@ -58,8 +59,8 @@ public class MealMenuUpcomingFeedServlet extends HttpServlet {
         
         Iterator<MealMenu> future_menus = datastore.find()
         .type(MealMenu.class)
-        .addFilter("endMillis",
-        		com.google.appengine.api.datastore.Query.FilterOperator.GREATER_THAN_OR_EQUAL, time.getMillis())
+        .addFilter("commonsName", EQUAL ,common)
+        .addFilter("endMillis", GREATER_THAN_OR_EQUAL , time.getMillis())
         .addSort("endMillis")
         .returnResultsNow();
         
