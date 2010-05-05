@@ -13,6 +13,8 @@ try{
 } catch(Exception e){
 	
 }
-DatastoreUpdater.updateDatastore(i);
+DatastoreUpdater.updateDatastore();
 
 %>
+
+Updating!
