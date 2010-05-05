@@ -3,6 +3,8 @@ import org.joda.time.DateTime;
 import org.joda.time.Interval;
 
 import org.joda.time.format.DateTimeFormat;
+
+import com.vercer.engine.persist.annotation.Child;
 import com.vercer.engine.persist.annotation.Key;
 
 import java.util.ArrayList;
@@ -14,6 +16,7 @@ import java.util.ArrayList;
 public class MealMenu {
 	private String commonsName;
 	private long startMillis, endMillis, modMillis;
+	@Child
 	private ArrayList<Venue> venues;
 	private String mealName;
 	@SuppressWarnings("unused")
@@ -39,6 +42,9 @@ public class MealMenu {
 		this.venues = venues;
 		this.mealName = mealName;
 		setMenuKey();
+		for(Venue venue : venues){
+			venue.setParent(this);
+		}
 	}
 	
 	@SuppressWarnings("unused")
