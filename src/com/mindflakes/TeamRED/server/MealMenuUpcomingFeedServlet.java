@@ -28,6 +28,7 @@ import com.sun.syndication.io.FeedException;
 import com.sun.syndication.io.SyndFeedOutput;
 import com.vercer.engine.persist.annotation.AnnotationObjectDatastore;
 import static com.google.appengine.api.datastore.Query.FilterOperator.*;
+import static com.google.appengine.api.datastore.Query.SortDirection.*;
 
 @SuppressWarnings("serial")
 
@@ -39,6 +40,7 @@ public class MealMenuUpcomingFeedServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
     throws IOException {
 		String common = (String) req.getAttribute("common");
+		common = common.toLowerCase();
 		
 		resp.setContentType("application/xml; charset="
                 + "UTF-8");
@@ -59,17 +61,25 @@ public class MealMenuUpcomingFeedServlet extends HttpServlet {
         
         Iterator<MealMenu> future_menus = datastore.find()
         .type(MealMenu.class)
-        .addFilter("commonsName", EQUAL ,common)
-        .addFilter("endMillis", GREATER_THAN_OR_EQUAL , time.getMillis())
-        .addSort("endMillis")
+        .addFilter("commonsName", EQUAL ,"Carrillo")
+        .addFilter("startMillis", GREATER_THAN_OR_EQUAL , time.getMillis())
+        .addSort("startMillis", ASCENDING)
         .returnResultsNow();
         
+        SyndEntry entry;
+    	SyndContent description;
+    	
         List<SyndEntry> entries = new ArrayList<SyndEntry>();
+        if (future_menus.hasNext() != true) {
+        	entry = new SyndEntryImpl();
+        	entry.setTitle("Nothing valid found");
+        	entries.add(entry);
+        }
         
-        while (future_menus.hasNext() && count < 3) {
+        
+        while (future_menus.hasNext() && count < 6) {
         	MealMenu menu = future_menus.next();
-        	SyndEntry entry;
-        	SyndContent description;
+        	
         	entry = new SyndEntryImpl();
         	entry.setTitle(menu.getCommonsName() + " " + menu.getMealName() + " "+
         			DateTimeFormat.mediumDateTime()
@@ -77,7 +87,7 @@ public class MealMenuUpcomingFeedServlet extends HttpServlet {
         	entry.setPublishedDate(new Date());
         	description = new SyndContentImpl();
         	description.setType("text/html");
-        	//description.setValue(MealMenuUtil.mealMenuSimpleRSSHTML(menu));
+        	description.setValue(MealMenuUtil.mealMenuSimpleRSSHTML(menu));
         	entry.setDescription(description);
         	entries.add(entry);
         	count++;
