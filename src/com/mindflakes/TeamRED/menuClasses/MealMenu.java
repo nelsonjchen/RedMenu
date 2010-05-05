@@ -18,7 +18,7 @@ public class MealMenu {
 	private String mealName;
 	@SuppressWarnings("unused")
 	@Key
-	private String menukey;
+	private String menuKey;
 	
 	/** constructs a MealMenu object with the specified parameters. Time is passed to the constructor in the form returned by
 	 * a call to Joda Time's {@link org.joda.time.DateTime#getMillis() DateTime.getMillis. This convention is used for the start, end, and modification times
@@ -38,7 +38,7 @@ public class MealMenu {
 		this.modMillis = modMillis;
 		this.venues = venues;
 		this.mealName = mealName;
-		setmenuKey();
+		setMenuKey();
 	}
 	
 	@SuppressWarnings("unused")
@@ -52,14 +52,17 @@ public class MealMenu {
 		
 	}
 	
+	public String getMenuKey(){
+		return menuKey;
+	}
+	
 	/**
 	 * This method sets a key for unique persistance.
 	 */
-	private void setmenuKey() {
-		this.menukey =  this.commonsName.toLowerCase() +
-						this.mealName.toLowerCase() +
-						DateTimeFormat.forPattern("MMddyyyy")
-						.print(startMillis);
+	private void setMenuKey() {
+		 this.menuKey = this.commonsName.toLowerCase() +
+		 DateTimeFormat.forPattern("MMddyyyyHHmm")
+		 .print(startMillis);
 	}
 	
 	/** gets the name of the dining commons at which this meal occurs. For example, "Carrillo" or "Ortega".
