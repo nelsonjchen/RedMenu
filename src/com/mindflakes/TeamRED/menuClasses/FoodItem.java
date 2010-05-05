@@ -1,11 +1,14 @@
 package com.mindflakes.TeamRED.menuClasses;
 
+import com.vercer.engine.persist.annotation.Key;
+
 /**
  * The class FoodItem is used to hold information about a single item of foods
  * @author Johan Henkens
  *
  */
 public class FoodItem {
+	@Key
 	private String name;
 	private boolean vegan;
 	private boolean vegetarian;

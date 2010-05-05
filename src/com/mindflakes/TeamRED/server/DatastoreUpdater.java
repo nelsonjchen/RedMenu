@@ -20,13 +20,14 @@ import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
 import com.vercer.engine.persist.annotation.AnnotationObjectDatastore;
-//import com.google.appengine.api.labs.taskqueue.Queue;
-//import com.google.appengine.api.labs.taskqueue.QueueFactory;
-//import static com.google.appengine.api.labs.taskqueue.TaskOptions.Builder.*;
+import com.google.appengine.api.labs.taskqueue.Queue;
+import com.google.appengine.api.labs.taskqueue.QueueFactory;
+import com.google.appengine.api.labs.taskqueue.TaskOptions;
 
+import static com.google.appengine.api.labs.taskqueue.TaskOptions.Builder.*;
 public class DatastoreUpdater {
 
-	public static void updateDatastore(){
+	public static void updateDatastore(int i){
 		//DatastoreService service = DatastoreServiceFactory.getDatastoreService();
 		AnnotationObjectDatastore datastore = new AnnotationObjectDatastore(false);
 
@@ -37,13 +38,13 @@ public class DatastoreUpdater {
 		// while(toDelete.hasNext()){
 		// datastore.delete(toDelete.next());
 		// }
-
+		Queue queue = QueueFactory.getDefaultQueue();
 		ArrayList<MealMenu> menus;
 		UCSBJMenuScraper scraper = new UCSBJMenuScraper(new RemoteUCSBMenuFile(RemoteUCSBMenuFile.CARRILLO_THIS_WEEK));
 		menus = scraper.getMenus();
 
 		List<Future<Key>> keys = new LinkedList<Future<Key>>();
-		for(MealMenu menu : menus){
+		for(int o = i;o<i+5&&o<menus.size();o++){
 			// MealMenu tmp = datastore.load(MealMenu.class,menu.getMenuKey());
 			// if(tmp!=null){
 			// if(menu.getModDate().getMillis()>tmp.getModDate().getMillis()){
@@ -52,9 +53,11 @@ public class DatastoreUpdater {
 			// }
 			// } else{
 //			keys.add(datastore.store().instance(menu).returnKeyLater());
-			datastore.store().instance(menu).returnKeyNow();
+			System.out.println(datastore.store().instance(menus.get(o)).returnKeyNow());
 			// }
 		}
+		i+=5;
+		if(i<menus.size()) queue.add(TaskOptions.Builder.url("/cron/update.jsp").param("count", ""+i));
 		// List<Future<Key>> keys = new LinkedList<Future<Key>>();
 		// for(MealMenu menu:menus){
 		// keys.add(datastore.store().instance(menu).returnKeyLater());
