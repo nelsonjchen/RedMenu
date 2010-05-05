@@ -1,12 +1,21 @@
 package com.mindflakes.TeamRED.menuClasses;
 import java.util.ArrayList;
 
+import com.vercer.engine.persist.annotation.Parent;
+
 /** A container class that holds all the {@link com.mindflakes.TeamRED.menuClasses.FoodItem FoodItem}s
  * that a specific venue are serving. An example of a venue would be "Bakery" or "Grill" and all the FoodItems served there..
  * @author Johan Henkens
  *
  */
 public class Venue {
+	@Parent
+	private MealMenu parent;
+	
+	protected void setParent(MealMenu parent){
+		this.parent=parent;
+	}
+	
 	private String name;
 	private ArrayList<FoodItem> foodItems;
 	/** Constructs a <code>Venue</code> with the specified name and FoodItems to be served.
