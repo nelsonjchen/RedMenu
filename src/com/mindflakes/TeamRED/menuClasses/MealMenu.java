@@ -118,5 +118,44 @@ public class MealMenu {
 	public void setModDate(long modMillis){
 		this.modMillis=modMillis;
 	}
+	
+	/** constructs a new arrayList holding all the venues with vegan food items.
+	 * @return a new arraylist holding only venues with vegan food items
+	 */
+	public ArrayList<Venue> getVeganVenues(){
+		ArrayList<Venue> veganVenues = new ArrayList<Venue>();
+		for(Venue venue:venues){
+			if(venue.getVeganItems().size()>0){
+				veganVenues.add(venue.newVenueFromVegan());
+			}
+		}
+		return veganVenues;
+	}
+	/** constructs a new arrayList holding all the venues with vegetarian food items.
+	 * @return a new arraylist holding only venues with vegetarian food items
+	 */
+	public ArrayList<Venue> getVegetarianVenues(){
+		ArrayList<Venue> vgtVenues = new ArrayList<Venue>();
+		for(Venue venue:venues){
+			if(venue.getVegetarianItems().size()>0){
+				vgtVenues.add(venue.newVenueFromVegetarian());
+			}
+		}
+		return vgtVenues;
+	}
+	
+	/** constructs a new MealMenu instance that is a copy of this, but with only the Vegan foods in the venues
+	 * @return a new MealMenu object with only Vegan foods
+	 */
+	public MealMenu newMealMenuFromVegan(){
+		return new MealMenu(this.commonsName,this.startMillis,this.endMillis,this.modMillis,this.getVeganVenues(),this.mealName);
+	}
+	
+	/** constructs a new MealMenu instance that is a copy of this, but with only the vegetarian foods in the venues
+	 * @return a new MealMenu object with only vegetarian foods
+	 */
+	public MealMenu newMealMenuFromVegetarian(){
+		return new MealMenu(this.commonsName,this.startMillis,this.endMillis,this.modMillis,this.getVegetarianVenues(),this.mealName);
+	}
 
 }

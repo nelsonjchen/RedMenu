@@ -268,28 +268,7 @@ public class UCSBJMenuScraper {
 		return menus;
 	}
     
-    
-    /** Prints each <code>MealMenu</code> in this Scraper to <code>System.out</code> in a clean format. 
-     * 
-     */
-    public void printAll(){
-    	for(MealMenu menu : menus){
-    		System.out.println("Commons: " + menu.getCommonsName());
-    		System.out.println("Start Time: " + DateTimeFormat.mediumDateTime().print(menu.getMealInterval().getStart()));
-    		System.out.println("End Time: " + DateTimeFormat.mediumDateTime().print(menu.getMealInterval().getEnd()));
-    		System.out.println("Mod Time: " + DateTimeFormat.mediumDateTime().print(menu.getModDate()));
-    		System.out.println("Meal Name: " + menu.getMealName());
-    		System.out.println("Venues: ");
-    		for(Venue ven : menu.getVenues()){
-    			System.out.println("    Venue Name: " + ven.getName());
-    			System.out.println("    Food Items:");
-    			for(FoodItem food : ven.getFoodItems()){
-    				System.out.println("        " + food.getName()+" " + food.isVegan() +" "+ food.isVegetarian());
-    			}
-    		}
-    	}
-    }
-
+   
     private String[] doubleLineHelper(String workingLine, String lineBody, int[][] positions, int currentPos, int dayNear){
     	String[] result = new String[2];
 
