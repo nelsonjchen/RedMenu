@@ -362,9 +362,20 @@ public class UCSBJMenuScraper {
     	return false;
     }
     
-    private static String fixAndSigns(String in){
+    private static String fixFoodNameErrors(String in){
     	while(in.indexOf("&amp;") != -1){
     		in=in.substring(0,in.indexOf("&amp;"))+"&"+in.substring(in.indexOf("&amp;")+5);
+    	}
+    	if(in.indexOf(' ')!=-1){
+    		String tmp = in.substring(0,in.indexOf(' '));
+    		boolean safeToCutOffFront = true;
+    		for(int i = 0; i<tmp.length();i++){
+    			if(tmp.charAt(i)<'0'||tmp.charAt(i)>'9'){
+    				safeToCutOffFront = false;
+    				break;
+    			}
+    		}
+    		if(safeToCutOffFront) in = in.substring(in.indexOf(' ')+1);
     	}
     	return in;
     }
@@ -482,7 +493,7 @@ public class UCSBJMenuScraper {
     				continue;
     			}
     			try{
-    				foodItems.add(new FoodItem(fixAndSigns(st),isVegan(st), isVgt(st)));
+    				foodItems.add(new FoodItem(fixFoodNameErrors(st),isVegan(st), isVgt(st)));
     			} catch(NullPointerException e){
     				System.out.println((foodItems==null)+"::"+st);
     				throw e;
