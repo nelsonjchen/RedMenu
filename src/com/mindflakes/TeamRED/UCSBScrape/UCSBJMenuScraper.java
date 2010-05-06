@@ -380,6 +380,11 @@ public class UCSBJMenuScraper {
     	return in;
     }
     
+    /**
+     * @author Kenneth Hwang
+     * @param in
+     * @return
+     */
     private static boolean isVegan(String in){
     	in = in.toLowerCase();
     	if (in.contains("vegan")) {
@@ -397,6 +402,11 @@ public class UCSBJMenuScraper {
     		return false;
     	}
     }
+    /**
+     * @author Kenneth Hwang
+     * @param in
+     * @return
+     */
     private static boolean isVgt(String in){
     	in = in.toLowerCase();
     	if (in.contains("vgt")) {

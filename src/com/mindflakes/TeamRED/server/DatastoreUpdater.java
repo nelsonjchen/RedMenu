@@ -25,8 +25,16 @@ import com.google.appengine.api.labs.taskqueue.QueueFactory;
 import com.google.appengine.api.labs.taskqueue.TaskOptions;
 
 import static com.google.appengine.api.labs.taskqueue.TaskOptions.Builder.*;
+/**
+ * @author Johan Henkens
+ *	Utility class used for managing the datastore for the REDMenu app.
+ */
 public class DatastoreUpdater {
 
+	/**
+	 * Method to be used ONLY WHEN USING THE LOCAL DEVELOPMENT SUITE.
+	 * Requests will be FAR TOO LARGE for the deployed app
+	 */
 	public static void updateDatastoreLocal(){
 		//Create Queue and menus
 		Queue queue = QueueFactory.getDefaultQueue();
@@ -41,6 +49,11 @@ public class DatastoreUpdater {
 		}
 	}
 	
+	/**
+	 * Method to be used ONLY ON DEPLOYED APPLICATION.
+	 * Local suit does NOT support the Task Queue!
+	 * Method deletes all menus that are over a month old. Corresponding FoodItems are left in the datastore.
+	 */
 	public static void deleteOldMealMenus(){
 		DatastoreService service = DatastoreServiceFactory.getDatastoreService();
 		AnnotationObjectDatastore datastore = new AnnotationObjectDatastore(service);
@@ -56,6 +69,17 @@ public class DatastoreUpdater {
 		if(doMore) queue.add(TaskOptions.Builder.url("/cron/deleteOldMenus.jsp"));
 	}
 
+	/**
+	 * Method to be used ONLY ON DEPLOYED SERVERS
+	 * Local suite does NOT support the Task Queue!<br>
+	 * Updates the datastore with the latest information from the web
+	 * Only updates 5 menus at a time, and then hands off remainder of the work to Task Queue
+	 * @param iteration represents where in the currently parsed file to start adding to the datastore
+	 * @param menuCode two digit number that determines which menu we are pulling from. 
+	 * The second digit represents either this weeks menus (1) or next week's (2). 
+	 * The first digit represents the dining common: 1=Carrillo, 2=DLG, 3=Ortega, 4=Portola
+	 * For example, a menuCode of 32 would represent Ortega's menu for next week.
+	 */
 	public static void updateDatastore(int iteration, int menuCode){
 		//Create Queue and menus
 		Queue queue = QueueFactory.getDefaultQueue();
@@ -71,6 +95,11 @@ public class DatastoreUpdater {
 	}
 	
 	
+	/**
+	 * @param start start position in the arraylist passed in
+	 * @param stop stop position in the arraylist passed in
+	 * @param menus arraylist of meal menus to be added to the datastore
+	 */
 	private static void updateDatastoreHelper(int start, int stop, ArrayList<MealMenu> menus){
 		DatastoreService service = DatastoreServiceFactory.getDatastoreService();
 		AnnotationObjectDatastore datastore = new AnnotationObjectDatastore(service);
@@ -102,6 +131,10 @@ public class DatastoreUpdater {
 		}
 	}
 
+	/**
+	 * TO BE USED ON DEPLOYED SERVERS ONLY. WILL NOT WORK ON LOCAL SERVERS AS TASK QUEUE ISN'T IMPLEMENTED
+	 * @param mode 0 to clear meal menus, 1 to clear food items.
+	 */
 	public static void clearAll(int mode){
 		Queue queue = QueueFactory.getDefaultQueue();
 		DatastoreService service = DatastoreServiceFactory.getDatastoreService();
