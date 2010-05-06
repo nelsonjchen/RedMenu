@@ -11,10 +11,11 @@ int i = 0;
 try{
 	i = Integer.parseInt(str);
 } catch(Exception e){
-	
+if(i==-1){
+	DatastoreUpdater.updateDatastore();
+} else{
+	DatastoreUpdater.updateDatastore(i);
 }
-DatastoreUpdater.updateDatastore();
-
 %>
 
 Updating!
