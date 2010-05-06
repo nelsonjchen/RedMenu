@@ -21,6 +21,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Upcoming Meals</title>
 </head>
+
 <body>
 <%
     UserService userService = UserServiceFactory.getUserService();
@@ -39,9 +40,9 @@
 %>
 
 <% 
-DateTime time = new DateTime(2010, 4, 12, 7, 15, 00, 00); 
+DateTime time = new DateTime(); 
 %>
-Current (Fake) Time is <%= DateTimeFormat.mediumDateTime().print(time) %> </br>
+Current Time is <%= DateTimeFormat.mediumDateTime().print(time) %> </br>
 
 <h1>Menu for Meals</h1>
 
@@ -50,8 +51,6 @@ Current (Fake) Time is <%= DateTimeFormat.mediumDateTime().print(time) %> </br>
 DatastoreService service = DatastoreServiceFactory.getDatastoreService();
 AnnotationObjectDatastore datastore = new AnnotationObjectDatastore(service);
 
-MealMenu mealmenu = MealMenuTestUtils.createTestMenu();
-datastore.store().instance(mealmenu).returnKeyNow();
 Iterator<MealMenu> future_menu = datastore.find()
 .type(MealMenu.class)
 .addFilter("endMillis",
@@ -60,8 +59,11 @@ Iterator<MealMenu> future_menu = datastore.find()
 .returnResultsNow();
 %>
 
+<% if(future_menu.hasNext()){ %>
 <%= MealMenuUtil.mealMenuSimpleHTML(future_menu.next()) %>
-
+<% } else { %>
+ No Menu.
+<% } %>
 
 </body>
 </html>
