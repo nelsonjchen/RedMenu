@@ -44,7 +44,7 @@ DateTime time = new DateTime();
 %>
 Current Time is <%= DateTimeFormat.mediumDateTime().print(time) %> </br>
 
-<h1>8 Upcoming Meals</h1>
+<h1>10 Upcoming Meals</h1>
 
 <%
 
