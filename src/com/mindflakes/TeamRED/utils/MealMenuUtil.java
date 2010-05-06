@@ -21,7 +21,7 @@ public  class MealMenuUtil {
 	}
 	
 	public static String mealMenuSimpleHTML(MealMenu menu) {
-		String append = "";
+		String append = "<div class=\"meal\">";
 		append += "<h2>" + menu.getCommonsName() + "</h2>\n";
 		append += "<h3>" + menu.getMealName() + "</h3>\n";
 		append += "<p>" + DateTimeFormat.mediumDateTime()
@@ -32,6 +32,7 @@ public  class MealMenuUtil {
 				
 				+ "</p>\n";
 		append += mealMenuSimpleRSSHTML(menu);
+		append += "</div>";
 		return append;
 	}
 	

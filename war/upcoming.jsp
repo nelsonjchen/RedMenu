@@ -23,6 +23,11 @@
 </head>
 
 <body>
+<script src="https://www.google.com/jsapi"></script>
+<script>
+google.load('jquery', '1.3.1');
+</script>
+
 <%
     UserService userService = UserServiceFactory.getUserService();
     User user = userService.getCurrentUser();
@@ -58,6 +63,7 @@ Iterator<MealMenu> future_menu = datastore.find()
 .addSort("endMillis")
 .returnResultsNow();
 %>
+
 <% int count = 0; %>
 <% while(future_menu.hasNext() && (count <= 8) ){ %>
 <%= MealMenuUtil.mealMenuSimpleHTML(future_menu.next()) %>
