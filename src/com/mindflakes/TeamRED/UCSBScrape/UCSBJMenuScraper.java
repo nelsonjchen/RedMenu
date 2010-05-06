@@ -370,10 +370,47 @@ public class UCSBJMenuScraper {
     }
     
     private static boolean isVegan(String in){
-    	return false;
+    	in = in.toLowerCase();
+    	if (in.contains("vegan")) {
+    		return true;
+    	} else {
+    		if (in.toLowerCase().contains("rice") && !(in.toLowerCase().contains("mexican"))) {
+    			return true;
+    		} else if (in.toLowerCase().equals("baked potato")) {
+    			return true;
+    		} else if (in.toLowerCase().equals("corn")) {
+    			return true;
+    		} else if (in.toLowerCase().equals("oatmeal")) {
+    			return true;
+    		}
+    		return false;
+    	}
     }
     private static boolean isVgt(String in){
-    	return false;
+    	in = in.toLowerCase();
+    	if (in.contains("vgt")) {
+    		return true;
+    	} else if(isVegan(in)) { 
+    		return true;
+    	}	else {
+    		//meats
+    		if (in.toLowerCase().contains("beef") || in.toLowerCase().contains("chicken") || 
+    				in.toLowerCase().contains("pork") || in.toLowerCase().contains("meat") || 
+    				in.toLowerCase().contains("bacon") || in.toLowerCase().contains("beef") ||
+    				in.toLowerCase().contains("fish") || in.toLowerCase().contains("turkey") || 
+    				in.toLowerCase().contains("ham") || in.toLowerCase().contains("patstrami") || 
+    				in.toLowerCase().contains("chop suey") || in.toLowerCase().contains("clam") ||
+    				in.toLowerCase().contains("salami") || in.toLowerCase().contains("pepperoni") || 
+    				in.toLowerCase().contains("sloppy joes") || in.toLowerCase().contains("charburger") || 
+    				in.toLowerCase().contains("ahi") || in.toLowerCase().contains("tuna") || 
+    				in.toLowerCase().contains("sausage") || in.toLowerCase().contains("shrimp") ) {
+    			return false;
+    				
+
+    		} else {
+    			return true;
+    		}
+    	}
     }
     
     private static void convertDatesToMMDDYYYY(String[] dates){
