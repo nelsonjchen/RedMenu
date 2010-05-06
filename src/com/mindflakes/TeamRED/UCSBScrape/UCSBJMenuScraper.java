@@ -13,21 +13,67 @@ import com.mindflakes.TeamRED.menuClasses.*;
  *
  */
 public class UCSBJMenuScraper {
-     private UCSBMenuFile file;
-     private ArrayList<MealMenu> menus = new ArrayList<MealMenu>();
-    
-    
-    /** Constructs a <code>UCSBJMenuScraper</code> object, using a <code>UCSBMenuFile</code> created from the specified filename or absolute URL, and mode. 
-     * The constructor parses the file and populates this objects' <code>MealMenu</code> collection.
-     * <p>
-     * The URL must be absolute.
-     * @param filename name or absolute URL to the XML file that is to be parsed.
-     * @param local <code>boolean</code> value specifying if the filename points to a local file (<code>true</code>) or a remote file (<code>false</code>).
-     */
-    public UCSBJMenuScraper(String filename, boolean local) {
-    	this((local) ? new LocalUCSBMenuFile(filename) : new RemoteUCSBMenuFile(filename));
-    }
-    
+	private static final String[] mealNames = {"Breakfast","Lunch","Dinner","Brunch","Late Night"};
+	private UCSBMenuFile file;
+	private ArrayList<MealMenu> menus = new ArrayList<MealMenu>();
+
+	private static String[][] getMealTimes(String commonsName){
+		if(commonsName.contains("Carrillo")){
+			String[][] result = {{"0715", "1000"},
+					{"1100", "1430"},
+					{"1700","2000"},
+					{"1030","1400"},
+					null};
+			return result;
+		} else if (commonsName.contains("De La Guerra")){
+			String[][] result = {null,
+					{"1100", "1430"},
+					{"1700","2000"},
+					{"1030","1400"},
+					{"2100","2300"}};
+			return result;
+		} else if (commonsName.contains("Ortega")){
+			String[][] result = {{"0715", "1045"},
+					{"1145", "1400"},
+					{"1700","2000"},
+					null,
+					null};
+			return result;
+		} else if (commonsName.contains("Portola")){
+			String[][] result = {{"0700","1030"},
+					{"1200", "1400"},
+					{"1700","2000"},
+					{"1030","1400"},
+					null};
+			return result;
+		}
+		throw new NullPointerException();
+	}
+
+	private static String getRealCommonsName(String lineBody){
+		lineBody = lineBody.toLowerCase();
+		if(lineBody.contains("carrillo")){
+			return "Carrillo Commons";
+		} else if(lineBody.contains("guerra")){
+			return "De La Guerra Commons";
+		} else if(lineBody.contains("ortega")){
+			return "Ortega Commons";
+		} else if(lineBody.contains("portola")){
+			return "Portola Commons";
+		} else return lineBody;
+	}
+	
+	/** Constructs a <code>UCSBJMenuScraper</code> object, using a <code>UCSBMenuFile</code> created from the specified filename or absolute URL, and mode. 
+	 * The constructor parses the file and populates this objects' <code>MealMenu</code> collection.
+	 * <p>
+	 * The URL must be absolute.
+	 * @param filename name or absolute URL to the XML file that is to be parsed.
+	 * @param local <code>boolean</code> value specifying if the filename points to a local file (<code>true</code>) or a remote file (<code>false</code>).
+	 */
+	public UCSBJMenuScraper(String filename, boolean local) {
+		this((local) ? new LocalUCSBMenuFile(filename) : new RemoteUCSBMenuFile(filename));
+	}
+
     /** Constructs a <code>UCSBJMenuScraper</code> object, reading from the <code>UCSBMenuFile</code> specified. 
      * The constructor parses the file and populates this objects' <code>UCSBMenuFile</code> collection.
      * @param file the specified <code>UCSBMenuFile</code>
@@ -48,8 +94,7 @@ public class UCSBJMenuScraper {
         initializeALofALofString(lateNites);
         int[][] positions = new int[7][20];
         String[] dates = new String[7];
-        String[] mealNames = new String[5];
-        String[][] mealTimes = new String[5][2];
+        String[][] mealTimes;
         
         ArrayList<ArrayList<String>> currentMealArrayList = breakfasts;
         
@@ -70,7 +115,8 @@ public class UCSBJMenuScraper {
 		if(!currentLine.contains("Commons")){
 			throw new LineErrorException("Expected \"Commons\" in line" + currentLine);
 		}
-		currentCommons = getLineBody(currentLine);
+		currentCommons = getRealCommonsName(getLineBody(currentLine));
+        mealTimes = getMealTimes(currentCommons);
 
 //        System.out.println(DateTimeFormat.mediumDateTime().print(new DateTime(modDateMillis)));
         currentLine = file.nextLine();
@@ -89,37 +135,25 @@ public class UCSBJMenuScraper {
         	lineBody = getLineBody(currentLine);
         	
         	
-        	if(lineBodyHasMealTime(lineBody)){      		
-        		String currentMealStartTime = lineBody.substring(lineBody.indexOf('(')+1,lineBody.indexOf('-'));
-        		currentMealStartTime= fixBodyOfMealTimeLineForAMPM(currentMealStartTime.trim());
-        		
-        		String currentMealEndTime = lineBody.substring(lineBody.indexOf('-')+1,lineBody.indexOf(')')); 
-        		currentMealEndTime = fixBodyOfMealTimeLineForAMPM(currentMealEndTime.trim());
-        		{
-        			int meal = findMealNumberFromBodyOfMealNameLine(getLineBody(currentLine));
-        			mealNames[meal-1]=lineBody.substring(0,lineBody.indexOf("(")-1);
-        			mealTimes[meal-1][0]=currentMealStartTime;
-        			mealTimes[meal-1][1]=currentMealEndTime;
-        			
+        	if(lineBodyHasMealName(lineBody)){      		
         			// Sets the 'currentMealArrayList' to the one appropriate for the current meal
         			switch(findMealNumberFromBodyOfMealNameLine(lineBody)){
-        			case 1:
+        			case 0:
         				currentMealArrayList = breakfasts;
         				break;
-        			case 2:
+        			case 1:
         				currentMealArrayList = lunches;
         				break;
-        			case 3:
+        			case 2:
         				currentMealArrayList = dinners;
         				break;
-        			case 4:
+        			case 3:
         				currentMealArrayList = brunches;
         				break;
-        			case 5:
+        			case 4:
         				currentMealArrayList = lateNites;
         				break;
         			}
-        		}
         		
         		currentLine=file.nextLine();
         		lineBody=getLineBody(currentLine);
@@ -169,6 +203,10 @@ public class UCSBJMenuScraper {
         			}
         			//Checks if the line matches venue names and then adds to all lists if it is a venue.
         			if(isLineBodyAVenue(lineBody,currentCommons)){
+        		    	if(lineBody.indexOf(" - ")!=-1){
+        		    		lineBody = lineBody.substring(lineBody.indexOf(" - ")+3);
+        		    		currentLine = setLineBody(currentLine,lineBody);
+        		    	}
         				for(ArrayList<String> ar : currentMealArrayList){
         					ar.add(currentLine);
         				}
@@ -258,27 +296,25 @@ public class UCSBJMenuScraper {
     	int[] pArr = getLinePValues(workingLine);
     	int pos = -1;
     	for(int i = 2;i<pArr.length;i+=2){
-    		if(pArr[i]-(pArr[i-2]+pArr[i-1])>2){
-    			for(int o = 0; o<positions[dayNear+1].length;o++){
-    				if(positions[dayNear+1][o]==pArr[i]){
-    					pos=i;
-    				}
-    			}
+    		for(int o = 0; o<positions[dayNear+1].length;o++){
+    			if(positions[dayNear+1][o]==pArr[i]){
+    				pos=i;
+    				i=pArr.length;
+    				break;
+    			} else if(positions[dayNear+1][o]==0) break;
     		}
     	}
     	if(pos==-1){
     		int diff = 50;
     		for(int i = 2;i<pArr.length;i+=2){
-    			if(pArr[i]-(pArr[i-2]+pArr[i-1])>2){
-    				for(int o = 0; o<positions[dayNear+1].length;o++){
-    					if(Math.abs(positions[dayNear+1][o]-pArr[i])<diff){
-    						diff = Math.abs(positions[dayNear+1][o]-pArr[i]);
-    						pos=i;
-    					}
-    				}
-    			}
-    		}
-    	}
+   				for(int o = 0; o<positions[dayNear+1].length;o++){
+   					if(Math.abs(positions[dayNear+1][o]-pArr[i])<diff){
+   						diff = Math.abs(positions[dayNear+1][o]-pArr[i]);
+   						pos=i;
+   					}
+   				}
+   			}
+      	}
 
     	String[] contentAr = lineBody.split(" ");
     	String currentBody = "";
@@ -297,7 +333,6 @@ public class UCSBJMenuScraper {
     	result[1]=setLineLValue(workingLine,pArr[pos]);
     	result[1]=setLineWValue(result[1],120);
     	result[1]=setLineBody(result[1],secondBody);
-    	
     	return result;
     }
     
@@ -397,6 +432,7 @@ public class UCSBJMenuScraper {
     }
     
     private  void createMealMenusForMeal(ArrayList<ArrayList<String>> arrOfArr, String commons, String[] dates, String[] mealTimes, long modDateMillis, String mealName){
+    	String commonsShort = commons.substring(0,commons.indexOf(" Commons"));
     	for(int i = 0; i<arrOfArr.size();i++){
     		if(!hasMoreThanVenues(arrOfArr.get(i),commons)) continue;
     		ArrayList<Venue> venues = new ArrayList<Venue>();
@@ -411,13 +447,13 @@ public class UCSBJMenuScraper {
     			try{
     				foodItems.add(new FoodItem(fixAndSigns(st),isVegan(st), isVgt(st)));
     			} catch(NullPointerException e){
-    				System.out.println(foodItems==null);
+    				System.out.println((foodItems==null)+"::"+st);
     				throw e;
     			}
     		}
     		long startMillis = combineAndConvertToMillis(dates[i], mealTimes[0]);
         	long endMillis  = combineAndConvertToMillis(dates[i], mealTimes[1]);
-    		menus.add(new MealMenu(commons.substring(0,commons.indexOf(" Commons")),
+    		menus.add(new MealMenu(commonsShort,
     				startMillis,endMillis,modDateMillis, venues, mealName));
     	}
     }
@@ -431,6 +467,9 @@ public class UCSBJMenuScraper {
     
     private static boolean isLineBodyAVenue(String line, String commonsName){
     	line=line.toLowerCase();
+    	if(line.indexOf(" - ")!=-1){
+    		line = line.substring(line.indexOf(" - ")+3);
+    	}
     	//For Carrillo venues...
     	if(commonsName.equals("Carrillo Commons") && (line.equals("grill (cafe)") || line.equals("bakery") ||
     			line.equals("salads") || line.equals("deli")||
@@ -504,24 +543,20 @@ public class UCSBJMenuScraper {
     	return 0;
     }
     
-    private static boolean lineBodyHasMealTime(String currentLine){
+    private static boolean lineBodyHasMealName(String currentLine){
     	return ((currentLine.startsWith("Breakfast") ||
     			currentLine.startsWith("Lunch")||
     			currentLine.startsWith("Dinner")||
     			currentLine.startsWith("Brunch")||
-    			currentLine.startsWith("Late Night")) && 
-    				(currentLine.toLowerCase().contains("am") ||
-    				currentLine.toLowerCase().contains("pm")));
+    			currentLine.startsWith("Late Night")));
     }
     
     private static int findMealNumberFromBodyOfMealNameLine(String currentLine){
-    	if((currentLine.toLowerCase().contains("am") ||
-				currentLine.toLowerCase().contains("pm"))==false) return -1;
-    	if(currentLine.startsWith("Breakfast")) return 1;
-    	if(currentLine.startsWith("Lunch")) return 2;
-    	if(currentLine.startsWith("Dinner")) return 3;
-    	if(currentLine.startsWith("Brunch")) return 4;
-    	if(currentLine.startsWith("Late Night")) return 5;
+    	if(currentLine.startsWith("Breakfast")) return 0;
+    	if(currentLine.startsWith("Lunch")) return 1;
+    	if(currentLine.startsWith("Dinner")) return 2;
+    	if(currentLine.startsWith("Brunch")) return 3;
+    	if(currentLine.startsWith("Late Night")) return 4;
     	return -1;
     }
     

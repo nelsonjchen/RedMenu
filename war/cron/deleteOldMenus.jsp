@@ -14,11 +14,5 @@
 
 
 <%
-String str = request.getParameter("count");
-int i = 0;
-try{
-	i = Integer.parseInt(str);
-} catch(Exception e){
-}
-DatastoreUpdater.clearAll(i);
+DatastoreUpdater.deleteOldMealMenus();
 %>

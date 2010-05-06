@@ -9,13 +9,6 @@ import com.vercer.engine.persist.annotation.Parent;
  *
  */
 public class Venue {
-	@Parent
-	private MealMenu parent;
-	
-	protected void setParent(MealMenu parent){
-		this.parent=parent;
-	}
-	
 	private String name;
 	private ArrayList<FoodItem> foodItems;
 	/** Constructs a <code>Venue</code> with the specified name and FoodItems to be served.

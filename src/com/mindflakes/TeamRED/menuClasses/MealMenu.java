@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class MealMenu {
 	private String commonsName;
 	private long startMillis, endMillis, modMillis;
-	@Child
+	@Embed
 	private ArrayList<Venue> venues;
 	private String mealName;
 	@SuppressWarnings("unused")
@@ -43,9 +43,6 @@ public class MealMenu {
 		this.venues = venues;
 		this.mealName = mealName;
 		setMenuKey();
-		for(Venue venue : venues){
-			venue.setParent(this);
-		}
 	}
 	
 	@SuppressWarnings("unused")
