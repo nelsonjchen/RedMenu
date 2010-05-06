@@ -40,7 +40,6 @@ public class MealMenuUpcomingFeedServlet extends HttpServlet {
 	public void doGet(HttpServletRequest req, HttpServletResponse resp)
     throws IOException {
 		String common = (String) req.getAttribute("common");
-		common = common.toLowerCase();
 		
 		resp.setContentType("application/xml; charset="
                 + "UTF-8");
@@ -59,12 +58,21 @@ public class MealMenuUpcomingFeedServlet extends HttpServlet {
         
         DateTime time = new DateTime();
         
-        Iterator<MealMenu> future_menus = datastore.find()
-        .type(MealMenu.class)
-        .addFilter("commonsName", EQUAL ,"Carrillo")
-        .addFilter("endMillis", LESS_THAN_OR_EQUAL , time.getMillis())
-        .addSort("endMillis", ASCENDING)
-        .returnResultsNow();
+        Iterator<MealMenu> future_menus;
+        if (common != "all") {
+        	future_menus = datastore.find()
+        	.type(MealMenu.class)
+        	.addFilter("commonsName", EQUAL ,common)
+        	.addFilter("endMillis", LESS_THAN_OR_EQUAL , time.getMillis())
+        	.addSort("endMillis", ASCENDING)
+        	.returnResultsNow();
+        } else {
+        	future_menus = datastore.find()
+            .type(MealMenu.class)
+            .addFilter("endMillis", LESS_THAN_OR_EQUAL , time.getMillis())
+            .addSort("endMillis", ASCENDING)
+            .returnResultsNow();
+        }
         
         SyndEntry entry;
     	SyndContent description;
@@ -77,7 +85,7 @@ public class MealMenuUpcomingFeedServlet extends HttpServlet {
         }
         
         
-        while (future_menus.hasNext() && count < 6) {
+        while (future_menus.hasNext() && count < 10) {
         	MealMenu menu = future_menus.next();
         	
         	entry = new SyndEntryImpl();

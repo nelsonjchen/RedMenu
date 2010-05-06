@@ -44,7 +44,7 @@ DateTime time = new DateTime();
 %>
 Current Time is <%= DateTimeFormat.mediumDateTime().print(time) %> </br>
 
-<h1>Menu for Meals</h1>
+<h1>8 Upcoming Meals</h1>
 
 <%
 
@@ -58,12 +58,10 @@ Iterator<MealMenu> future_menu = datastore.find()
 .addSort("endMillis")
 .returnResultsNow();
 %>
-
-<% if(future_menu.hasNext()){ %>
+<% int count = 0; %>
+<% while(future_menu.hasNext() && (count <= 8) ){ %>
 <%= MealMenuUtil.mealMenuSimpleHTML(future_menu.next()) %>
-<% } else { %>
- No Menu.
-<% } %>
+<% count++; } %>
 
 </body>
 </html>
