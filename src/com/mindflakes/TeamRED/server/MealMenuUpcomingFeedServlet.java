@@ -62,8 +62,8 @@ public class MealMenuUpcomingFeedServlet extends HttpServlet {
         Iterator<MealMenu> future_menus = datastore.find()
         .type(MealMenu.class)
         .addFilter("commonsName", EQUAL ,"Carrillo")
-        .addFilter("startMillis", GREATER_THAN_OR_EQUAL , time.getMillis())
-        .addSort("startMillis", ASCENDING)
+        .addFilter("endMillis", LESS_THAN_OR_EQUAL , time.getMillis())
+        .addSort("endMillis", ASCENDING)
         .returnResultsNow();
         
         SyndEntry entry;
