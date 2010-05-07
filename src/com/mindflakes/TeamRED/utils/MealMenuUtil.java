@@ -2,6 +2,7 @@ package com.mindflakes.TeamRED.utils;
 
 import java.util.ArrayList;
 
+import org.joda.time.DateTimeZone;
 import org.joda.time.format.DateTimeFormat;
 
 import com.mindflakes.TeamRED.menuClasses.FoodItem;
@@ -48,11 +49,11 @@ public  class MealMenuUtil {
 		String append = "<div class=\"meal\">";
 		append += "<h2>" + menu.getCommonsName() + "</h2>\n";
 		append += "<h3>" + menu.getMealName() + "</h3>\n";
-		append += "<p>" + DateTimeFormat.mediumDateTime()
-				.print(menu.getMealInterval().getStartMillis())
+		append += "<p>" + DateTimeFormat.mediumDateTime().withZone(DateTimeZone.forID("America/Los_Angeles"))
+				.print(menu.getMealInterval().getStart())
 				+ " to "
-				+ DateTimeFormat.shortTime()
-				.print(menu.getMealInterval().getEndMillis()) 
+				+ DateTimeFormat.shortTime().withZone(DateTimeZone.forID("America/Los_Angeles"))
+				.print(menu.getMealInterval().getEnd()) 
 				
 				+ "</p>\n";
 
