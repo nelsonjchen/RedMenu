@@ -69,5 +69,14 @@ Iterator<MealMenu> future_menu = datastore.find()
 <%= MealMenuUtil.mealMenuSimpleHTML(future_menu.next()) %>
 <% count++; } %>
 
+<a href="/feed/Ortega">Feed for Ortega</a>  <br/>
+
+<a href="/feed/Carrillo">Feed for Carrillo</a>  <br/>
+
+<a href="/feed/De La Guerra">Feed for DLG</a>  <br/>
+
+<a href="/feed/Portola">Feed for Portola</a>  <br/>
+
+
 </body>
 </html>
