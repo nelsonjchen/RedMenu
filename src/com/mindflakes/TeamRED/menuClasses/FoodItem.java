@@ -24,6 +24,7 @@ public class FoodItem {
 		this.name = name;
 		this.vegan = vegan;
 		this.vegetarian = vegetarian;
+		if(name==null) name = "NULLNAME";
 	}
 	
 	@SuppressWarnings("unused")
