@@ -69,6 +69,14 @@ Iterator<MealMenu> future_menu = datastore.find()
 <%= MealMenuUtil.mealMenuSimpleHTML(future_menu.next()) %>
 <% count++; } %>
 
+
+<form action="search.jsp" method="get">
+
+	<p>Search:</p>
+	<p><input type="text" name="search" value="" /></p>
+
+</form>
+
 <a href="/feed/Ortega">Feed for Ortega</a>  <br/>
 
 <a href="/feed/Carrillo">Feed for Carrillo</a>  <br/>
