@@ -58,8 +58,13 @@ public  class MealMenuUtil {
 		for (Venue v : menu.getVenues()) {
 			append += "<h4>" + v.getName() + "</h4>\n";
 			append += "<ul>\n";
-			for (FoodItem f: v.getFoodItems()) {
+			if(v.getFoodItems()!=null) for (FoodItem f: v.getFoodItems()) {
+				if(f==null){
+					append += "<li>null</li>\n";
+				}
 				append += "<li>" + f.getName() + "</li>\n";
+			} else{
+				append+=append += "<li>AllFoodItems are NULL!!! null</li>\n";
 			}
 			append += "</ul>\n";
 		}

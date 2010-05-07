@@ -18,7 +18,19 @@ public class Venue {
 	public Venue(String name, ArrayList<FoodItem> foodItems) {
 		this.name = name;
 		this.foodItems = foodItems;
+		fixFoodItems();
 	}
+	
+	private void fixFoodItems(){
+		if(foodItems==null){
+			foodItems = new ArrayList<FoodItem>();
+		} else{
+			for(int i = 0; i < foodItems.size();i++){
+				if(foodItems.get(i)==null) foodItems.remove(i--);
+			}
+		}
+	}
+	
 	
 	@SuppressWarnings("unused")
 	private Venue() {
@@ -51,6 +63,7 @@ public class Venue {
 	 */
 	public ArrayList<FoodItem> getVeganItems(){
 		ArrayList<FoodItem> veganItems = new ArrayList<FoodItem>();
+		if(foodItems==null) return veganItems;
 		for(FoodItem food:foodItems){
 			if(food.isVegan()) veganItems.add(food);
 		}

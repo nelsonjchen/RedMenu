@@ -1,5 +1,7 @@
 package com.mindflakes.TeamRED.tests;
 
+import org.joda.time.DateTime;
+
 import com.mindflakes.TeamRED.UCSBScrape.LocalUCSBMenuFile;
 import com.mindflakes.TeamRED.UCSBScrape.RemoteUCSBMenuFile;
 import com.mindflakes.TeamRED.UCSBScrape.UCSBJMenuScraper;
@@ -25,12 +27,15 @@ public class TestJScrape {
 		
 //		UCSBJMenuScraper ortega = new UCSBJMenuScraper("docs/Menus/ortega4.19.xml", 1);
 		//UCSBJMenuScraper ortega = new UCSBJMenuScraper(RemoteUCSBMenuFile.CARRILLO_NEXT_WEEK, false);
-		UCSBJMenuScraper ortega = new UCSBJMenuScraper(RemoteUCSBMenuFile.PORTOLA_THIS_WEEK, false);
-		MealMenuSearchQuery search = new MealMenuSearchQuery(ortega.getMenus());
+		UCSBJMenuScraper ortega = new UCSBJMenuScraper(RemoteUCSBMenuFile.CARRILLO_THIS_WEEK, false);
+//		MealMenuSearchQuery search = new MealMenuSearchQuery(ortega.getMenus());
 		MealMenuUtil.printAll(ortega.getMenus());
-		System.out.println("<---------SEARCH RESULTS--------->");
-		MealMenuUtil.printAll(search.findFoodItem("\"Focaccia Sandwich\" Blackened\"").returnResults());
-
+		ortega = new UCSBJMenuScraper(RemoteUCSBMenuFile.CARRILLO_NEXT_WEEK, false);
+		MealMenuUtil.printAll(ortega.getMenus());
+//		System.out.println("<---------SEARCH RESULTS--------->");
+//		MealMenuUtil.printAll(search.findFoodItem("\"Focaccia Sandwich\" Blackened\"").returnResults());
+//		System.out.println(new DateTime().getMillis());
+//		System.out.println(new DateTime().plusWeeks(1).getMillis());
 	}
 
 }

@@ -8,6 +8,7 @@
 <%@page import="com.google.appengine.api.labs.taskqueue.QueueFactory"%>
 <%@page import="com.google.appengine.api.labs.taskqueue.TaskOptions"%>
 
+
 <%
 //To update on a local version of the server: Run /cron/update.jsp?count=-1
 //If that is taking too long and timing out, can call each menu individually with
@@ -30,8 +31,18 @@ try{
 Queue queue = QueueFactory.getDefaultQueue();
 if(count==9001){
 	if(menu==-1){
+		%>
+<a href="/cron/update.jsp?count=0&menu=11">Click Here to Update Carrillo This Week</a><br>
+<a href="/cron/update.jsp?count=0&menu=12">Click Here to Update Carrillo Next Week</a><br>
+<a href="/cron/update.jsp?count=0&menu=21">Click Here to Update DLG This Week</a><br>
+<a href="/cron/update.jsp?count=0&menu=22">Click Here to Update DLG Next Week</a><br>
+<a href="/cron/update.jsp?count=0&menu=31">Click Here to Update Ortega This Week</a><br>
+<a href="/cron/update.jsp?count=0&menu=32">Click Here to Update Ortega Next Week</a><br>
+<a href="/cron/update.jsp?count=0&menu=41">Click Here to Update Portola This Week</a><br>
+<a href="/cron/update.jsp?count=0&menu=42">Click Here to Update Portola Next Week</a><br>
+<%
 	//If no paramaters, start update for remote setting on all menus starting at the first menu
-		queue.add(TaskOptions.Builder.url("/cron/update.jsp").param("count","0").param("menu","11"));
+/*		queue.add(TaskOptions.Builder.url("/cron/update.jsp").param("count","0").param("menu","11"));
 		queue.add(TaskOptions.Builder.url("/cron/update.jsp").param("count","0").param("menu","12"));
 		queue.add(TaskOptions.Builder.url("/cron/update.jsp").param("count","0").param("menu","21"));
 		queue.add(TaskOptions.Builder.url("/cron/update.jsp").param("count","0").param("menu","22"));
@@ -39,6 +50,7 @@ if(count==9001){
 		queue.add(TaskOptions.Builder.url("/cron/update.jsp").param("count","0").param("menu","32"));
 		queue.add(TaskOptions.Builder.url("/cron/update.jsp").param("count","0").param("menu","41"));
 		queue.add(TaskOptions.Builder.url("/cron/update.jsp").param("count","0").param("menu","42"));
+		*/
 	} else{
 		//Othewrise, if no count parameter, but there is a menu parameter, start just that menu updating
 		queue.add(TaskOptions.Builder.url("/cron/update.jsp").param("count","0").param("menu",""+menu));

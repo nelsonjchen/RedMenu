@@ -7,6 +7,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <%@page import="org.joda.time.DateTime"%>
+<%@page import="org.joda.time.DateTimeZone"%>
 <%@page import="org.joda.time.format.DateTimeFormat"%>
 <%@page import="com.mindflakes.TeamRED.menuClasses.MealMenu"%>
 <%@page import="com.mindflakes.TeamRED.utils.MealMenuUtil"%>
@@ -39,7 +40,7 @@
 %>
 
 <% 
-DateTime time = new DateTime(); 
+DateTime time = new DateTime(DateTimeZone.forID("America/Los_Angeles")); 
 %>
 Current (Fake) Time is <%= DateTimeFormat.mediumDateTime().print(time) %> </br>
 

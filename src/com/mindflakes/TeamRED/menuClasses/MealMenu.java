@@ -1,5 +1,6 @@
 package com.mindflakes.TeamRED.menuClasses;
 import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.joda.time.Interval;
 
 import org.joda.time.format.DateTimeFormat;
@@ -15,14 +16,14 @@ import java.util.ArrayList;
  *
  */
 public class MealMenu {
+	@Key
+	private String _menuKey;
 	private String commonsName;
 	private long startMillis, endMillis, modMillis;
 	@Embed
 	private ArrayList<Venue> venues;
 	private String mealName;
-	@SuppressWarnings("unused")
-	@Key
-	private String menuKey;
+
 	
 	/** constructs a MealMenu object with the specified parameters. Time is passed to the constructor in the form returned by
 	 * a call to Joda Time's {@link org.joda.time.DateTime#getMillis() DateTime.getMillis. This convention is used for the start, end, and modification times
@@ -43,6 +44,13 @@ public class MealMenu {
 		this.venues = venues;
 		this.mealName = mealName;
 		setMenuKey();
+		removeEmptyVenues();
+	}
+	
+	private void removeEmptyVenues(){
+		for(int i = 0; i<venues.size();i++){
+			if(venues.get(i).getFoodItems().size()==0) venues.remove(i--);
+		}
 	}
 	
 	@SuppressWarnings("unused")
@@ -57,14 +65,14 @@ public class MealMenu {
 	}
 	
 	public String getMenuKey(){
-		return menuKey;
+		return _menuKey;
 	}
 	
 	/**
 	 * This method sets a key for unique persistance.
 	 */
 	private void setMenuKey() {
-		 this.menuKey = this.commonsName.toLowerCase() +
+		 this._menuKey = this.commonsName.toLowerCase() +
 		 DateTimeFormat.forPattern("MMddyyyyHHmm")
 		 .print(startMillis);
 	}
@@ -94,7 +102,7 @@ public class MealMenu {
 	 * @return interval the <code>Interval</code> representing the time during which the meal is served
 	 */
 	public Interval getMealInterval(){
-		return new Interval(startMillis, endMillis);
+		return new Interval(startMillis, endMillis,DateTimeZone.forID("America/Los_Angeles"));
 	}
 	
 	/** creates and returns a <code>DateTime</code> object from the modTime of this meal. 
@@ -102,7 +110,7 @@ public class MealMenu {
 	 * @return the DateTime at which this MealMenu was last modified.
 	 */
 	public DateTime getModDate() {
-		return new DateTime(modMillis);
+		return new DateTime(modMillis,DateTimeZone.forID("America/Los_Angeles"));
 	}
 	
 	/**	sets the modDate of this <code>MealMenu</code> to the specified modDate

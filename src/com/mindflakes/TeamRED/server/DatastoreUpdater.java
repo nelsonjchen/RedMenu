@@ -40,7 +40,7 @@ public class DatastoreUpdater {
 		Queue queue = QueueFactory.getDefaultQueue();
 		ArrayList<MealMenu> menus;
 		UCSBJMenuScraper scraper;
-		for(int menuCode=11;menuCode<=42;menuCode++){
+		for(int menuCode=11;menuCode<=12;menuCode++){
 			System.out.println(menuCode);
 			scraper = new UCSBJMenuScraper(new RemoteUCSBMenuFile(getCommonsURL(menuCode)));
 			menus = scraper.getMenus();
@@ -146,9 +146,11 @@ public class DatastoreUpdater {
 			Iterator<MealMenu> it = datastore.find().type(MealMenu.class).fetchResultsBy(5).returnResultsNow();
 			if(it.hasNext()) shouldContinue=true;
 			MealMenu mm;
-			while(it.hasNext()){
+			int count = 0;
+			while(it.hasNext() && count<5){
 				mm = it.next();
 				datastore.delete(mm);
+				count++;
 			}
 		}
 		break;
@@ -156,8 +158,10 @@ public class DatastoreUpdater {
 		{
 			Iterator<FoodItem> it = datastore.find().type(FoodItem.class).fetchResultsBy(20).returnResultsNow();
 			if(it.hasNext()) shouldContinue=true;
-			while(it.hasNext()){
+			int count = 0;
+			while(it.hasNext()&&count<20){
 				datastore.delete(it.next());
+				count++;
 			}
 		}
 		break;

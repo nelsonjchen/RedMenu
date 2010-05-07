@@ -2,6 +2,8 @@ package com.mindflakes.TeamRED.UCSBScrape;
 import java.util.*;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
+
 import com.mindflakes.TeamRED.menuClasses.*;
 
 /** A class that 'scrapes' data from a UCSB XML Menu, creating populated MealMenu objects which can be much more easily worked with.
@@ -324,7 +326,8 @@ public class UCSBJMenuScraper {
     		result[4]=Integer.parseInt(modDate.substring(10,12));
     		result[5]=Integer.parseInt(modDate.substring(12,14));
     		result[6]=00;
-    	return (new DateTime(result[0],result[1],result[2],result[3],result[4],result[5],result[6])).getMillis();
+    	return (new DateTime(result[0],result[1],result[2],result[3]
+    	   ,result[4],result[5],result[6],DateTimeZone.forID("America/Los_Angeles"))).getMillis();
     }
     
     private static void initializeALofALofString(ArrayList<ArrayList<String>> arrList){
@@ -394,16 +397,17 @@ public class UCSBJMenuScraper {
     		return true;
     	}	else {
     		//meats
-    		if (in.toLowerCase().contains("beef") || in.toLowerCase().contains("chicken") || 
-    				in.toLowerCase().contains("pork") || in.toLowerCase().contains("meat") || 
-    				in.toLowerCase().contains("bacon") || in.toLowerCase().contains("beef") ||
-    				in.toLowerCase().contains("fish") || in.toLowerCase().contains("turkey") || 
-    				in.toLowerCase().contains("ham") || in.toLowerCase().contains("patstrami") || 
-    				in.toLowerCase().contains("chop suey") || in.toLowerCase().contains("clam") ||
-    				in.toLowerCase().contains("salami") || in.toLowerCase().contains("pepperoni") || 
-    				in.toLowerCase().contains("sloppy joes") || in.toLowerCase().contains("charburger") || 
-    				in.toLowerCase().contains("ahi") || in.toLowerCase().contains("tuna") || 
-    				in.toLowerCase().contains("sausage") || in.toLowerCase().contains("shrimp") ) {
+    		if (in.contains("beef") || in.contains("chicken") || 
+    				in.contains("pork") || in.contains("meat") || 
+    				in.contains("bacon") || in.contains("beef") ||
+    				in.contains("fish") || in.contains("turkey") || 
+    				in.contains("ham") || in.contains("patstrami") || 
+    				in.contains("chop suey") || in.contains("clam") ||
+    				in.contains("salami") || in.contains("pepperoni") || 
+    				in.contains("sloppy joes") || in.contains("charburger") || 
+    				in.contains("ahi") || in.contains("tuna") || 
+    				in.contains("sausage") || in.contains("shrimp") || in.contains("cheeseburger")||
+    				in.contains("carnitas")) {
     			return false;
     				
 
@@ -463,7 +467,7 @@ public class UCSBJMenuScraper {
         			Integer.parseInt(dates.substring(2,4)),
         			Integer.parseInt(time.substring(0,2)),
         			Integer.parseInt(time.substring(2))
-    				,00,00)).getMillis();
+    				,00,00,DateTimeZone.forID("America/Los_Angeles"))).getMillis();
 
     	return result;
     }
