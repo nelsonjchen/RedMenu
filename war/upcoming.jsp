@@ -68,7 +68,7 @@ Iterator<MealMenu> future_menu = datastore.find()
 <% while(future_menu.hasNext() && (count <= 8) ){ %>
 <%= MealMenuUtil.mealMenuSimpleHTML(future_menu.next()) %>
 <% count++; } %>
-
+<h1>Search</h1>
 
 <form action="search.jsp" method="get">
 
@@ -76,6 +76,10 @@ Iterator<MealMenu> future_menu = datastore.find()
 	<p><input type="text" name="search" value="" /></p>
 
 </form>
+
+<a href="/feed/Ortega">Vegan Items</a>  <br/>
+
+<h1>RSS Feeds</h1>
 
 <a href="/feed/Ortega">Feed for Ortega</a>  <br/>
 
