@@ -46,7 +46,7 @@ String commons = request.getParameter("commons");
 try{
 ArrayList<MealMenu> results = null;
 long startMillis = (start!=null) ? Long.parseLong(start) : new DateTime().getMillis();
-long endMillis = (end!=null) ? Long.parseLong(stop) : new DateTime().plusWeeks(2).getMillis();
+long endMillis = (stop!=null) ? Long.parseLong(stop) : new DateTime().plusWeeks(2).getMillis();
 boolean veganBool = (vegan!=null)? Boolean.parseBoolean(vegan) : false;
 boolean vgtBool = (vegan!=null) ? Boolean.parseBoolean(vegetarian) : false;
 %>
