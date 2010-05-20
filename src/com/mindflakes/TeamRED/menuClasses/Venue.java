@@ -1,6 +1,8 @@
 package com.mindflakes.TeamRED.menuClasses;
+import java.io.Serializable;
 import java.util.ArrayList;
 
+import com.vercer.engine.persist.annotation.Embed;
 import com.vercer.engine.persist.annotation.Parent;
 
 /** A container class that holds all the {@link com.mindflakes.TeamRED.menuClasses.FoodItem FoodItem}s
@@ -8,8 +10,9 @@ import com.vercer.engine.persist.annotation.Parent;
  * @author Johan Henkens
  *
  */
-public class Venue {
+public class Venue implements Serializable{
 	private String name;
+	@Embed
 	private ArrayList<FoodItem> foodItems;
 	/** Constructs a <code>Venue</code> with the specified name and FoodItems to be served.
 	 * @param name name of the venue at which the food is served
@@ -17,18 +20,14 @@ public class Venue {
 	 */
 	public Venue(String name, ArrayList<FoodItem> foodItems) {
 		this.name = name;
-		this.foodItems = foodItems;
-		fixFoodItems();
+		this.foodItems = (foodItems!=null)?foodItems:new ArrayList<FoodItem>();
 	}
 	
-	private void fixFoodItems(){
-		if(foodItems==null){
-			foodItems = new ArrayList<FoodItem>();
-		} else{
-			for(int i = 0; i < foodItems.size();i++){
-				if(foodItems.get(i)==null) foodItems.remove(i--);
-			}
+	public void fixFoodItems(){
+		for(int i = 0; i < foodItems.size();i++){
+			if(foodItems.get(i)==null) foodItems.remove(i--);
 		}
+		if(foodItems.size()==0) foodItems=null;
 	}
 	
 	

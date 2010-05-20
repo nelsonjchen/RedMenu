@@ -260,6 +260,18 @@ public class UCSBJMenuScraper {
     	createMealMenusForMeal(dinners,currentCommons, dates, mealTimes[2],modDateMillis,mealNames[2]);
     	createMealMenusForMeal(brunches,currentCommons, dates, mealTimes[3],modDateMillis,mealNames[3]);
     	createMealMenusForMeal(lateNites,currentCommons, dates, mealTimes[4],modDateMillis,mealNames[4]);
+    	checkMealMenus();
+    }
+    
+    private void checkMealMenus(){
+    	for(int i = 0; i <menus.size();i++){
+    		if(menus.get(i)==null||
+    				menus.get(i).getVenues()==null
+    				|| menus.get(i).getVenues().size()==0){
+    			menus.remove(i);
+    			i--;
+    		}
+    	}
     }
     
     
@@ -471,7 +483,7 @@ public class UCSBJMenuScraper {
 
     	return result;
     }
-    
+
     private  void createMealMenusForMeal(ArrayList<ArrayList<String>> arrOfArr, String commons, String[] dates, String[] mealTimes, long modDateMillis, String mealName){
     	String commonsShort = commons.substring(0,commons.indexOf(" Commons"));
     	for(int i = 0; i<arrOfArr.size();i++){
@@ -493,9 +505,18 @@ public class UCSBJMenuScraper {
     			}
     		}
     		long startMillis = combineAndConvertToMillis(dates[i], mealTimes[0]);
-        	long endMillis  = combineAndConvertToMillis(dates[i], mealTimes[1]);
-    		menus.add(new MealMenu(commonsShort,
-    				startMillis,endMillis,modDateMillis, venues, mealName));
+    		long endMillis  = combineAndConvertToMillis(dates[i], mealTimes[1]);
+    		for(int o = 0; o < venues.size();o++){
+    			venues.get(o).fixFoodItems();
+    			if(venues.get(o).getFoodItems()==null||venues.get(o).getFoodItems().size()==0){
+    				venues.remove(o);
+    				o--;
+    			}
+    		}
+    		if(venues!=null&&venues.size()!=0){
+    			menus.add(new MealMenu(commonsShort,
+    					startMillis,endMillis,modDateMillis, venues, mealName));
+    		}
     	}
     }
     
@@ -503,7 +524,7 @@ public class UCSBJMenuScraper {
 
     
     private static boolean isTwoEntries(String line){
-    	return (getLineWValue(line)>130);
+    	return (getLineWValue(line)>135);
     }
     
     private static boolean isLineBodyAVenue(String line, String commonsName){

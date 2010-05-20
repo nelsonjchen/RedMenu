@@ -1,5 +1,7 @@
 package com.mindflakes.TeamRED.menuClasses;
 
+import java.io.Serializable;
+
 import com.vercer.engine.persist.annotation.Key;
 
 /**
@@ -7,7 +9,7 @@ import com.vercer.engine.persist.annotation.Key;
  * @author Johan Henkens
  *
  */
-public class FoodItem {
+public class FoodItem implements Serializable{
 	@Key
 	private String name;
 	private boolean vegan;

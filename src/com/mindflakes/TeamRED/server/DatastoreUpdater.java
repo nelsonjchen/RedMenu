@@ -40,7 +40,7 @@ public class DatastoreUpdater {
 		Queue queue = QueueFactory.getDefaultQueue();
 		ArrayList<MealMenu> menus;
 		UCSBJMenuScraper scraper;
-		for(int menuCode=11;menuCode<=12;menuCode++){
+		for(int menuCode=11;menuCode<=42;menuCode++){
 			System.out.println(menuCode);
 			scraper = new UCSBJMenuScraper(new RemoteUCSBMenuFile(getCommonsURL(menuCode)));
 			menus = scraper.getMenus();

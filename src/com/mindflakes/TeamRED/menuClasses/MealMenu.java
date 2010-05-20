@@ -9,13 +9,14 @@ import com.vercer.engine.persist.annotation.Child;
 import com.vercer.engine.persist.annotation.Embed;
 import com.vercer.engine.persist.annotation.Key;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /** A container object that represents a specific meal at a specific dining common.
  * @author Johan Henkens
  *
  */
-public class MealMenu {
+public class MealMenu implements Serializable{
 	@Key
 	private String _menuKey;
 	private String commonsName;
@@ -49,7 +50,16 @@ public class MealMenu {
 	
 	private void removeEmptyVenues(){
 		for(int i = 0; i<venues.size();i++){
-			if(venues.get(i).getFoodItems().size()==0) venues.remove(i--);
+			if(venues.get(i)==null){
+				venues.remove(i);
+				i--;
+			} else if(venues.get(i).getFoodItems()==null){
+				venues.remove(i);
+				i--;
+			}else if(venues.get(i).getFoodItems().size()==0){
+				venues.remove(i);
+				i--;
+			}
 		}
 	}
 	

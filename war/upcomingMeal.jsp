@@ -57,10 +57,12 @@ Iterator<MealMenu> future_menu = datastore.find()
 		com.google.appengine.api.datastore.Query.FilterOperator.GREATER_THAN_OR_EQUAL, time.getMillis())
 .addSort("endMillis")
 .returnResultsNow();
+if(future_menu.hasNext()){
 %>
 
 <%= MealMenuUtil.mealMenuSimpleHTML(future_menu.next()) %>
 <%
+}
 	future_menu = datastore.find().type(MealMenu.class).returnResultsNow();
 	int count = 0;
 	while(future_menu.hasNext()){
